@@ -2,97 +2,108 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import {
   Activity,
-  Boxes,
+  BookOpen,
   CheckCircle2,
-  ChevronRight,
-  Cpu,
+  ExternalLink,
+  FileSearch,
   GitBranch,
+  HelpCircle,
   Network,
   Search,
   Shield,
-  Sparkles,
   Terminal,
-  Wrench,
+  Users,
 } from "lucide-react";
-import { maOsData, type SkillAtom } from "@/lib/ma-os-data";
+import { investigation } from "@/lib/investigation-data";
+import { maOsData } from "@/lib/ma-os-data";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({ component: Desk });
 
-type TabId = "overview" | "agents" | "skills" | "methods" | "repos" | "governance";
+type Tab =
+  | "overview"
+  | "timeline"
+  | "entities"
+  | "sources"
+  | "claims"
+  | "methods"
+  | "agents"
+  | "links";
 
-const TABS: { id: TabId; label: string; icon: typeof Activity }[] = [
-  { id: "overview", label: "Overview", icon: Activity },
-  { id: "agents", label: "Agents", icon: Cpu },
-  { id: "skills", label: "Skills", icon: Sparkles },
-  { id: "methods", label: "Methods", icon: Search },
-  { id: "repos", label: "Repos", icon: GitBranch },
-  { id: "governance", label: "Governance", icon: Shield },
+const TABS: { id: Tab; label: string; icon: typeof Activity }[] = [
+  { id: "overview", label: "Overview", icon: BookOpen },
+  { id: "timeline", label: "Timeline", icon: Activity },
+  { id: "entities", label: "Entities", icon: Users },
+  { id: "sources", label: "Sources", icon: FileSearch },
+  { id: "claims", label: "Open Qs", icon: HelpCircle },
+  { id: "methods", label: "Methods", icon: Shield },
+  { id: "agents", label: "MA-OS-12", icon: Network },
+  { id: "links", label: "Live links", icon: ExternalLink },
 ];
 
-function Home() {
-  const [tab, setTab] = useState<TabId>("overview");
-  const [query, setQuery] = useState("");
-  const [selectedAgent, setSelectedAgent] = useState<string | null>(null);
+function Desk() {
+  const [tab, setTab] = useState<Tab>("overview");
+  const [q, setQ] = useState("");
   const [running, setRunning] = useState(false);
-  const [runLog, setRunLog] = useState<string[]>([]);
-  const [agentStatus, setAgentStatus] = useState<Record<string, "idle" | "running" | "done">>({});
+  const [log, setLog] = useState<string[]>([]);
+  const [status, setStatus] = useState<Record<string, "idle" | "running" | "done">>({});
 
-  const filteredAtoms = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return maOsData.atoms;
-    return maOsData.atoms.filter(
-      (a) =>
-        a.skill.toLowerCase().includes(q) ||
-        a.trigger.toLowerCase().includes(q) ||
-        a.capability.toLowerCase().includes(q),
+  const filteredTimeline = useMemo(() => {
+    const s = q.trim().toLowerCase();
+    if (!s) return investigation.timeline;
+    return investigation.timeline.filter(
+      (t) =>
+        t.event.toLowerCase().includes(s) ||
+        t.date.includes(s) ||
+        t.source.toLowerCase().includes(s),
     );
-  }, [query]);
+  }, [q]);
 
-  async function simulateRun() {
+  async function runPipeline() {
     if (running) return;
     setRunning(true);
-    setRunLog([]);
-    setAgentStatus({});
-    const logs: string[] = [];
-    for (const agent of maOsData.agents) {
-      setAgentStatus((s) => ({ ...s, [agent.id]: "running" }));
-      logs.push(`[phase ${agent.phase}] ${agent.id} → ${agent.artifact}`);
-      setRunLog([...logs]);
-      await new Promise((r) => setTimeout(r, 120));
-      setAgentStatus((s) => ({ ...s, [agent.id]: "done" }));
+    setLog([]);
+    setStatus({});
+    const lines: string[] = [];
+    for (const a of maOsData.agents) {
+      setStatus((p) => ({ ...p, [a.id]: "running" }));
+      lines.push(`[${a.phase}/12] ${a.id} → ${a.artifact}`);
+      setLog([...lines]);
+      await new Promise((r) => setTimeout(r, 90));
+      setStatus((p) => ({ ...p, [a.id]: "done" }));
     }
-    logs.push("SUPER_OBJECT packed · verify ok");
-    setRunLog([...logs]);
+    lines.push("VERIFY ok · SOLID/MAYBE tags preserved · public-record ceiling");
+    setLog([...lines]);
     setRunning(false);
   }
 
   return (
     <div className="min-h-dvh flex flex-col bg-bg text-fg">
       <header className="sticky top-0 z-20 border-b border-border bg-bg/95 backdrop-blur-sm">
-        <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6 flex flex-wrap items-center gap-3 justify-between">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="size-9 rounded-[var(--radius-sm)] border border-border-strong bg-bg-elevated flex items-center justify-center shrink-0">
-              <Network className="size-4 text-accent" strokeWidth={1.75} />
-            </div>
-            <div className="min-w-0">
-              <h1 className="text-base sm:text-lg font-semibold tracking-tight truncate">
-                MA-OS-12
-              </h1>
-              <p className="text-xs text-fg-muted truncate">
-                Multi-Agent Operating System · investigation swarm
-              </p>
-            </div>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="min-w-0">
+            <p className="text-[10px] uppercase tracking-widest text-fg-subtle font-medium">
+              Investigative journalism · public records only
+            </p>
+            <h1 className="text-base sm:text-lg font-semibold tracking-tight truncate">
+              {investigation.purpose.title}
+            </h1>
+            <p className="text-xs text-fg-muted line-clamp-2 max-w-xl">
+              {investigation.purpose.one_liner}
+            </p>
           </div>
           <div className="flex items-center gap-2">
-            <StatusPill ok={maOsData.verify.ok} />
+            <span className="inline-flex items-center gap-1.5 h-8 px-2.5 rounded-full text-xs font-medium border border-ok/30 text-ok bg-ok/10">
+              <CheckCircle2 className="size-3.5" />
+              Verified build
+            </span>
             <button
               type="button"
-              onClick={simulateRun}
+              onClick={runPipeline}
               disabled={running}
-              className="inline-flex items-center gap-2 h-10 px-4 rounded-[var(--radius-sm)] bg-accent text-accent-fg text-sm font-medium transition-opacity hover:opacity-90 active:scale-[0.98] disabled:opacity-50"
+              className="inline-flex items-center gap-2 h-10 px-4 rounded-[var(--radius-sm)] bg-accent text-accent-fg text-sm font-medium hover:opacity-90 active:scale-[0.98] disabled:opacity-50"
             >
               <Terminal className="size-4" />
-              {running ? "Running…" : "Run swarm"}
+              {running ? "Running…" : "Run 12-agent cycle"}
             </button>
           </div>
         </div>
@@ -119,448 +130,355 @@ function Home() {
             })}
           </div>
         </nav>
-        <PhasesStrip status={agentStatus} />
       </header>
 
       <main className="flex-1 mx-auto w-full max-w-6xl px-4 sm:px-6 py-6 space-y-6">
         {tab === "overview" && (
-          <Overview
-            runLog={runLog}
-            agentStatus={agentStatus}
-            onSelectAgent={(id) => {
-              setSelectedAgent(id);
-              setTab("agents");
-            }}
-          />
+          <Overview log={log} status={status} />
         )}
-        {tab === "agents" && (
-          <AgentsPanel
-            selected={selectedAgent}
-            onSelect={setSelectedAgent}
-            status={agentStatus}
-          />
+        {tab === "timeline" && (
+          <TimelinePanel q={q} setQ={setQ} items={filteredTimeline} />
         )}
-        {tab === "skills" && (
-          <SkillsPanel
-            query={query}
-            setQuery={setQuery}
-            atoms={filteredAtoms}
-            total={maOsData.atoms.length}
-          />
-        )}
+        {tab === "entities" && <EntitiesPanel />}
+        {tab === "sources" && <SourcesPanel />}
+        {tab === "claims" && <ClaimsPanel />}
         {tab === "methods" && <MethodsPanel />}
-        {tab === "repos" && <ReposPanel />}
-        {tab === "governance" && <GovernancePanel />}
+        {tab === "agents" && <AgentsPanel status={status} />}
+        {tab === "links" && <LinksPanel />}
       </main>
 
-      <footer className="border-t border-border py-4 text-center text-xs text-fg-subtle">
-        {maOsData.meta.policy}
+      <footer className="border-t border-border py-4 px-4 text-center text-xs text-fg-subtle space-y-1">
+        <p>Public-record ceiling · HITL · SOLID/MAYBE · association ≠ guilt</p>
+        <p>No CSAM · no private victim data beyond already-public filings · no secret loaders</p>
       </footer>
     </div>
   );
 }
 
-
-function PhasesStrip({ status }: { status: Record<string, "idle" | "running" | "done"> }) {
-  return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-3">
-      <div className="flex gap-1 overflow-x-auto">
-        {maOsData.agents.map((a) => {
-          const st = status[a.id] ?? "idle";
-          const tone =
-            st === "done"
-              ? "border-ok/40 bg-ok/10 text-ok"
-              : st === "running"
-                ? "border-info/40 bg-info/10 text-info"
-                : "border-border bg-bg-elevated text-fg-subtle";
-          return (
-            <div
-              key={a.id}
-              title={a.role}
-              className={`shrink-0 rounded-full border px-2.5 py-1 text-[10px] font-mono font-medium ${tone}`}
-            >
-              {a.phase}.{a.id.slice(0, 3)}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function StatusPill({ ok }: { ok: boolean }) {
+function Tag({ t }: { t: string }) {
+  const ok = t === "SOLID";
   return (
     <span
       className={[
-        "inline-flex items-center gap-1.5 h-8 px-2.5 rounded-full text-xs font-medium border",
+        "inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide border",
         ok
-          ? "border-ok/30 text-ok bg-ok/10"
-          : "border-danger/30 text-danger bg-danger/10",
+          ? "border-ok/40 text-ok bg-ok/10"
+          : "border-warn/40 text-warn bg-warn/10",
       ].join(" ")}
     >
-      <CheckCircle2 className="size-3.5" />
-      {ok ? "Verified" : "Fail"}
+      {t}
     </span>
   );
 }
 
-function StatCard({
-  label,
-  value,
-  hint,
-}: {
-  label: string;
-  value: string | number;
-  hint?: string;
-}) {
-  return (
-    <div className="rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4 sm:p-5">
-      <p className="text-xs font-medium text-fg-muted uppercase tracking-wide">{label}</p>
-      <p className="mt-1 text-2xl sm:text-3xl font-semibold tabular-nums tracking-tight">
-        {value}
-      </p>
-      {hint ? <p className="mt-1 text-xs text-fg-subtle">{hint}</p> : null}
-    </div>
-  );
-}
-
 function Overview({
-  runLog,
-  agentStatus,
-  onSelectAgent,
+  log,
+  status,
 }: {
-  runLog: string[];
-  agentStatus: Record<string, "idle" | "running" | "done">;
-  onSelectAgent: (id: string) => void;
+  log: string[];
+  status: Record<string, "idle" | "running" | "done">;
 }) {
-  const v = maOsData.verify;
+  const p = investigation.purpose;
   return (
     <div className="space-y-6">
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-        <StatCard label="Agents" value={`${v.agents}/12`} hint="Pipeline complete" />
-        <StatCard label="Plugins" value={v.plugins} hint="Skills + integrity" />
-        <StatCard label="Skill atoms" value={v.atoms} hint="Routable graph" />
-        <StatCard label="Repos indexed" value={maOsData.repos.length} hint="Pointers only" />
+      <section className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5 sm:p-6">
+        <h2 className="text-sm font-semibold mb-2">Exact purpose</h2>
+        <p className="text-sm text-fg-muted leading-relaxed">{p.one_liner}</p>
+        <ul className="mt-4 space-y-2">
+          {p.mission.map((m) => (
+            <li key={m} className="flex gap-2 text-sm text-fg-muted">
+              <CheckCircle2 className="size-4 text-ok shrink-0 mt-0.5" />
+              {m}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-4 pt-4 border-t border-border">
+          <p className="text-xs font-medium text-fg-subtle mb-2">Not for</p>
+          <ul className="space-y-1">
+            {p.not_for.map((n) => (
+              <li key={n} className="text-xs text-fg-subtle">
+                — {n}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <Stat label="Timeline events" value={investigation.timeline.length} />
+        <Stat label="Entities mapped" value={investigation.entities.length} />
+        <Stat label="Primary portals" value={investigation.official_portals.filter((x) => x.tier === "primary").length} />
+        <Stat label="Agents" value="12/12" />
       </section>
 
       <section className="grid lg:grid-cols-2 gap-4">
-        <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-4 sm:p-5">
-          <div className="flex items-center justify-between gap-2 mb-4">
-            <h2 className="text-sm font-semibold">Agent pipeline</h2>
-            <span className="text-xs text-fg-subtle">12 phases</span>
-          </div>
-          <ol className="space-y-1.5">
+        <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-4">
+          <h3 className="text-sm font-semibold mb-3">Pipeline status</h3>
+          <ol className="space-y-1">
             {maOsData.agents.map((a) => {
-              const st = agentStatus[a.id] ?? "idle";
+              const st = status[a.id] ?? "idle";
               return (
-                <li key={a.id}>
-                  <button
-                    type="button"
-                    onClick={() => onSelectAgent(a.id)}
-                    className="w-full flex items-center gap-3 rounded-[var(--radius-sm)] px-2 py-2 text-left hover:bg-bg-subtle transition-colors"
-                  >
-                    <span className="size-6 rounded-full border border-border text-[10px] font-mono flex items-center justify-center text-fg-muted tabular-nums shrink-0">
-                      {a.phase}
-                    </span>
-                    <span className="flex-1 min-w-0">
-                      <span className="block text-sm font-medium truncate">{a.id}</span>
-                      <span className="block text-xs text-fg-subtle truncate">{a.role}</span>
-                    </span>
-                    <StatusDot status={st} />
-                    <ChevronRight className="size-4 text-fg-subtle shrink-0" />
-                  </button>
+                <li key={a.id} className="flex items-center gap-2 text-sm py-1">
+                  <span className="font-mono text-xs text-fg-subtle w-6">{a.phase}</span>
+                  <span className="flex-1 truncate">{a.id}</span>
+                  <span
+                    className={[
+                      "size-2 rounded-full",
+                      st === "done" ? "bg-ok" : st === "running" ? "bg-info animate-pulse" : "bg-fg-subtle/40",
+                    ].join(" ")}
+                  />
                 </li>
               );
             })}
           </ol>
         </div>
-
-        <div className="space-y-4">
-          <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-4 sm:p-5">
-            <h2 className="text-sm font-semibold mb-3">Toolchain</h2>
-            <ul className="space-y-2">
-              {Object.entries(maOsData.toolchain).map(([key, val]) => (
-                <li
-                  key={key}
-                  className="flex gap-3 rounded-[var(--radius-md)] border border-border bg-bg p-3"
-                >
-                  <Wrench className="size-4 text-fg-muted mt-0.5 shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium font-mono">{key}</p>
-                    <p className="text-xs text-fg-muted leading-relaxed mt-0.5">
-                      {val.purpose || "—"}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-4 sm:p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Boxes className="size-4 text-fg-muted" />
-              <h2 className="text-sm font-semibold">Run log</h2>
-            </div>
-            {runLog.length === 0 ? (
-              <p className="text-sm text-fg-subtle">
-                Press Run swarm to simulate the 12-phase pipeline.
-              </p>
-            ) : (
-              <pre className="text-xs font-mono text-fg-muted whitespace-pre-wrap max-h-56 overflow-y-auto leading-relaxed">
-                {runLog.join("\n")}
-              </pre>
-            )}
-          </div>
+        <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-4">
+          <h3 className="text-sm font-semibold mb-3">Cycle log</h3>
+          {log.length === 0 ? (
+            <p className="text-sm text-fg-subtle">Run the 12-agent cycle to simulate collect → verify.</p>
+          ) : (
+            <pre className="text-xs font-mono text-fg-muted whitespace-pre-wrap max-h-64 overflow-y-auto">
+              {log.join("\n")}
+            </pre>
+          )}
         </div>
       </section>
     </div>
   );
 }
 
-function StatusDot({ status }: { status: "idle" | "running" | "done" }) {
-  const cls =
-    status === "done"
-      ? "bg-ok"
-      : status === "running"
-        ? "bg-info animate-pulse"
-        : "bg-fg-subtle/40";
-  return <span className={`size-2 rounded-full shrink-0 ${cls}`} />;
+function Stat({ label, value }: { label: string; value: string | number }) {
+  return (
+    <div className="rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4">
+      <p className="text-xs text-fg-muted uppercase tracking-wide">{label}</p>
+      <p className="mt-1 text-2xl font-semibold tabular-nums">{value}</p>
+    </div>
+  );
 }
 
-function AgentsPanel({
-  selected,
-  onSelect,
-  status,
+function TimelinePanel({
+  q,
+  setQ,
+  items,
 }: {
-  selected: string | null;
-  onSelect: (id: string) => void;
-  status: Record<string, "idle" | "running" | "done">;
+  q: string;
+  setQ: (v: string) => void;
+  items: typeof investigation.timeline;
 }) {
-  const agent = maOsData.agents.find((a) => a.id === selected) ?? maOsData.agents[0];
   return (
-    <div className="grid lg:grid-cols-[280px_1fr] gap-4">
-      <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-2 sm:p-3 h-fit">
-        {maOsData.agents.map((a) => {
-          const active = a.id === agent.id;
-          return (
-            <button
-              key={a.id}
-              type="button"
-              onClick={() => onSelect(a.id)}
-              className={[
-                "w-full text-left rounded-[var(--radius-sm)] px-3 py-2.5 transition-colors",
-                active ? "bg-bg-subtle border border-border-strong" : "hover:bg-bg",
-              ].join(" ")}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-mono text-fg-subtle tabular-nums">
-                  {String(a.phase).padStart(2, "0")}
-                </span>
-                <span className="text-sm font-medium">{a.id}</span>
-                <StatusDot status={status[a.id] ?? "idle"} />
-              </div>
-            </button>
-          );
-        })}
+    <div className="space-y-4">
+      <div className="flex flex-col sm:flex-row gap-3 sm:items-center justify-between">
+        <h2 className="text-lg font-semibold tracking-tight">Public chronology</h2>
+        <label className="relative w-full sm:w-72">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-fg-subtle" />
+          <input
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Filter timeline…"
+            className="w-full h-10 pl-9 pr-3 rounded-[var(--radius-sm)] border border-border bg-bg-elevated text-sm focus:outline-none focus:ring-2 focus:ring-accent/40"
+          />
+        </label>
       </div>
-      <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5 sm:p-6 space-y-4">
-        <div>
-          <p className="text-xs font-mono text-fg-subtle">Phase {agent.phase}</p>
-          <h2 className="text-xl font-semibold tracking-tight mt-1">{agent.id}</h2>
-          <p className="text-sm text-fg-muted mt-2 leading-relaxed">{agent.role}</p>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-3">
-          <div className="rounded-[var(--radius-md)] border border-border bg-bg p-4">
-            <p className="text-xs text-fg-muted mb-1">Output artifact</p>
-            <p className="text-sm font-mono font-medium break-all">{agent.artifact}</p>
-          </div>
-          <div className="rounded-[var(--radius-md)] border border-border bg-bg p-4">
-            <p className="text-xs text-fg-muted mb-1">Subsystems</p>
-            <p className="text-sm text-fg-muted">
-              Self-heal · Plugin discovery · Evolution · RL loop
-            </p>
-          </div>
-        </div>
-        <p className="text-sm text-fg-subtle leading-relaxed">
-          Each agent publishes on the bus, receives rewards, and can be healed on
-          failure. Plugins load from the skill root with class-based quarantine —
-          aggressive filenames are not blocked when the operational class is lawful.
-        </p>
+      <ol className="space-y-3">
+        {items.map((t) => (
+          <li
+            key={t.date + t.event.slice(0, 24)}
+            className="rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4"
+          >
+            <div className="flex flex-wrap items-center gap-2 mb-1">
+              <span className="font-mono text-xs text-fg-subtle">{t.date}</span>
+              <Tag t={t.tag} />
+            </div>
+            <p className="text-sm leading-relaxed">{t.event}</p>
+            <p className="mt-1 text-xs text-fg-subtle">Source: {t.source}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+function EntitiesPanel() {
+  return (
+    <div className="space-y-4">
+      <h2 className="text-lg font-semibold tracking-tight">Entity map</h2>
+      <p className="text-sm text-fg-muted">
+        Names appear from public filings and institutions. Association is not a finding of guilt.
+      </p>
+      <div className="grid sm:grid-cols-2 gap-3">
+        {investigation.entities.map((e) => (
+          <article
+            key={e.name}
+            className="rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <h3 className="text-sm font-semibold">{e.name}</h3>
+              <Tag t={e.tag} />
+            </div>
+            <p className="mt-1 text-sm text-fg-muted">{e.role}</p>
+            <p className="mt-2 text-xs font-mono text-fg-subtle">{e.status}</p>
+          </article>
+        ))}
       </div>
     </div>
   );
 }
 
-function SkillsPanel({
-  query,
-  setQuery,
-  atoms,
-  total,
-}: {
-  query: string;
-  setQuery: (v: string) => void;
-  atoms: SkillAtom[];
-  total: number;
-}) {
+function SourcesPanel() {
   return (
     <div className="space-y-4">
-      <div className="flex flex-col sm:flex-row gap-3 sm:items-center justify-between">
-        <div>
-          <h2 className="text-lg font-semibold tracking-tight">Skill tree</h2>
-          <p className="text-sm text-fg-muted">
-            {atoms.length} of {total} atoms · graph edges {maOsData.graph_edges.length}+
-          </p>
-        </div>
-        <label className="relative w-full sm:w-72">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-fg-subtle" />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Route query…"
-            className="w-full h-10 pl-9 pr-3 rounded-[var(--radius-sm)] border border-border bg-bg-elevated text-sm text-fg placeholder:text-fg-subtle focus:outline-none focus:ring-2 focus:ring-accent/40"
-          />
-        </label>
-      </div>
-      <div className="grid sm:grid-cols-2 gap-3">
-        {atoms.map((a) => (
-          <article
-            key={a.id}
-            className="rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4 hover:border-border-strong transition-colors"
-          >
-            <h3 className="text-sm font-semibold font-mono truncate">{a.skill}</h3>
-            <p className="mt-1 text-xs text-fg-subtle font-mono truncate">{a.trigger}</p>
-            <p className="mt-2 text-xs text-fg-muted leading-relaxed line-clamp-3">
-              {a.capability}
-            </p>
-          </article>
+      <h2 className="text-lg font-semibold tracking-tight">Official & secondary portals</h2>
+      <ul className="space-y-2">
+        {investigation.official_portals.map((s) => (
+          <li key={s.url}>
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4 hover:border-border-strong transition-colors"
+            >
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium flex items-center gap-2">
+                  {s.name}
+                  <ExternalLink className="size-3.5 text-fg-subtle" />
+                </p>
+                <p className="text-xs text-fg-muted mt-0.5">{s.note}</p>
+              </div>
+              <span className="text-[10px] uppercase tracking-wide font-semibold text-fg-subtle">
+                {s.tier}
+              </span>
+            </a>
+          </li>
         ))}
-      </div>
-      {atoms.length === 0 ? (
-        <p className="text-sm text-fg-subtle text-center py-8">No skills match that query.</p>
-      ) : null}
+      </ul>
+    </div>
+  );
+}
+
+function ClaimsPanel() {
+  return (
+    <div className="space-y-4">
+      <h2 className="text-lg font-semibold tracking-tight">Open questions (MAYBE)</h2>
+      <p className="text-sm text-fg-muted">
+        Tracked gaps for further public research — not conclusions.
+      </p>
+      <ul className="space-y-3">
+        {investigation.open_questions.map((c) => (
+          <li
+            key={c.q}
+            className="rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4"
+          >
+            <div className="flex gap-2 items-start">
+              <Tag t={c.tag} />
+              <div>
+                <p className="text-sm font-medium leading-relaxed">{c.q}</p>
+                <p className="mt-1 text-xs text-fg-subtle">Next step: {c.next}</p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 function MethodsPanel() {
   return (
-    <div className="space-y-6">
-      <section>
-        <h2 className="text-lg font-semibold tracking-tight mb-1">Investigation methods</h2>
-        <p className="text-sm text-fg-muted mb-4">
-          Ingested from Drive backup · public-record ceiling
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {maOsData.tools.map((t) => (
-            <span
-              key={t}
-              className="inline-flex items-center h-8 px-3 rounded-full border border-border bg-bg-elevated text-xs font-medium text-fg-muted"
-            >
-              {t}
-            </span>
+    <div className="grid lg:grid-cols-2 gap-4">
+      <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5">
+        <h2 className="text-sm font-semibold mb-3">Journalism methods</h2>
+        <ul className="space-y-2">
+          {investigation.methods.map((m) => (
+            <li key={m} className="text-sm text-fg-muted flex gap-2">
+              <Shield className="size-4 text-fg-subtle shrink-0 mt-0.5" />
+              {m}
+            </li>
           ))}
-        </div>
-      </section>
-      <section>
-        <h2 className="text-sm font-semibold mb-3">Squad archetypes</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {maOsData.squads.map((s) => (
-            <div
-              key={s}
-              className="rounded-[var(--radius-md)] border border-border bg-bg-elevated p-4 text-sm font-medium"
-            >
-              {s}
-            </div>
+        </ul>
+      </div>
+      <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5">
+        <h2 className="text-sm font-semibold mb-3">Skill atoms (sample)</h2>
+        <ul className="space-y-2 max-h-72 overflow-y-auto">
+          {maOsData.atoms.slice(0, 12).map((a) => (
+            <li key={a.id} className="text-xs border border-border rounded-[var(--radius-sm)] p-2 bg-bg">
+              <p className="font-mono font-medium">{a.skill}</p>
+              <p className="text-fg-subtle mt-0.5 line-clamp-2">{a.capability}</p>
+            </li>
           ))}
-          {maOsData.squads.length === 0 ? (
-            <p className="text-sm text-fg-subtle">No squad labels in dump.</p>
-          ) : null}
-        </div>
-      </section>
+        </ul>
+      </div>
     </div>
   );
 }
 
-function ReposPanel() {
+function AgentsPanel({ status }: { status: Record<string, "idle" | "running" | "done"> }) {
   return (
     <div className="space-y-4">
-      <div>
-        <h2 className="text-lg font-semibold tracking-tight">Owned repositories</h2>
-        <p className="text-sm text-fg-muted">
-          Pointer catalog only — originals not rewritten · secrets not cloned
-        </p>
-      </div>
-      <div className="overflow-x-auto rounded-[var(--radius-xl)] border border-border">
-        <table className="w-full text-sm text-left">
-          <thead className="bg-bg-elevated text-fg-muted text-xs uppercase tracking-wide">
-            <tr>
-              <th className="px-4 py-3 font-medium">Repository</th>
-              <th className="px-4 py-3 font-medium">Visibility</th>
-              <th className="px-4 py-3 font-medium">Role</th>
-            </tr>
-          </thead>
-          <tbody>
-            {maOsData.repos.map((r) => (
-              <tr key={r.name} className="border-t border-border hover:bg-bg-elevated/50">
-                <td className="px-4 py-3">
-                  {"url" in r && r.url ? (
-                    <a
-                      href={r.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-mono text-info hover:underline"
-                    >
-                      {r.name}
-                    </a>
-                  ) : (
-                    <span className="font-mono">{r.name}</span>
-                  )}
-                </td>
-                <td className="px-4 py-3 text-fg-muted capitalize">{r.visibility}</td>
-                <td className="px-4 py-3 text-fg-muted max-w-xs truncate">{r.role}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <h2 className="text-lg font-semibold tracking-tight">MA-OS-12 agent pipeline</h2>
+      <p className="text-sm text-fg-muted">
+        The desk is powered by the 12-agent multi-agent OS: crawl public sources → distill →
+        classify → ontology → skill tree → verify.
+      </p>
+      <div className="grid sm:grid-cols-2 gap-2">
+        {maOsData.agents.map((a) => (
+          <div
+            key={a.id}
+            className="rounded-[var(--radius-md)] border border-border bg-bg-elevated p-3 flex gap-3"
+          >
+            <span className="font-mono text-xs text-fg-subtle">{String(a.phase).padStart(2, "0")}</span>
+            <div className="min-w-0 flex-1">
+              <p className="text-sm font-medium">{a.id}</p>
+              <p className="text-xs text-fg-muted truncate">{a.role}</p>
+            </div>
+            <span
+              className={[
+                "size-2 rounded-full mt-1.5",
+                (status[a.id] ?? "idle") === "done"
+                  ? "bg-ok"
+                  : (status[a.id] ?? "idle") === "running"
+                    ? "bg-info animate-pulse"
+                    : "bg-fg-subtle/40",
+              ].join(" ")}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
-function GovernancePanel() {
+function LinksPanel() {
+  const L = investigation.live_links;
+  const rows = [
+    { label: "GitHub app source", url: L.github_app },
+    { label: "Android debug APK release", url: L.apk_release },
+    { label: "Android CI workflow", url: L.apk_ci },
+    { label: "Swarm catalogs (MA-OS-12)", url: L.swarm_catalog },
+    { label: "DOJ Epstein disclosures", url: L.doj_disclosures },
+  ];
   return (
-    <div className="grid lg:grid-cols-2 gap-4">
-      <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5 sm:p-6">
-        <h2 className="text-sm font-semibold mb-4 flex items-center gap-2">
-          <Shield className="size-4" /> Continuous primary
-        </h2>
-        <ul className="space-y-3">
-          {maOsData.governance.map((g) => (
-            <li key={g} className="flex gap-3 text-sm">
-              <CheckCircle2 className="size-4 text-ok shrink-0 mt-0.5" />
-              <span className="text-fg-muted">{g}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5 sm:p-6">
-        <h2 className="text-sm font-semibold mb-4">Classes not executed</h2>
-        <ul className="space-y-2">
-          {maOsData.quarantine_classes.map((c) => (
-            <li
-              key={c}
-              className="rounded-[var(--radius-sm)] border border-border bg-bg px-3 py-2 text-sm font-mono text-fg-muted"
+    <div className="space-y-4">
+      <h2 className="text-lg font-semibold tracking-tight">Live links</h2>
+      <ul className="space-y-2">
+        {rows.map((r) => (
+          <li key={r.url}>
+            <a
+              href={r.url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between gap-3 rounded-[var(--radius-lg)] border border-border bg-bg-elevated p-4 hover:border-border-strong text-sm"
             >
-              {c}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-4 text-xs text-fg-subtle leading-relaxed">
-          Rhetoric and aggressive filenames are not quarantine triggers. Operational
-          class is. Investigation methods stay loadable.
-        </p>
-      </div>
+              <span className="font-medium">{r.label}</span>
+              <ExternalLink className="size-4 text-info shrink-0" />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p className="text-xs text-fg-subtle">
+        Grok App Builder publishes the web app to a public grok.me preview/production link when
+        platform deploy runs. Vercel CLI token is not required for that path.
+      </p>
     </div>
   );
 }
