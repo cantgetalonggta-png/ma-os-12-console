@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MAOS12" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#c8ccd4</item>
+        <item name="colorPrimaryVariant">#121214</item>
+        <item name="colorOnPrimary">#0a0a0b</item>
+        <item name="colorSecondary">#6ee7b7</item>
+        <item name="android:statusBarColor">#0a0a0b</item>
+        <item name="android:navigationBarColor">#0a0a0b</item>
+        <item name="android:windowBackground">#0a0a0b</item>
+    </style>
+</resources>

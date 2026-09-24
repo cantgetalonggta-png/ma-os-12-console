@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MA-OS-12</string>
+    <string name="reload">Reload</string>
+    <string name="home">Console home</string>
+    <string name="set_url">Set console URL</string>
+    <string name="set_url_title">Console HTTPS URL</string>
+    <string name="save">Save</string>
+    <string name="open_browser">Open in browser</string>
+    <string name="about">About</string>
+    <string name="about_title">MA-OS-12 Console</string>
+    <string name="about_body">Android WebView shell for the Multi-Agent Operating System control panel.\n\nPublic-record ceiling · HITL · SOLID/MAYBE.\nNo secrets are stored in this shell. Set your live console HTTPS URL from the menu.\n\nDeep link: maos12://open?url=https://…</string>
+    <string name="https_only">HTTPS URLs only</string>
+    <string name="no_handler">No app can handle this link</string>
+</resources>
