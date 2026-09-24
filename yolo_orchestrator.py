@@ -80,13 +80,32 @@ def main(yolo: bool) -> int:
     report["steps"]["preflight"] = {"gh_auth": ok_gh, "detail": gh[:500]}
     print("[+] gh auth" if ok_gh else "[-] gh auth missing")
 
-    # Android compile only if present
+    # Android companion shell
+    android_dir = ROOT / "android"
+    main_kt = android_dir / "app/src/main/java/com/maos12/console/MainActivity.kt"
+    manifest = android_dir / "app/src/main/AndroidManifest.xml"
+    report["android_project_present"] = main_kt.exists() and manifest.exists()
+    report["android_hits"] = [str(main_kt.relative_to(ROOT)), str(manifest.relative_to(ROOT))] if report["android_project_present"] else []
+
     if report["android_project_present"]:
-        banner("ANDROID APK (optional)")
-        report["steps"]["apk"] = {"status": "skipped_no_gradle_path"}
+        banner("ANDROID SHELL")
+        print("[+] MainActivity.kt + AndroidManifest.xml present")
+        # Local assemble only if SDK present; else CI builds free on GHA
+        sdk = os.environ.get("ANDROID_HOME") or os.environ.get("ANDROID_SDK_ROOT")
+        has_local = bool(sdk and Path(sdk).exists()) or (android_dir / "local.properties").exists()
+        if has_local and (android_dir / "gradlew").exists():
+            ok_apk, out_apk = run([str(android_dir / "gradlew"), ":app:assembleDebug"], cwd=android_dir, timeout=900)
+            report["steps"]["apk"] = {"status": "local_assembleDebug", "ok": ok_apk, "out": out_apk[-1500:]}
+        else:
+            print("[*] No local ANDROID_HOME — free GitHub Actions android-ci builds assembleDebug")
+            report["steps"]["apk"] = {
+                "status": "deferred_to_github_actions_free",
+                "workflow": ".github/workflows/android-ci.yml",
+                "artifact": "ma-os-12-debug-apk",
+            }
     else:
-        print("[*] No MainActivity.kt / AndroidManifest — skipping APK (web deploy only)")
-        report["steps"]["apk"] = {"status": "skipped_not_android_project"}
+        print("[*] Android shell missing")
+        report["steps"]["apk"] = {"status": "missing"}
 
     banner("2 SWARM VERIFY")
     if (SWARM / "verify_deploy.py").exists():
@@ -127,6 +146,9 @@ def main(yolo: bool) -> int:
         "vercel.json",
         "startup.sh",
         "yolo_orchestrator.py",
+        "android",
+        "docs",
+        ".github",
         "artifacts/swarm_os/README.md",
         "artifacts/swarm_os/main.py",
         "artifacts/swarm_os/verify_deploy.py",
