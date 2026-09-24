@@ -1,0 +1,829 @@
+{
+  "meta": {
+    "entities": 34,
+    "edges": 19,
+    "hypotheses": 5,
+    "pipeline_stages": 6,
+    "protections": 5,
+    "sources": 7,
+    "solid_entities": 18,
+    "maybe_entities": 16,
+    "files_ingested": [
+      "BATES_AND_DOCKET_INDEX.md",
+      "CANONICAL_URLS.md",
+      "LEADS_1953_TRUST_HOUR1_2026-09-09.md",
+      "README.md",
+      "SQUADS_PROOF_VOL_INGEST.md",
+      "Verified_Inventory_2020-03-03_djvu.txt",
+      "codex_FULL_EXPORT.md",
+      "codex_STATUS.json",
+      "lolita_express_main.txt"
+    ],
+    "generated_at": "2026-09-24T23:49:18.807200+00:00",
+    "policy": "Public-record ceiling \u00b7 association \u2260 guilt \u00b7 HITL \u00b7 no CSAM \u00b7 operator theory quarantined from SOLID"
+  },
+  "entities": [
+    {
+      "id": "E-EPSTEIN",
+      "name": "Jeffrey Epstein",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Deceased defendant; SDNY sex trafficking charges 2019",
+      "aliases": [
+        "J. Epstein"
+      ],
+      "sources": [
+        "SDNY 2019",
+        "DOJ"
+      ]
+    },
+    {
+      "id": "E-MAXWELL",
+      "name": "Ghislaine Maxwell",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Convicted co-conspirator; 20-year sentence",
+      "aliases": [
+        "G. Maxwell"
+      ],
+      "sources": [
+        "SDNY verdict 2021"
+      ]
+    },
+    {
+      "id": "E-SDNY",
+      "name": "USAO SDNY",
+      "kind": "institution",
+      "tag": "SOLID",
+      "role": "Prosecuting office",
+      "aliases": [
+        "Southern District of New York"
+      ],
+      "sources": [
+        "DOJ press"
+      ]
+    },
+    {
+      "id": "E-PBPD",
+      "name": "Palm Beach Police Department",
+      "kind": "institution",
+      "tag": "SOLID",
+      "role": "Originating local investigation 2005",
+      "aliases": [
+        "PBPD"
+      ],
+      "sources": [
+        "AP timeline"
+      ]
+    },
+    {
+      "id": "E-ACOSTA",
+      "name": "Alex Acosta",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Former SDFL USA; NPA era",
+      "aliases": [],
+      "sources": [
+        "DOJ OPR 2020"
+      ]
+    },
+    {
+      "id": "E-OPR",
+      "name": "DOJ Office of Professional Responsibility",
+      "kind": "institution",
+      "tag": "SOLID",
+      "role": "NPA process review Nov 2020",
+      "aliases": [
+        "OPR"
+      ],
+      "sources": [
+        "DOJ OPR exec summary"
+      ]
+    },
+    {
+      "id": "E-INDYKE",
+      "name": "Darren Indyke",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Epstein estate co-executor / counsel (public civil filings)",
+      "aliases": [
+        "Indyke"
+      ],
+      "sources": [
+        "USVI estate / civil dockets"
+      ]
+    },
+    {
+      "id": "E-KAHN",
+      "name": "Richard Kahn",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Epstein estate co-executor / accountant (public civil filings)",
+      "aliases": [
+        "Kahn"
+      ],
+      "sources": [
+        "USVI estate / civil dockets"
+      ]
+    },
+    {
+      "id": "E-WEXNER",
+      "name": "Leslie Wexner",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Public figure; financial relationship publicly reported; named in civil context",
+      "aliases": [
+        "Wexner",
+        "L Brands founder"
+      ],
+      "sources": [
+        "public reporting / civil names"
+      ]
+    },
+    {
+      "id": "E-SOUTHERN-TRUST",
+      "name": "Southern Trust Company",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "Operator EFTA lead: money-flow entity \u2014 verify against bates exhibits",
+      "aliases": [
+        "Southern Trust"
+      ],
+      "sources": [
+        "operator EFTA notes",
+        "SQUADS ingest"
+      ]
+    },
+    {
+      "id": "E-NE",
+      "name": "New Economy Holdings / related vehicles",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "Operator-tracked corporate vehicle aliases \u2014 needs primary filing cite",
+      "aliases": [],
+      "sources": [
+        "operator synthesis"
+      ]
+    },
+    {
+      "id": "E-E66",
+      "name": "9 East 71st / East 66th properties (NY)",
+      "kind": "place",
+      "tag": "SOLID",
+      "role": "Publicly associated NYC properties in reporting and dockets",
+      "aliases": [
+        "E66",
+        "Manhattan mansion"
+      ],
+      "sources": [
+        "public reporting",
+        "civil dockets"
+      ]
+    },
+    {
+      "id": "E-LITTLE-ST-JAMES",
+      "name": "Little St. James (USVI)",
+      "kind": "place",
+      "tag": "SOLID",
+      "role": "Private island publicly associated with Epstein",
+      "aliases": [
+        "LSJ",
+        "Pedophile Island (media moniker)"
+      ],
+      "sources": [
+        "public reporting",
+        "estate inventory references"
+      ]
+    },
+    {
+      "id": "E-ZORRO",
+      "name": "Zorro Ranch (NM)",
+      "kind": "place",
+      "tag": "SOLID",
+      "role": "New Mexico property publicly associated",
+      "aliases": [
+        "Zorro"
+      ],
+      "sources": [
+        "public reporting"
+      ]
+    },
+    {
+      "id": "E-PALM-BEACH",
+      "name": "358 El Brillo Way, Palm Beach",
+      "kind": "place",
+      "tag": "SOLID",
+      "role": "Florida residence; origin of 2005 investigation",
+      "aliases": [
+        "El Brillo"
+      ],
+      "sources": [
+        "PBPD / court"
+      ]
+    },
+    {
+      "id": "E-LOLITA-EXPRESS",
+      "name": "Aircraft N908JE / media 'Lolita Express'",
+      "kind": "asset",
+      "tag": "SOLID",
+      "role": "Epstein-associated jet; flight logs public in releases",
+      "aliases": [
+        "N908JE",
+        "Lolita Express"
+      ],
+      "sources": [
+        "flight logs (public)",
+        "DOJ releases"
+      ]
+    },
+    {
+      "id": "E-1953-TRUST",
+      "name": "1953 Trust (operator track)",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "Operator investigation target; instrument not confirmed in SQUADS VOL00012 slice",
+      "aliases": [
+        "THE 1953 TRUST"
+      ],
+      "sources": [
+        "LEADS_1953_TRUST",
+        "strand-1953 vault"
+      ]
+    },
+    {
+      "id": "E-BELLER",
+      "name": "Harry Beller (operator lead)",
+      "kind": "person",
+      "tag": "MAYBE",
+      "role": "Named in operator leads; not confirmed in SQUADS primary FOIA text this pass",
+      "aliases": [
+        "Beller"
+      ],
+      "sources": [
+        "LEADS memo",
+        "SQUADS gate NO"
+      ]
+    },
+    {
+      "id": "E-BUTTERFLY",
+      "name": "Butterfly / decant (operator lead)",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "Operator trust-structure lead; not found in SQUADS primary text this pass",
+      "aliases": [
+        "Butterfly"
+      ],
+      "sources": [
+        "LEADS memo"
+      ]
+    },
+    {
+      "id": "E-ENGORON",
+      "name": "Arthur Engoron (judge \u2014 public figure)",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "NY judge; operator track cross-ref; public official",
+      "aliases": [
+        "Engoron"
+      ],
+      "sources": [
+        "public court identity"
+      ]
+    },
+    {
+      "id": "E-GIUFFRE",
+      "name": "Virginia Giuffre",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Public plaintiff / accuser in civil litigation",
+      "aliases": [
+        "Giuffre"
+      ],
+      "sources": [
+        "SDNY civil docket"
+      ]
+    },
+    {
+      "id": "E-DOJ-LIB",
+      "name": "DOJ Epstein Library / Disclosures",
+      "kind": "institution",
+      "tag": "SOLID",
+      "role": "Official disclosure portal",
+      "aliases": [
+        "Epstein Files"
+      ],
+      "sources": [
+        "justice.gov/epstein"
+      ]
+    },
+    {
+      "id": "E-VOL00012",
+      "name": "VOL00012 Concordance production",
+      "kind": "document_set",
+      "tag": "SOLID",
+      "role": "Bates EFTA02730265\u2013EFTA02731789 production volume index",
+      "aliases": [
+        "VOL00012"
+      ],
+      "sources": [
+        "SQUADS_PROOF_VOL_INGEST"
+      ]
+    },
+    {
+      "id": "E-INV-8484f22e",
+      "name": "Helvetica Neue",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22486) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-bd4bbbe2",
+      "name": "Affero General Public",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22483) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-14bac111",
+      "name": "Wayback Machine",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22482) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-a772690c",
+      "name": "Internet Archive",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22482) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-e396716c",
+      "name": "Verified Inventory",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-2e3cb8e2",
+      "name": "Free Software Foundation",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-88cbbc23",
+      "name": "Sign Fight",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-02bfb998",
+      "name": "Close Banner",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-e9a7bcd0",
+      "name": "Text Contents",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-128983f2",
+      "name": "Live Music",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    },
+    {
+      "id": "E-INV-20d5b982",
+      "name": "Web Sites",
+      "kind": "person_or_entity",
+      "tag": "MAYBE",
+      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "aliases": [],
+      "sources": [
+        "Verified_Inventory_2020-03-03"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-MAXWELL",
+      "rel": "alleged_co_conspirator",
+      "tag": "SOLID",
+      "note": "Maxwell conviction tied to trafficking conspiracy with Epstein"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-SDNY",
+      "rel": "charged_by",
+      "tag": "SOLID",
+      "note": "2019 SDNY indictment"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-PBPD",
+      "rel": "investigated_by",
+      "tag": "SOLID",
+      "note": "2005 local case origin"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-ACOSTA",
+      "rel": "npa_era_prosecution",
+      "tag": "SOLID",
+      "note": "SDFL NPA era; OPR reviewed"
+    },
+    {
+      "from": "E-ACOSTA",
+      "to": "E-OPR",
+      "rel": "reviewed_by",
+      "tag": "SOLID",
+      "note": "OPR Nov 2020 executive summary"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-INDYKE",
+      "rel": "estate_executor",
+      "tag": "SOLID",
+      "note": "Public estate administration"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-KAHN",
+      "rel": "estate_executor",
+      "tag": "SOLID",
+      "note": "Public estate administration"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-LOLITA-EXPRESS",
+      "rel": "owned_or_controlled_asset",
+      "tag": "SOLID",
+      "note": "Flight logs public"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-LITTLE-ST-JAMES",
+      "rel": "property_associated",
+      "tag": "SOLID",
+      "note": "Public reporting / estate"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-PALM-BEACH",
+      "rel": "property_associated",
+      "tag": "SOLID",
+      "note": "El Brillo Way"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-E66",
+      "rel": "property_associated",
+      "tag": "SOLID",
+      "note": "Manhattan properties"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-ZORRO",
+      "rel": "property_associated",
+      "tag": "SOLID",
+      "note": "NM ranch"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-WEXNER",
+      "rel": "financial_relationship_publicly_reported",
+      "tag": "SOLID",
+      "note": "Public reporting; not a criminal finding by itself"
+    },
+    {
+      "from": "E-EPSTEIN",
+      "to": "E-SOUTHERN-TRUST",
+      "rel": "money_flow_hypothesis",
+      "tag": "MAYBE",
+      "note": "Operator EFTA lead \u2014 needs exhibit cite"
+    },
+    {
+      "from": "E-1953-TRUST",
+      "to": "E-BELLER",
+      "rel": "operator_lead_link",
+      "tag": "MAYBE",
+      "note": "Not confirmed in SQUADS FOIA text this pass"
+    },
+    {
+      "from": "E-1953-TRUST",
+      "to": "E-BUTTERFLY",
+      "rel": "operator_structure_lead",
+      "tag": "MAYBE",
+      "note": "Decant/butterfly structure unconfirmed in primary text"
+    },
+    {
+      "from": "E-VOL00012",
+      "to": "E-EPSTEIN",
+      "rel": "document_production_about",
+      "tag": "SOLID",
+      "note": "EFTA bates range production volume"
+    },
+    {
+      "from": "E-GIUFFRE",
+      "to": "E-MAXWELL",
+      "rel": "civil_litigation",
+      "tag": "SOLID",
+      "note": "Giuffre v. Maxwell unsealings"
+    },
+    {
+      "from": "E-DOJ-LIB",
+      "to": "E-EPSTEIN",
+      "rel": "discloses_records_about",
+      "tag": "SOLID",
+      "note": "Transparency Act / DOJ library"
+    }
+  ],
+  "pipeline": [
+    {
+      "stage": 1,
+      "name": "Recruitment / access",
+      "tag": "SOLID",
+      "desc": "Public case describes recruitment of minors for 'massages' beginning local Palm Beach complaints",
+      "nodes": [
+        "E-PALM-BEACH",
+        "E-PBPD"
+      ]
+    },
+    {
+      "stage": 2,
+      "name": "Transportation / locations",
+      "tag": "SOLID",
+      "desc": "Aircraft and multi-jurisdiction properties appear in public flight logs and property records",
+      "nodes": [
+        "E-LOLITA-EXPRESS",
+        "E-LITTLE-ST-JAMES",
+        "E-E66",
+        "E-ZORRO"
+      ]
+    },
+    {
+      "stage": 3,
+      "name": "Financial wrappers",
+      "tag": "MAYBE",
+      "desc": "Shell companies / trusts used for assets \u2014 public estate entities SOLID; Southern Trust / 1953 tracks MAYBE pending exhibits",
+      "nodes": [
+        "E-SOUTHERN-TRUST",
+        "E-1953-TRUST",
+        "E-INDYKE",
+        "E-KAHN"
+      ]
+    },
+    {
+      "stage": 4,
+      "name": "Legal protection / NPA",
+      "tag": "SOLID",
+      "desc": "2007\u201308 non-prosecution agreement and work-release arrangement \u2014 documented and OPR-reviewed",
+      "nodes": [
+        "E-ACOSTA",
+        "E-OPR",
+        "E-SDNY"
+      ]
+    },
+    {
+      "stage": 5,
+      "name": "Federal prosecution wave",
+      "tag": "SOLID",
+      "desc": "2019 SDNY charges; Maxwell conviction; ongoing civil unsealing",
+      "nodes": [
+        "E-SDNY",
+        "E-MAXWELL",
+        "E-GIUFFRE"
+      ]
+    },
+    {
+      "stage": 6,
+      "name": "Transparency / FOIA / production",
+      "tag": "SOLID",
+      "desc": "DOJ library releases + Concordance VOL00012 EFTA production indexes",
+      "nodes": [
+        "E-DOJ-LIB",
+        "E-VOL00012"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H-NPA-SCOPE",
+      "title": "NPA scope shielded unnamed associates",
+      "tag": "MAYBE",
+      "branch": "legal_protection",
+      "evidence_for": [
+        "OPR summary acknowledges controversial NPA"
+      ],
+      "evidence_against": [
+        "DOJ 2025 memo disputed publicly on breadth of additional crimes"
+      ],
+      "next": "Read full OPR + compare named parties in civil vs criminal"
+    },
+    {
+      "id": "H-1953-TRUST",
+      "title": "1953 Trust instrument exists and links estate flows",
+      "tag": "MAYBE",
+      "branch": "financial",
+      "evidence_for": [
+        "Operator LEADS track; EFTA bates elsewhere"
+      ],
+      "evidence_against": [
+        "SQUADS VOL00012 slice: Trust instrument NOT found"
+      ],
+      "next": "FU-016 OCR E files; FU-018 other production volumes"
+    },
+    {
+      "id": "H-CLIENT-LIST",
+      "title": "A singular 'client list' document exists as charged construct",
+      "tag": "MAYBE",
+      "branch": "accountability",
+      "evidence_for": [
+        "Public interest / political claims"
+      ],
+      "evidence_against": [
+        "DOJ/FBI July 2025 memo stated no client list found"
+      ],
+      "next": "Track Transparency Act redaction classes vs indexes"
+    },
+    {
+      "id": "H-SHELL-LAYER",
+      "title": "Multi-layer shell companies obscured beneficial ownership of properties/jets",
+      "tag": "MAYBE",
+      "branch": "financial",
+      "evidence_for": [
+        "Estate entities + property SPVs common pattern; Indyke/Kahn public roles"
+      ],
+      "evidence_against": [
+        "Need specific formation docs per entity"
+      ],
+      "next": "Corporationwiki/OpenCorporates + USVI filings crosswalk"
+    },
+    {
+      "id": "H-PIPELINE",
+      "title": "Structured multi-jurisdiction trafficking pipeline with logistics roles",
+      "tag": "SOLID",
+      "branch": "trafficking_model",
+      "evidence_for": [
+        "Maxwell conviction; multi-property + jet logistics in public record"
+      ],
+      "evidence_against": [
+        "Individual third-party roles beyond Maxwell remain case-by-case"
+      ],
+      "next": "Map only charged/convicted roles as SOLID; others MAYBE"
+    }
+  ],
+  "protections": [
+    {
+      "name": "2007 SDFL Non-Prosecution Agreement",
+      "tag": "SOLID",
+      "desc": "Federal decision not to prosecute Epstein federally in exchange for state plea \u2014 later criticized; OPR reviewed process"
+    },
+    {
+      "name": "Work-release / private security jail arrangement",
+      "tag": "SOLID",
+      "desc": "Publicly reported Palm Beach County jail work-release conditions"
+    },
+    {
+      "name": "Sealed civil materials (pre-2024)",
+      "tag": "SOLID",
+      "desc": "Giuffre v. Maxwell materials sealed until court-ordered unsealing waves"
+    },
+    {
+      "name": "FOIA / CSAM redaction classes",
+      "tag": "SOLID",
+      "desc": "DOJ releases use statutory redactions including CSAM markings \u2014 desk never displays CSAM"
+    },
+    {
+      "name": "Estate confidentiality / settlement structures",
+      "tag": "MAYBE",
+      "desc": "Civil settlements and estate administration may limit public disclosure \u2014 verify per docket"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-SQUADS",
+      "title": "SQUADS_PROOF_VOL_INGEST_2026-09-09",
+      "class": "operator_custody_log",
+      "tag": "SOLID",
+      "path": "Drive + evidence/SQUADS_PROOF_VOL_INGEST.md"
+    },
+    {
+      "id": "SRC-LEADS-1953",
+      "title": "LEADS_1953_TRUST_HOUR1",
+      "class": "operator_leads",
+      "tag": "MAYBE",
+      "path": "strand-1953 vault"
+    },
+    {
+      "id": "SRC-INV-2020",
+      "title": "Verified_Inventory_2020-03-03",
+      "class": "inventory_ocr",
+      "tag": "MAYBE",
+      "path": "evidence/Verified_Inventory_2020-03-03_djvu.txt"
+    },
+    {
+      "id": "SRC-CODEX",
+      "title": "detective-codex FULL_EXPORT",
+      "class": "operator_export",
+      "tag": "MAYBE",
+      "path": "detective-codex-vault/exports"
+    },
+    {
+      "id": "SRC-LOLITA-TXT",
+      "title": "Lolita Express main txt",
+      "class": "operator_synthesis",
+      "tag": "MAYBE",
+      "path": "Drive \u2014 quarantine as primary"
+    },
+    {
+      "id": "SRC-DOJ",
+      "title": "DOJ Epstein disclosures",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.justice.gov/epstein/doj-disclosures"
+    },
+    {
+      "id": "SRC-CANON-URLS",
+      "title": "CANONICAL_URLS",
+      "class": "url_index",
+      "tag": "SOLID",
+      "path": "strand-1953 08_URL_INDEX"
+    }
+  ],
+  "follow_ups": [
+    {
+      "id": "FU-016",
+      "need": "OCR full SQUADS/E files Part 01\u201321 for Trust/Butterfly/Beller/Southern/Kahn wires",
+      "priority": "A"
+    },
+    {
+      "id": "FU-017",
+      "need": "Locate little-black-book PDF under SQUADS or IA if present",
+      "priority": "B"
+    },
+    {
+      "id": "FU-018",
+      "need": "Locate production volumes other than VOL00012 for lower EFTA bates",
+      "priority": "A"
+    },
+    {
+      "id": "FU-019",
+      "need": "Crosswalk OpenCorporates for estate SPVs vs property deeds",
+      "priority": "B"
+    },
+    {
+      "id": "FU-020",
+      "need": "Ingest CYCLE19/21 JSON from live-online-agent-swarm investigations/",
+      "priority": "B"
+    }
+  ]
+}
