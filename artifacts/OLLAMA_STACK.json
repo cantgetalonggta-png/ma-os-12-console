@@ -1,0 +1,59 @@
+{
+  "purpose": "Route coder/distiller agents to free/local Ollama or paid GPU clouds",
+  "native_cloud": {
+    "name": "Ollama Cloud",
+    "docs": "https://docs.ollama.com/cloud",
+    "example": "ollama run cloud.qwen:7b",
+    "notes": "Offload heavy inference without local GPU"
+  },
+  "managed": [
+    {
+      "name": "Elestio",
+      "url": "https://elest.io/open-source/ollama"
+    },
+    {
+      "name": "Koyeb",
+      "url": "https://www.koyeb.com/deploy/ollama"
+    }
+  ],
+  "gpu": [
+    {
+      "name": "RunPod",
+      "url": "https://www.runpod.io/"
+    },
+    {
+      "name": "Thunder Compute",
+      "url": "https://thundercompute.com/"
+    },
+    {
+      "name": "Hostkey",
+      "url": "https://hostkey.com/apps/machine-learning/ollama-ai-chatbot/"
+    }
+  ],
+  "vps": [
+    {
+      "name": "Hostinger AI VPS",
+      "url": "https://www.hostinger.com/ca/applications/ollama"
+    },
+    {
+      "name": "DigitalOcean",
+      "url": "https://www.digitalocean.com/"
+    }
+  ],
+  "routing": {
+    "architect": "xAI Grok / OpenAI-compatible",
+    "coder": "ollama/qwen2.5-coder:*",
+    "distiller": "ollama/llama3.2:*",
+    "compliance": "gpt-4o-mini or small local"
+  },
+  "swarm_map": {
+    "primary": "https://github.com/cantgetalonggta-png/live-online-agent-swarm",
+    "layers": [
+      "Supervisor",
+      "Sub-swarm (parallel OSINT/Pattern/LiveWeb)",
+      "Background swarm (Anticipation + MemoryVault persistence)",
+      "Subagent background (TruthVerifier ACH workers)"
+    ],
+    "note": "Named repos live-online-agent-subswarm / background-swarm not found separately; mapped as architecture layers"
+  }
+}
