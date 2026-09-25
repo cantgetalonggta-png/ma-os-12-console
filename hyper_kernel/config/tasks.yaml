@@ -1,0 +1,21 @@
+analyze_webhook_payload:
+  description: >
+    Interrogate incoming webhooks from Google Drive, GitHub, or Vercel.
+    Extract state failures and target component for repair.
+    Never request or log third-party secrets.
+  expected_output: "JSON state record with target, severity, and suggested repair."
+  agent: architect_agent
+
+execute_auto_healing:
+  description: >
+    Patch broken functions, push GitHub commits (trigger CI), attempt Vercel redeploy if token present.
+    Update Drive architecture specs via upload artifact path.
+  expected_output: "Deployment log with success/failure and URLs."
+  agent: code_execution_agent
+
+distill_public_evidence:
+  description: >
+    Distill public-record Epstein/EFTA evidence into entities, bridges, hypotheses.
+    Tag SOLID vs MAYBE. Quarantine operator theory from SOLID.
+  expected_output: "EVIDENCE_GRAPH delta JSON."
+  agent: osint_distiller
