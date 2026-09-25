@@ -20,6 +20,7 @@ import {
 import { investigation } from "@/lib/investigation-data";
 import { maOsData } from "@/lib/ma-os-data";
 import { evidenceGraph } from "@/lib/evidence-graph";
+import { ollamaStack } from "@/lib/ollama-stack";
 
 export const Route = createFileRoute("/")({ component: Desk });
 
@@ -33,7 +34,7 @@ type Tab =
   | "protections"
   | "sources"
   | "methods"
-  | "links";
+  | "links" | "stack";
 
 const TABS: { id: Tab; label: string; icon: typeof Activity }[] = [
   { id: "overview", label: "Overview", icon: BookOpen },
@@ -46,6 +47,7 @@ const TABS: { id: Tab; label: string; icon: typeof Activity }[] = [
   { id: "sources", label: "Sources", icon: FileSearch },
   { id: "methods", label: "Methods", icon: Network },
   { id: "links", label: "Live links", icon: ExternalLink },
+  { id: "stack", label: "Ollama/Crew", icon: Terminal },
 ];
 
 function Desk() {
@@ -184,6 +186,7 @@ function Desk() {
         {tab === "sources" && <SourcesPanel />}
         {tab === "methods" && <MethodsPanel />}
         {tab === "links" && <LinksPanel />}
+        {tab === "stack" && <StackPanel />}
       </main>
 
       <footer className="border-t border-border py-4 px-4 text-center text-xs text-fg-subtle space-y-1">
@@ -654,6 +657,49 @@ function MethodsPanel() {
           ))}
         </ul>
       </div>
+    </div>
+  );
+}
+
+
+function StackPanel() {
+  return (
+    <div className="space-y-6">
+      <section className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5">
+        <h2 className="text-sm font-semibold mb-2">Ollama routing & cloud hosts</h2>
+        <p className="text-sm text-fg-muted mb-3">{ollamaStack.purpose}</p>
+        <p className="text-xs text-fg-subtle mb-2">Native: {ollamaStack.native_cloud.name} — {ollamaStack.native_cloud.example}</p>
+        <ul className="space-y-2">
+          {[...ollamaStack.managed, ...ollamaStack.gpu, ...ollamaStack.vps].map((x) => (
+            <li key={x.url}>
+              <a href={x.url} target="_blank" rel="noreferrer" className="text-sm text-info hover:underline flex items-center gap-2">
+                {x.name} <ExternalLink className="size-3.5" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5">
+        <h2 className="text-sm font-semibold mb-2">Model routing</h2>
+        <ul className="text-sm text-fg-muted space-y-1 font-mono">
+          {Object.entries(ollamaStack.routing).map(([k, v]) => (
+            <li key={k}>{k}: {v}</li>
+          ))}
+        </ul>
+      </section>
+      <section className="rounded-[var(--radius-xl)] border border-border bg-bg-elevated p-5">
+        <h2 className="text-sm font-semibold mb-2">Live swarm architecture layers</h2>
+        <a className="text-sm text-info" href={ollamaStack.swarm_map.primary} target="_blank" rel="noreferrer">
+          {ollamaStack.swarm_map.primary}
+        </a>
+        <ul className="mt-2 text-sm text-fg-muted list-disc list-inside">
+          {ollamaStack.swarm_map.layers.map((l) => (
+            <li key={l}>{l}</li>
+          ))}
+        </ul>
+        <p className="mt-2 text-xs text-fg-subtle">{ollamaStack.swarm_map.note}</p>
+        <p className="mt-3 text-xs text-fg-subtle">Hyper kernel: POST /webhooks/all-platforms · GET /stack on port 8090</p>
+      </section>
     </div>
   );
 }
