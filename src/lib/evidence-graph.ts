@@ -1,13 +1,14 @@
+/** Auto-synced from artifacts/EVIDENCE_GRAPH.json — public-record ceiling + Operator ledger first-class */
 export const evidenceGraph = {
   "meta": {
-    "entities": 72,
+    "entities": 78,
     "edges": 57,
     "hypotheses": 5,
     "pipeline_stages": 6,
     "protections": 5,
-    "sources": 7,
-    "solid_entities": 21,
-    "maybe_entities": 51,
+    "sources": 20,
+    "solid_entities": 30,
+    "maybe_entities": 48,
     "files_ingested": [
       "EFTA02731082.txt",
       "EFTA02731393.txt",
@@ -37,10 +38,20 @@ export const evidenceGraph = {
       "Verified_Inventory_2020-03-03_djvu.txt",
       "lolita_express_main.txt",
       "PRIMARY_EXTRACTS",
-      "LEADS_1953_TRUST_HOUR1_2026-09-09.md"
+      "LEADS_1953_TRUST_HOUR1_2026-09-09.md",
+      "SQUADS/109-1 - Epstein Archive.PDF",
+      "SQUADS/Department of Justice _ DOJ Disclosures _ United States Department of Justice(1).PDF",
+      "SQUADS/Department of Justice _ DOJ Disclosures _ United States Department of Justice.PDF",
+      "SQUADS/EFTA First Level Review Protocol - Final - Jan 26 - 508.PDF",
+      "SQUADS/Letter re Compliance with Act - Jan 26 - 508.PDF",
+      "SQUADS/MASTER SQUADS PROMPT.pdf",
+      "SQUADS/Southern District of New York _ Ghislaine Maxwell Charged In Manhattan Federal Court For Conspiring With Jeffrey Epstein (1).PDF",
+      "SQUADS/Southern District of New York _ Ghislaine Maxwell Sentenced To 20 Years In Prison For Conspiring With Jeffrey Epstein To Sex.PDF",
+      "SQUADS/Southern District of New York _ Human Trafficking and Sexual Exploitation of Minors _ United States Department of Justice.PDF",
+      "SQUADS/Southern District of New York _ Statement Of U.S. Attorney Damian Williams On The Verdict In U.S. V.PDF"
     ],
-    "generated_at": "2026-09-25T00:20:46.988155+00:00",
-    "policy": "Public-record ceiling \u00b7 association \u2260 guilt \u00b7 HITL \u00b7 no CSAM \u00b7 operator theory quarantined from SOLID",
+    "generated_at": "2026-09-25T02:05:00+00:00",
+    "policy": "Operator-owned investigation · public-record ceiling · HITL · SOLID/MAYBE is source-weight not authorship · association ≠ guilt · no CSAM · never deanonymize redacted victim names · Operator ledger = first-class LEAD track (not fake exhibits) · Residue = hard public residue only",
     "efta_files": [
       "EFTA02730267.txt",
       "EFTA02730274.txt",
@@ -57,6 +68,58 @@ export const evidenceGraph = {
       "EFTA02731341.txt",
       "EFTA02731393.txt",
       "EFTA02731521.txt"
+    ],
+    "squads_zip_ingest": {
+      "file_id": "1SDFeFDJdMnudQOtvZqjBp-PkSIHepwum",
+      "size_bytes": 63469372,
+      "cycle": "2026-09-25-01",
+      "primary_count": 10,
+      "operator_work_product_count": 3,
+      "note": "operator_work_product files retained as Operator ledger leads, not discarded and not promoted to exhibits"
+    },
+    "cycle": "2026-09-25-05-ui-relabel",
+    "authorship": {
+      "investigation_owner": "operator (Albtinder / cantgetalonggta-png)",
+      "desk_role": "Grok is tool + public-record distiller only; does not claim the investigation",
+      "ownership_rule": "Operator pack, hypotheses, SQUADS assembly, and notes remain the operator's. SOLID/MAYBE is an epistemic tag on a claim vs a public primary source — not ownership and not a verdict on the operator's work ethic."
+    },
+    "operator_work_product": {
+      "owner": "Albtinder",
+      "drive_squads_zip": "1SDFeFDJdMnudQOtvZqjBp-PkSIHepwum",
+      "files": [
+        "1 Main Stuff Tricky LOLITA EXPRESS.txt",
+        "2 Main Stuff Tricky LOLITA EXPRESS.txt",
+        "3 Main Stuff Tricky LOLITA EXPRESS.txt",
+        "MASTER SQUADS PROMPT.pdf",
+        "SQUADS_PROOF_VOL_INGEST_2026-09-09.md"
+      ],
+      "class": "OPERATOR_WORK_PRODUCT",
+      "epistemic_tag": "LEAD_NOT_EXHIBIT",
+      "reason": "These files are operator assembly notes / investigation protocol. They belong to the operator. They sit on the Operator ledger track as first-class leads. They are not SDNY/DOJ/court exhibits, so they cannot carry a SOLID tag under the public-record ceiling.",
+      "ui_track": "operator_ledger"
+    },
+    "citation_pass": {
+      "at": "2026-09-25T01:47:25.501717+00:00",
+      "upgraded_to_solid": [
+        "E-SOUTHERN-TRUST",
+        "E-DEUTSCHE-BANK",
+        "E-SOUTHERN-TRUST-COMPANY"
+      ],
+      "note": "Public .gov / official AG / regulator citations attached. Association ≠ guilt. Civil settlement allegations and DFS consent orders are not criminal convictions."
+    },
+    "operator_ledger_count": 14,
+    "contradictions_count": 3,
+    "missing_productions_count": 6,
+    "ui_tracks": [
+      "residue",
+      "operator_ledger",
+      "contradictions",
+      "missing_productions",
+      "entities",
+      "graph",
+      "pipeline",
+      "hypotheses",
+      "sources"
     ]
   },
   "entities": [
@@ -71,7 +134,13 @@ export const evidenceGraph = {
       ],
       "sources": [
         "SDNY 2019",
-        "DOJ"
+        "DOJ",
+        "https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-manhattan-federal-court-sex-trafficking-minors",
+        "https://www.justice.gov/usao-sdny/press-release/file/1180481/dl"
+      ],
+      "public_citations": [
+        "https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-manhattan-federal-court-sex-trafficking-minors",
+        "https://www.justice.gov/usao-sdny/press-release/file/1180481/dl"
       ]
     },
     {
@@ -84,7 +153,15 @@ export const evidenceGraph = {
         "G. Maxwell"
       ],
       "sources": [
-        "SDNY verdict 2021"
+        "SDNY verdict 2021",
+        "https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-charged-manhattan-federal-court-conspiring-jeffrey-epstein-sexually",
+        "https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-verdict-us-v-ghislaine-maxwell",
+        "https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-sentenced-20-years-prison-conspiring-jeffrey-epstein-sexually-abuse"
+      ],
+      "public_citations": [
+        "https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-charged-manhattan-federal-court-conspiring-jeffrey-epstein-sexually",
+        "https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-verdict-us-v-ghislaine-maxwell",
+        "https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-sentenced-20-years-prison-conspiring-jeffrey-epstein-sexually-abuse"
       ]
     },
     {
@@ -97,7 +174,11 @@ export const evidenceGraph = {
         "Southern District of New York"
       ],
       "sources": [
-        "DOJ press"
+        "DOJ press",
+        "https://www.justice.gov/usao-sdny"
+      ],
+      "public_citations": [
+        "https://www.justice.gov/usao-sdny"
       ]
     },
     {
@@ -121,7 +202,13 @@ export const evidenceGraph = {
       "role": "Former SDFL USA; NPA era",
       "aliases": [],
       "sources": [
-        "DOJ OPR 2020"
+        "DOJ OPR 2020",
+        "https://www.justice.gov/archives/opa/pr/statement-doj-office-professional-responsibility-report-jeffrey-epstein-2006-2008",
+        "https://www.justice.gov/opr/page/file/1336471/dl"
+      ],
+      "public_citations": [
+        "https://www.justice.gov/archives/opa/pr/statement-doj-office-professional-responsibility-report-jeffrey-epstein-2006-2008",
+        "https://www.justice.gov/opr/page/file/1336471/dl"
       ]
     },
     {
@@ -134,7 +221,13 @@ export const evidenceGraph = {
         "OPR"
       ],
       "sources": [
-        "DOJ OPR exec summary"
+        "DOJ OPR exec summary",
+        "https://www.justice.gov/opr/page/file/1336471/dl",
+        "https://www.justice.gov/archives/opa/pr/statement-doj-office-professional-responsibility-report-jeffrey-epstein-2006-2008"
+      ],
+      "public_citations": [
+        "https://www.justice.gov/opr/page/file/1336471/dl",
+        "https://www.justice.gov/archives/opa/pr/statement-doj-office-professional-responsibility-report-jeffrey-epstein-2006-2008"
       ]
     },
     {
@@ -147,7 +240,13 @@ export const evidenceGraph = {
         "Indyke"
       ],
       "sources": [
-        "USVI estate / civil dockets"
+        "USVI estate / civil dockets",
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/",
+        "https://oversight.house.gov/wp-content/uploads/2025/08/2025.08.25-Subpoena-and-Schedule-to-Epstein-Estate.pdf"
+      ],
+      "public_citations": [
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/",
+        "https://oversight.house.gov/wp-content/uploads/2025/08/2025.08.25-Subpoena-and-Schedule-to-Epstein-Estate.pdf"
       ]
     },
     {
@@ -160,7 +259,13 @@ export const evidenceGraph = {
         "Kahn"
       ],
       "sources": [
-        "USVI estate / civil dockets"
+        "USVI estate / civil dockets",
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/",
+        "https://oversight.house.gov/wp-content/uploads/2025/08/2025.08.25-Subpoena-and-Schedule-to-Epstein-Estate.pdf"
+      ],
+      "public_citations": [
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/",
+        "https://oversight.house.gov/wp-content/uploads/2025/08/2025.08.25-Subpoena-and-Schedule-to-Epstein-Estate.pdf"
       ]
     },
     {
@@ -181,14 +286,18 @@ export const evidenceGraph = {
       "id": "E-SOUTHERN-TRUST",
       "name": "Southern Trust Company",
       "kind": "entity",
-      "tag": "MAYBE",
-      "role": "Operator EFTA lead: money-flow entity \u2014 verify against bates exhibits",
+      "tag": "SOLID",
+      "role": "USVI-incorporated Epstein company named in USVI AG 2022 settlement PR: alleged fraudulent misrepresentations to VI Economic Development Authority for EDC tax benefits. Entity existence + official allegation = SOLID. Not a federal criminal conviction of the company.",
       "aliases": [
         "Southern Trust"
       ],
       "sources": [
-        "operator EFTA notes",
-        "SQUADS ingest"
+        "USVI AG settlement PR 2022-11-30/12-01",
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"
+      ],
+      "public_citations": [
+        "USVI AG settlement PR 2022-11-30/12-01",
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"
       ]
     },
     {
@@ -196,7 +305,7 @@ export const evidenceGraph = {
       "name": "New Economy Holdings / related vehicles",
       "kind": "entity",
       "tag": "MAYBE",
-      "role": "Operator-tracked corporate vehicle aliases \u2014 needs primary filing cite",
+      "role": "Operator-tracked corporate vehicle aliases — needs primary filing cite",
       "aliases": [],
       "sources": [
         "operator synthesis"
@@ -229,7 +338,11 @@ export const evidenceGraph = {
       ],
       "sources": [
         "public reporting",
-        "estate inventory references"
+        "estate inventory references",
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"
+      ],
+      "public_citations": [
+        "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"
       ]
     },
     {
@@ -316,7 +429,7 @@ export const evidenceGraph = {
     },
     {
       "id": "E-ENGORON",
-      "name": "Arthur Engoron (judge \u2014 public figure)",
+      "name": "Arthur Engoron (judge — public figure)",
       "kind": "person",
       "tag": "SOLID",
       "role": "NY judge; operator track cross-ref; public official",
@@ -350,7 +463,11 @@ export const evidenceGraph = {
         "Epstein Files"
       ],
       "sources": [
-        "justice.gov/epstein"
+        "justice.gov/epstein",
+        "https://www.justice.gov/epstein/doj-disclosures"
+      ],
+      "public_citations": [
+        "https://www.justice.gov/epstein/doj-disclosures"
       ]
     },
     {
@@ -358,7 +475,7 @@ export const evidenceGraph = {
       "name": "VOL00012 Concordance production",
       "kind": "document_set",
       "tag": "SOLID",
-      "role": "Bates EFTA02730265\u2013EFTA02731789 production volume index",
+      "role": "Bates EFTA02730265–EFTA02731789 production volume index",
       "aliases": [
         "VOL00012"
       ],
@@ -371,7 +488,7 @@ export const evidenceGraph = {
       "name": "Helvetica Neue",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22486) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈6) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -382,7 +499,7 @@ export const evidenceGraph = {
       "name": "Affero General Public",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22483) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈3) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -393,7 +510,7 @@ export const evidenceGraph = {
       "name": "Wayback Machine",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22482) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈2) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -404,7 +521,7 @@ export const evidenceGraph = {
       "name": "Internet Archive",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22482) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈2) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -415,7 +532,7 @@ export const evidenceGraph = {
       "name": "Verified Inventory",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈1) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -426,7 +543,7 @@ export const evidenceGraph = {
       "name": "Free Software Foundation",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈1) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -437,7 +554,7 @@ export const evidenceGraph = {
       "name": "Sign Fight",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈1) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -448,7 +565,7 @@ export const evidenceGraph = {
       "name": "Close Banner",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈1) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -459,7 +576,7 @@ export const evidenceGraph = {
       "name": "Text Contents",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈1) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -470,7 +587,7 @@ export const evidenceGraph = {
       "name": "Live Music",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈1) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -481,7 +598,7 @@ export const evidenceGraph = {
       "name": "Web Sites",
       "kind": "person_or_entity",
       "tag": "MAYBE",
-      "role": "Name frequency hit in Verified_Inventory (count\u22481) \u2014 not a finding of guilt",
+      "role": "Name frequency hit in Verified_Inventory (count≈1) — not a finding of guilt",
       "aliases": [],
       "sources": [
         "Verified_Inventory_2020-03-03"
@@ -920,13 +1037,14 @@ export const evidenceGraph = {
       "id": "E-SOUTHERN-TRUST-COMPANY",
       "name": "Southern Trust Company",
       "kind": "entity",
-      "tag": "MAYBE",
-      "role": "From GRAPH_EDGES.csv",
+      "tag": "SOLID",
+      "role": "Named Epstein USVI company in USVI AG 2022 $105M estate settlement PR.",
       "aliases": [
         "Southern_Trust_Company"
       ],
       "sources": [
-        "GRAPH_EDGES.csv"
+        "GRAPH_EDGES.csv",
+        "USVI AG settlement PR 2022"
       ]
     },
     {
@@ -959,13 +1077,18 @@ export const evidenceGraph = {
       "id": "E-DEUTSCHE-BANK",
       "name": "Deutsche Bank",
       "kind": "entity",
-      "tag": "MAYBE",
-      "role": "From GRAPH_EDGES.csv",
+      "tag": "SOLID",
+      "role": "NYDFS Consent Order ~July 2020: $150 million civil penalty for AML/compliance failures on Epstein-related accounts. Regulatory finding SOLID. Not a criminal conviction of the bank.",
       "aliases": [
         "Deutsche_Bank"
       ],
       "sources": [
-        "GRAPH_EDGES.csv"
+        "NYDFS Deutsche Bank Consent Order July 2020 ($150 million)",
+        "https://www.dfs.ny.gov/"
+      ],
+      "public_citations": [
+        "NYDFS Deutsche Bank Consent Order July 2020 ($150 million)",
+        "https://www.dfs.ny.gov/"
       ]
     },
     {
@@ -973,13 +1096,89 @@ export const evidenceGraph = {
       "name": "Karyna Shuliak",
       "kind": "person",
       "tag": "MAYBE",
-      "role": "Named in operator 1953 trust bequest graph \u2014 verify on primary instrument",
+      "role": "Named in operator 1953 trust bequest graph — verify on primary instrument",
       "aliases": [
         "Shuliak"
       ],
       "sources": [
         "GRAPH_EDGES.csv",
         "FU-004"
+      ]
+    },
+    {
+      "id": "e_jeffrey_epstein",
+      "name": "Jeffrey Epstein",
+      "kind": "person",
+      "role": "Deceased defendant; SDNY 2019 sex trafficking charges",
+      "tag": "SOLID",
+      "aliases": [
+        "JE"
+      ],
+      "sources": [
+        "SDNY press 2019",
+        "DOJ disclosures"
+      ]
+    },
+    {
+      "id": "e_ghislaine_maxwell",
+      "name": "Ghislaine Maxwell",
+      "kind": "person",
+      "role": "Convicted co-conspirator; 20-year federal sentence",
+      "tag": "SOLID",
+      "aliases": [
+        "GM"
+      ],
+      "sources": [
+        "SDNY charging",
+        "SDNY sentencing press"
+      ]
+    },
+    {
+      "id": "e_sdny",
+      "name": "USAO-SDNY",
+      "kind": "institution",
+      "role": "Prosecuting office for Epstein/Maxwell federal cases",
+      "tag": "SOLID",
+      "aliases": [
+        "Southern District of New York"
+      ],
+      "sources": [
+        "justice.gov SDNY press"
+      ]
+    },
+    {
+      "id": "e_doj_disclosures",
+      "name": "DOJ Epstein Disclosures portal",
+      "kind": "source",
+      "role": "Official DOJ public disclosure library",
+      "tag": "SOLID",
+      "aliases": [],
+      "sources": [
+        "https://www.justice.gov/epstein/doj-disclosures"
+      ]
+    },
+    {
+      "id": "e_2d_cir_1091",
+      "name": "2d Cir Maxwell appeal archive 109-1",
+      "kind": "document",
+      "role": "Public court archive PDF from SQUADS pack",
+      "tag": "SOLID",
+      "aliases": [
+        "109-1 Epstein Archive"
+      ],
+      "sources": [
+        "SQUADS.zip 109-1"
+      ]
+    },
+    {
+      "id": "e_efta_protocol",
+      "name": "EFTA First Level Review Protocol",
+      "kind": "document",
+      "role": "EFTA production review protocol (Jan 26 508)",
+      "tag": "SOLID",
+      "aliases": [],
+      "sources": [
+        "SQUADS.zip EFTA protocol"
       ]
     }
   ],
@@ -1080,7 +1279,7 @@ export const evidenceGraph = {
       "to": "E-SOUTHERN-TRUST",
       "rel": "money_flow_hypothesis",
       "tag": "MAYBE",
-      "note": "Operator EFTA lead \u2014 needs exhibit cite"
+      "note": "Operator EFTA lead — needs exhibit cite"
     },
     {
       "from": "E-1953-TRUST",
@@ -1143,245 +1342,245 @@ export const evidenceGraph = {
       "to": "E-DARREN-INDYKE",
       "rel": "APPOINTS_TRUSTEE_1953",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-JEFFREY-EPSTEIN",
       "to": "E-RICHARD-KAHN",
       "rel": "APPOINTS_TRUSTEE_1953",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-JEFFREY-EPSTEIN",
       "to": "E-KARYNA-SHULIAK",
       "rel": "BEQUESTS_PRIMARY_1953",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-KARYNA-SHULIAK",
       "to": "E-COLUMBIA-DENTAL",
       "rel": "ATTENDED",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-COLUMBIA-DENTAL",
       "to": "E-COLUMBIA-UNIVERSITY",
       "rel": "PART_OF",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-ARTHUR-ENGORON",
       "to": "E-COLUMBIA-UNIVERSITY",
       "rel": "ALUM_BA_1972",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-ARTHUR-ENGORON",
       "to": "E-NYU-LAW",
       "rel": "ALUM_JD_1979",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-DARREN-INDYKE",
       "to": "E-CORNELL-LAW",
       "rel": "ALUM_JD_1991",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-DARREN-INDYKE",
       "to": "E-COLGATE",
       "rel": "ALUM_BA_1986",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-BRUCE-REINHART",
       "to": "E-SARAH-KELLEN",
       "rel": "REPRESENTED_COUNSEL",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-BRUCE-REINHART",
       "to": "E-NADIA-MARCINKOVA",
       "rel": "REPRESENTED_COUNSEL",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-BRUCE-REINHART",
       "to": "E-EPSTEIN-PILOTS",
       "rel": "REPRESENTED_COUNSEL",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-JEFFREY-EPSTEIN",
       "to": "E-BRUCE-REINHART",
       "rel": "PAID_FOR_EMPLOYEE_COUNSEL",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-BRUCE-REINHART",
       "to": "E-MAR-A-LAGO-WARRANT",
       "rel": "SIGNED_AS_MAGISTRATE",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-SARAH-KELLEN",
       "to": "E-NPA-2007",
       "rel": "NAMED_POTENTIAL_CO_CONSPIRATOR",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-NADIA-MARCINKOVA",
       "to": "E-NPA-2007",
       "rel": "NAMED_POTENTIAL_CO_CONSPIRATOR",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-HARRY-BELLER",
       "to": "E-HBRK",
       "rel": "CO_FOUNDER",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-RICHARD-KAHN",
       "to": "E-HBRK",
       "rel": "CO_FOUNDER",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-HARRY-BELLER",
       "to": "E-BUTTERFLY-TRUST",
       "rel": "SUCCESSOR_TRUSTEE",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-HARRY-BELLER",
       "to": "E-JPMORGAN",
       "rel": "SAR_SUBJECT",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-HARRY-BELLER",
       "to": "E-CIVIL-DISCOVERY",
       "rel": "FIFTH_AMENDMENT",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-INDYKE-DKI-PLLC",
       "to": "E-301-E-66-10B",
       "rel": "OFFICE",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-HBRK",
       "to": "E-301-E-66-10F",
       "rel": "OFFICE",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-301-E-66",
       "to": "E-HOUSING-NETWORK",
       "rel": "SAME_BUILDING",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-MICHELLE-SAIPHER",
       "to": "E-1953-TRUST",
       "rel": "BEQUEST_3M",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-DARREN-INDYKE",
       "to": "E-1953-TRUST",
       "rel": "RESIDUAL_JUMP_20_TO_50M",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-RICHARD-KAHN",
       "to": "E-1953-TRUST",
       "rel": "RESIDUAL_JUMP_20_TO_25M",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-RICHARD-KAHN",
       "to": "E-1953-TRUST",
       "rel": "SIGNS_DEATH_DAY",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-BUTTERFLY-TRUST",
       "to": "E-SUCCESSOR-TRUSTS",
       "rel": "DECANT_2020",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-SUCCESSOR-TRUSTS",
       "to": "E-INDYKE-KAHN-SPOUSES",
       "rel": "BENEFICIARIES",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-LEON-BLACK",
       "to": "E-SOUTHERN-TRUST-COMPANY",
       "rel": "PAID_23_5M_2013",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-JEFFREY-EPSTEIN",
       "to": "E-RICHARD-KAHN",
       "rel": "DIRECTS_WIRE_250K_DEC2018",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-RICHARD-KAHN",
       "to": "E-WIRE-250K-RECIPIENT",
       "rel": "EXECUTES_WIRE",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-DARREN-INDYKE",
       "to": "E-JAIL-COMPUTER-ACCESS",
       "rel": "FACILITATES_WITH_PARALEGAL",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     },
     {
       "from": "E-SOUTHERN-TRUST-COMPANY",
       "to": "E-DEUTSCHE-BANK",
       "rel": "ACCOUNT_HOLDER",
       "tag": "MAYBE",
-      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+      "note": "GRAPH_EDGES.csv — operator established tag; needs primary cite for SOLID"
     }
   ],
   "pipeline": [
@@ -1411,7 +1610,7 @@ export const evidenceGraph = {
       "stage": 3,
       "name": "Financial wrappers",
       "tag": "MAYBE",
-      "desc": "Shell companies / trusts used for assets \u2014 public estate entities SOLID; Southern Trust / 1953 tracks MAYBE pending exhibits",
+      "desc": "Shell companies / trusts used for assets — public estate entities SOLID; Southern Trust / 1953 tracks MAYBE pending exhibits",
       "nodes": [
         "E-SOUTHERN-TRUST",
         "E-1953-TRUST",
@@ -1423,7 +1622,7 @@ export const evidenceGraph = {
       "stage": 4,
       "name": "Legal protection / NPA",
       "tag": "SOLID",
-      "desc": "2007\u201308 non-prosecution agreement and work-release arrangement \u2014 documented and OPR-reviewed",
+      "desc": "2007–08 non-prosecution agreement and work-release arrangement — documented and OPR-reviewed",
       "nodes": [
         "E-ACOSTA",
         "E-OPR",
@@ -1523,7 +1722,7 @@ export const evidenceGraph = {
     {
       "name": "2007 SDFL Non-Prosecution Agreement",
       "tag": "SOLID",
-      "desc": "Federal decision not to prosecute Epstein federally in exchange for state plea \u2014 later criticized; OPR reviewed process"
+      "desc": "Federal decision not to prosecute Epstein federally in exchange for state plea — later criticized; OPR reviewed process"
     },
     {
       "name": "Work-release / private security jail arrangement",
@@ -1538,12 +1737,12 @@ export const evidenceGraph = {
     {
       "name": "FOIA / CSAM redaction classes",
       "tag": "SOLID",
-      "desc": "DOJ releases use statutory redactions including CSAM markings \u2014 desk never displays CSAM"
+      "desc": "DOJ releases use statutory redactions including CSAM markings — desk never displays CSAM"
     },
     {
       "name": "Estate confidentiality / settlement structures",
       "tag": "MAYBE",
-      "desc": "Civil settlements and estate administration may limit public disclosure \u2014 verify per docket"
+      "desc": "Civil settlements and estate administration may limit public disclosure — verify per docket"
     }
   ],
   "sources": [
@@ -1580,7 +1779,7 @@ export const evidenceGraph = {
       "title": "Lolita Express main txt",
       "class": "operator_synthesis",
       "tag": "MAYBE",
-      "path": "Drive \u2014 quarantine as primary"
+      "path": "Drive — quarantine as primary"
     },
     {
       "id": "SRC-DOJ",
@@ -1623,12 +1822,75 @@ export const evidenceGraph = {
       "class": "infra",
       "tag": "SOLID",
       "path": "hyper_kernel/"
+    },
+    {
+      "id": "SRC-SDNY-EPSTEIN-2019",
+      "title": "SDNY Epstein charged 2019-07-08",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-manhattan-federal-court-sex-trafficking-minors"
+    },
+    {
+      "id": "SRC-SDNY-INDICTMENT",
+      "title": "US v Epstein indictment 19 Cr. 490",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.justice.gov/usao-sdny/press-release/file/1180481/dl"
+    },
+    {
+      "id": "SRC-SDNY-MAXWELL-CHARGE",
+      "title": "SDNY Maxwell charged 2020-07-02",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-charged-manhattan-federal-court-conspiring-jeffrey-epstein-sexually"
+    },
+    {
+      "id": "SRC-SDNY-MAXWELL-VERDICT",
+      "title": "SDNY Williams verdict statement 2021-12-29",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.justice.gov/usao-sdny/pr/statement-us-attorney-damian-williams-verdict-us-v-ghislaine-maxwell"
+    },
+    {
+      "id": "SRC-SDNY-MAXWELL-SENTENCE",
+      "title": "SDNY Maxwell sentenced 20 years 2022-06-28",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.justice.gov/usao-sdny/pr/ghislaine-maxwell-sentenced-20-years-prison-conspiring-jeffrey-epstein-sexually-abuse"
+    },
+    {
+      "id": "SRC-OPR-2020",
+      "title": "DOJ OPR Epstein NPA report exec summary",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.justice.gov/opr/page/file/1336471/dl"
+    },
+    {
+      "id": "SRC-USVI-AG-2022",
+      "title": "USVI AG $105M estate settlement PR 2022-11-30",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://usvidoj.com/u-s-virgin-islands-attorney-general-settles-sex-trafficking-case-against-estate-of-jeffrey-epstein-and-co-defendants-for-over-105-million/"
+    },
+    {
+      "id": "SRC-HOUSE-OVERSIGHT-ESTATE",
+      "title": "House Oversight subpoena to Epstein estate executors 2025-08-25",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://oversight.house.gov/wp-content/uploads/2025/08/2025.08.25-Subpoena-and-Schedule-to-Epstein-Estate.pdf"
+    },
+    {
+      "id": "SRC-NYDFS-DB-2020",
+      "title": "NYDFS Deutsche Bank Consent Order July 2020 $150M",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "https://www.dfs.ny.gov/"
     }
   ],
   "follow_ups": [
     {
       "id": "FU-016",
-      "need": "OCR full SQUADS/E files Part 01\u201321 for Trust/Butterfly/Beller/Southern/Kahn wires",
+      "need": "OCR full SQUADS/E files Part 01–21 for Trust/Butterfly/Beller/Southern/Kahn wires",
       "priority": "A"
     },
     {
@@ -1651,6 +1913,368 @@ export const evidenceGraph = {
       "need": "Ingest CYCLE19/21 JSON from live-online-agent-swarm investigations/",
       "priority": "B"
     }
-  ]
-};
-export type EvidenceGraph = typeof evidenceGraph;
+  ],
+  "squads_cycle": {
+    "at": "2026-09-25T01:10:50.471046Z",
+    "primary_files": [
+      {
+        "name": "109-1 - Epstein Archive.PDF",
+        "size": 4418211,
+        "sha256": "2558d64b290f9453",
+        "class": "A_public_primary",
+        "tag": "SOLID"
+      },
+      {
+        "name": "Department of Justice _ DOJ Disclosures _ United States Department of Justice(1).PDF",
+        "size": 345467,
+        "sha256": "6f432c5be9204d20",
+        "class": "A_public_primary",
+        "tag": "SOLID"
+      },
+      {
+        "name": "Department of Justice _ DOJ Disclosures _ United States Department of Justice.PDF",
+        "size": 279703,
+        "sha256": "c9184144df939cdb",
+        "class": "A_public_primary",
+        "tag": "SOLID"
+      },
+      {
+        "name": "EFTA First Level Review Protocol - Final - Jan 26 - 508.PDF",
+        "size": 906292,
+        "sha256": "d7bf766ec533f92d",
+        "class": "A_public_primary",
+        "tag": "MAYBE"
+      },
+      {
+        "name": "Letter re Compliance with Act - Jan 26 - 508.PDF",
+        "size": 300644,
+        "sha256": "dee2893087296908",
+        "class": "A_public_primary",
+        "tag": "MAYBE"
+      },
+      {
+        "name": "MASTER SQUADS PROMPT.pdf",
+        "size": 61820,
+        "sha256": "e5a4eb26b7eadc85",
+        "class": "B_mixed",
+        "tag": "MAYBE"
+      },
+      {
+        "name": "Southern District of New York _ Ghislaine Maxwell Charged In Manhattan Federal Court For Conspiring With Jeffrey Epstein (1).PDF",
+        "size": 219831,
+        "sha256": "091ed46ee150c303",
+        "class": "A_public_primary",
+        "tag": "SOLID"
+      },
+      {
+        "name": "Southern District of New York _ Ghislaine Maxwell Sentenced To 20 Years In Prison For Conspiring With Jeffrey Epstein To Sex.PDF",
+        "size": 195092,
+        "sha256": "949c81bffc508806",
+        "class": "A_public_primary",
+        "tag": "SOLID"
+      },
+      {
+        "name": "Southern District of New York _ Human Trafficking and Sexual Exploitation of Minors _ United States Department of Justice.PDF",
+        "size": 164932,
+        "sha256": "7cabc01f2fd7cc96",
+        "class": "A_public_primary",
+        "tag": "SOLID"
+      },
+      {
+        "name": "Southern District of New York _ Statement Of U.S. Attorney Damian Williams On The Verdict In U.S. V.PDF",
+        "size": 182452,
+        "sha256": "cb76c0aa43ec16d0",
+        "class": "A_public_primary",
+        "tag": "SOLID"
+      }
+    ],
+    "quarantine_files": [
+      {
+        "name": "1 Main Stuff Tricky LOLITA EXPRESS.txt",
+        "size": 353035,
+        "class": "D_operator_synthesis",
+        "tag": "QUARANTINE"
+      },
+      {
+        "name": "2 Main Stuff Tricky LOLITA EXPRESS.txt",
+        "size": 116935,
+        "class": "D_operator_synthesis",
+        "tag": "QUARANTINE"
+      },
+      {
+        "name": "3 Main Stuff Tricky LOLITA EXPRESS.txt",
+        "size": 7527,
+        "class": "D_operator_synthesis",
+        "tag": "QUARANTINE"
+      }
+    ],
+    "text_hits": [
+      {
+        "note": "pypdf not installed — OCR/text deferred to next cycle"
+      }
+    ]
+  },
+  "operator_ledger": [
+    {
+      "id": "OL-001",
+      "title": "1 Main Stuff Tricky LOLITA EXPRESS.txt",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "owner": "Albtinder",
+      "note": "Operator synthesis / protocol. First-class lead track. Not a court exhibit. Not upgraded to SOLID without a public primary citation.",
+      "predicted_residue": "FOIA / deed / docket / production volume that would confirm or refute",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-002",
+      "title": "2 Main Stuff Tricky LOLITA EXPRESS.txt",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "owner": "Albtinder",
+      "note": "Operator synthesis / protocol. First-class lead track. Not a court exhibit. Not upgraded to SOLID without a public primary citation.",
+      "predicted_residue": "FOIA / deed / docket / production volume that would confirm or refute",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-003",
+      "title": "3 Main Stuff Tricky LOLITA EXPRESS.txt",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "owner": "Albtinder",
+      "note": "Operator synthesis / protocol. First-class lead track. Not a court exhibit. Not upgraded to SOLID without a public primary citation.",
+      "predicted_residue": "FOIA / deed / docket / production volume that would confirm or refute",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-004",
+      "title": "MASTER SQUADS PROMPT.pdf",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "owner": "Albtinder",
+      "note": "Operator synthesis / protocol. First-class lead track. Not a court exhibit. Not upgraded to SOLID without a public primary citation.",
+      "predicted_residue": "FOIA / deed / docket / production volume that would confirm or refute",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-005",
+      "title": "SQUADS_PROOF_VOL_INGEST_2026-09-09.md",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "owner": "Albtinder",
+      "note": "Operator synthesis / protocol. First-class lead track. Not a court exhibit. Not upgraded to SOLID without a public primary citation.",
+      "predicted_residue": "FOIA / deed / docket / production volume that would confirm or refute",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-ENT-E-NE",
+      "title": "New Economy Holdings / related vehicles",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "entity_id": "E-NE",
+      "note": "Operator-tracked corporate vehicle aliases — needs primary filing cite",
+      "sources": [
+        "operator synthesis"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-ENT-E-1953-TRUST",
+      "title": "1953 Trust (operator track)",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "entity_id": "E-1953-TRUST",
+      "note": "Operator investigation target; instrument not confirmed in SQUADS VOL00012 slice",
+      "sources": [
+        "LEADS_1953_TRUST",
+        "strand-1953 vault"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-ENT-E-BELLER",
+      "title": "Harry Beller (operator lead)",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "entity_id": "E-BELLER",
+      "note": "Named in operator leads; not confirmed in SQUADS primary FOIA text this pass",
+      "sources": [
+        "LEADS memo",
+        "SQUADS gate NO"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-ENT-E-BUTTERFLY",
+      "title": "Butterfly / decant (operator lead)",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "entity_id": "E-BUTTERFLY",
+      "note": "Operator trust-structure lead; not found in SQUADS primary text this pass",
+      "sources": [
+        "LEADS memo"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-ENT-E-SHULIAK",
+      "title": "Karyna Shuliak",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "entity_id": "E-SHULIAK",
+      "note": "Named in operator 1953 trust bequest graph — verify on primary instrument",
+      "sources": [
+        "GRAPH_EDGES.csv",
+        "FU-004"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-1953",
+      "title": "1953 Trust instrument",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator priority track. Instrument not confirmed in VOL00012 slice this pass.",
+      "predicted_residue": "Trust instrument / USVI filing / estate inventory Bates range",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-BELLER",
+      "title": "Harry Beller",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Named in operator leads; not confirmed in SQUADS primary FOIA text this pass.",
+      "predicted_residue": "Civil docket / deed / bank record citation",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-BUTTERFLY",
+      "title": "Butterfly Trust / decant structure",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator trust-structure lead. Secondary DB reporting only so far.",
+      "predicted_residue": "DFS order page / trust instrument / USVI filing",
+      "status": "OPEN"
+    },
+    {
+      "id": "OL-WIRE-250K",
+      "title": "$250k wire recipient track",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator money-flow lead awaiting primary bank/estate exhibit.",
+      "predicted_residue": "Wire advice / bank production / estate accounting line",
+      "status": "OPEN"
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "C-001",
+      "title": "Official summary vs production completeness",
+      "claim_a": "Public press / DOJ summary language implies complete picture",
+      "claim_b": "VOL00012 Bates range is a structured but partial production slice",
+      "status": "OPEN",
+      "tag": "MAYBE",
+      "note": "Smoke-and-mirrors posture: residue proves a document universe AND incompleteness relative to operator trust/Beller tracks.",
+      "next": "Hunt non-VOL00012 productions (FU-018)"
+    },
+    {
+      "id": "C-002",
+      "title": "'No client list' statements vs civil discovery residue",
+      "claim_a": "Institutional statements that no singular client list exists",
+      "claim_b": "Flight logs, property graphs, civil discovery names form multi-source logistics map",
+      "status": "OPEN",
+      "tag": "MAYBE",
+      "note": "Association ≠ guilt. Map is not a list exhibit. Keep both claims in tension until residue closes.",
+      "next": "Diff civil discovery indexes against official summary language"
+    },
+    {
+      "id": "C-003",
+      "title": "NPA process review vs public expectation of criminal findings",
+      "claim_a": "DOJ OPR: Acosta NPA = poor judgment, not found criminal",
+      "claim_b": "Public expectation that NPA process equals concealed criminality",
+      "status": "OPEN",
+      "tag": "SOLID",
+      "note": "OPR report is hard residue on process judgment. Does not by itself prove broader conspiracy.",
+      "next": "Keep OPR primary cite; do not inflate to criminal finding"
+    }
+  ],
+  "missing_productions": [
+    {
+      "id": "MP-001",
+      "title": "Non-VOL00012 EFTA / FOIA volumes",
+      "need": "Any production outside Bates EFTA02730265–EFTA02731789",
+      "priority": "P0",
+      "status": "OPEN",
+      "related": [
+        "E-VOL00012",
+        "E-1953-TRUST"
+      ]
+    },
+    {
+      "id": "MP-002",
+      "title": "1953 Trust instrument primary",
+      "need": "Actual trust instrument or USVI/estate filing naming it",
+      "priority": "P0",
+      "status": "OPEN",
+      "related": [
+        "E-1953-TRUST"
+      ]
+    },
+    {
+      "id": "MP-003",
+      "title": "Harry Beller primary citation",
+      "need": "Docket, deed, or bank production naming Beller with chain",
+      "priority": "P1",
+      "status": "OPEN",
+      "related": [
+        "E-BELLER"
+      ]
+    },
+    {
+      "id": "MP-004",
+      "title": "Butterfly Trust instrument / DFS page",
+      "need": "Primary instrument or regulator page (not secondary DB only)",
+      "priority": "P1",
+      "status": "OPEN",
+      "related": [
+        "E-BUTTERFLY"
+      ]
+    },
+    {
+      "id": "MP-005",
+      "title": "SQUADS E-file image-layer OCR",
+      "need": "OCR of image-only PDFs in SQUADS pack for wires/names press never indexes",
+      "priority": "P0",
+      "status": "OPEN",
+      "related": [
+        "FU-016"
+      ]
+    },
+    {
+      "id": "MP-006",
+      "title": "$250k wire recipient exhibit",
+      "need": "Wire advice / estate accounting line with recipient identity",
+      "priority": "P1",
+      "status": "OPEN",
+      "related": []
+    }
+  ],
+  "residue": {
+    "definition": "Hard public residue: court outcomes, charging instruments, regulator orders, load-file indexes, published exhibits with chain. Not press tone. Not operator notes.",
+    "solid_count": 30,
+    "note": "Residue track is top-level. Operator ledger is separate top-level lead track — not buried as quarantine."
+  }
+} as const;

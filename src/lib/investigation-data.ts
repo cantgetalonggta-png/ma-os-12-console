@@ -2,7 +2,7 @@
 export const investigation = {
   "purpose": {
     "title": "Epstein Public-Record Investigation Desk",
-    "one_liner": "A real-time investigative journalism console for public Epstein case records \u2014 court filings, DOJ disclosures, FOIA, timelines, and SOLID/MAYBE claim verification.",
+    "one_liner": "Operator-owned public-record desk: Residue (SOLID primaries) · Operator ledger (first-class leads, not fake exhibits) · Contradictions · Missing productions. Association \u2260 guilt. No CSAM.",
     "mission": [
       "Aggregate only public-record sources (courts, DOJ, FOIA, reputable news)",
       "Map entities with association \u2260 guilt",
