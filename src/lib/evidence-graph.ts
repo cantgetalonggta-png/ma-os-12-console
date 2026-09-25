@@ -1,14 +1,14 @@
-/** Auto-synced from artifacts/EVIDENCE_GRAPH.json — public-record ceiling + Operator ledger first-class */
+/** Auto-synced EVIDENCE_GRAPH — Operator ledger + Meridian geo */
 export const evidenceGraph = {
   "meta": {
-    "entities": 78,
+    "entities": 82,
     "edges": 57,
     "hypotheses": 5,
     "pipeline_stages": 6,
     "protections": 5,
     "sources": 20,
     "solid_entities": 30,
-    "maybe_entities": 48,
+    "maybe_entities": 52,
     "files_ingested": [
       "EFTA02731082.txt",
       "EFTA02731393.txt",
@@ -48,9 +48,12 @@ export const evidenceGraph = {
       "SQUADS/Southern District of New York _ Ghislaine Maxwell Charged In Manhattan Federal Court For Conspiring With Jeffrey Epstein (1).PDF",
       "SQUADS/Southern District of New York _ Ghislaine Maxwell Sentenced To 20 Years In Prison For Conspiring With Jeffrey Epstein To Sex.PDF",
       "SQUADS/Southern District of New York _ Human Trafficking and Sexual Exploitation of Minors _ United States Department of Justice.PDF",
-      "SQUADS/Southern District of New York _ Statement Of U.S. Attorney Damian Williams On The Verdict In U.S. V.PDF"
+      "SQUADS/Southern District of New York _ Statement Of U.S. Attorney Damian Williams On The Verdict In U.S. V.PDF",
+      "REPOSITORIES/LEADS_1953_TRUST_HOUR1_2026-09-09.md",
+      "REPOSITORIES/FIRST/MY THEORIES.pdf",
+      "REPOSITORIES/primary_Epstein_Echo_LEARNING.pdf"
     ],
-    "generated_at": "2026-09-25T02:05:00+00:00",
+    "generated_at": "2026-09-25T02:32:53.989566+00:00",
     "policy": "Operator-owned investigation · public-record ceiling · HITL · SOLID/MAYBE is source-weight not authorship · association ≠ guilt · no CSAM · never deanonymize redacted victim names · Operator ledger = first-class LEAD track (not fake exhibits) · Residue = hard public residue only",
     "efta_files": [
       "EFTA02730267.txt",
@@ -77,7 +80,7 @@ export const evidenceGraph = {
       "operator_work_product_count": 3,
       "note": "operator_work_product files retained as Operator ledger leads, not discarded and not promoted to exhibits"
     },
-    "cycle": "2026-09-25-05-ui-relabel",
+    "cycle": "2026-09-25-06-meridian-repos",
     "authorship": {
       "investigation_owner": "operator (Albtinder / cantgetalonggta-png)",
       "desk_role": "Grok is tool + public-record distiller only; does not claim the investigation",
@@ -107,9 +110,9 @@ export const evidenceGraph = {
       ],
       "note": "Public .gov / official AG / regulator citations attached. Association ≠ guilt. Civil settlement allegations and DFS consent orders are not criminal convictions."
     },
-    "operator_ledger_count": 14,
+    "operator_ledger_count": 25,
     "contradictions_count": 3,
-    "missing_productions_count": 6,
+    "missing_productions_count": 10,
     "ui_tracks": [
       "residue",
       "operator_ledger",
@@ -120,7 +123,29 @@ export const evidenceGraph = {
       "pipeline",
       "hypotheses",
       "sources"
-    ]
+    ],
+    "repos_ingest": {
+      "folder_id": "1l7WSmM736GJbUtlkqvEwvd4aufDUNzbC",
+      "folder_name": "REPOSITORIES",
+      "cycle": "2026-09-25-06-meridian-repos",
+      "files_scanned": 43,
+      "investigation_relevant": [
+        "LEADS_1953_TRUST_HOUR1_2026-09-09.md",
+        "MY THEORIES.pdf",
+        "primary_Epstein specific_API BUILD_New Folder_Echo LEARNING MODELS.pdf",
+        "Epstein Files_ Removal, Transparency, Redaction Debate - Grok.eml",
+        "FIRST/Investigative R-WPS Office.pdf (out-of-scope subject — not Epstein residue)"
+      ],
+      "operator_work_product_added": 2,
+      "leads_from_1953_hour1": 10,
+      "note": "MY_THEORIES + Echo LEARNING = operator work product / protocol. LEADS_1953 has mixed SOLID structure facts + MAYBE implications. Investigative_R is non-Epstein subject matter — parked, not graph-promoted. Conti book not ingested as Epstein residue."
+    },
+    "geo_locations_count": 10,
+    "security_scan": {
+      "research_agents_json_present_in_REPOSITORIES": true,
+      "action": "NOT downloaded into graph. Treat as potential service-account credential. Do not commit. Do not use third-party keys.",
+      "file_id_flagged": "1RRhnCQZ0aQFMSzeCJfZgGCxymIhzC6W-"
+    }
   },
   "entities": [
     {
@@ -1096,13 +1121,13 @@ export const evidenceGraph = {
       "name": "Karyna Shuliak",
       "kind": "person",
       "tag": "MAYBE",
-      "role": "Named in operator 1953 trust bequest graph — verify on primary instrument",
+      "role": "Named in operator LEAD-002/003 as top residual slot with Indyke/Kahn; GRAPH_EDGES already had entity. Not a conviction.",
       "aliases": [
         "Shuliak"
       ],
       "sources": [
-        "GRAPH_EDGES.csv",
-        "FU-004"
+        "LEADS_1953",
+        "GRAPH_EDGES.csv"
       ]
     },
     {
@@ -1179,6 +1204,62 @@ export const evidenceGraph = {
       "aliases": [],
       "sources": [
         "SQUADS.zip EFTA protocol"
+      ]
+    },
+    {
+      "id": "E-DUBIN-CELINA",
+      "name": "Celina Edith Dubin",
+      "kind": "person",
+      "tag": "MAYBE",
+      "role": "LEAD-003: Feb 2019 trust version property/ops fund; Aug 2019 absent; renunciation Apr 2020 per operator log. Verify on primary EFTA versions.",
+      "aliases": [
+        "Celina Dubin",
+        "Dubin"
+      ],
+      "sources": [
+        "LEADS_1953",
+        "EFTA versions"
+      ]
+    },
+    {
+      "id": "E-VALAR",
+      "name": "Valar Ventures funds (estate holdings)",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "LEAD-001/007: estate LP positions; ~$172M combined value per Indyke testimony reporting. Investment fact track — not control of 1953 Trust distributions by fund principals.",
+      "aliases": [
+        "Valar"
+      ],
+      "sources": [
+        "LEADS_1953",
+        "NYT 2025",
+        "Indyke deposition reporting"
+      ]
+    },
+    {
+      "id": "E-HARLEQUIN-DANE",
+      "name": "Harlequin Dane (entity)",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "LEAD-002: debt forgiveness to administrator-related entities — allegation/structure track needs primary cite.",
+      "aliases": [
+        "Harlequin Dane"
+      ],
+      "sources": [
+        "LEADS_1953"
+      ]
+    },
+    {
+      "id": "E-SOUTHERN-FINANCIAL",
+      "name": "Southern Financial (entity)",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "LEAD-002 related entity track — needs primary filing.",
+      "aliases": [
+        "Southern Financial"
+      ],
+      "sources": [
+        "LEADS_1953"
       ]
     }
   ],
@@ -2177,6 +2258,157 @@ export const evidenceGraph = {
       "note": "Operator money-flow lead awaiting primary bank/estate exhibit.",
       "predicted_residue": "Wire advice / bank production / estate accounting line",
       "status": "OPEN"
+    },
+    {
+      "id": "OL-L001",
+      "title": "Estate residual vs locked capital (Valar)",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-001: ~$127M liquid estate accounting; Valar funds ~$172M combined (Indyke); Kahn expects zero personal payout from 1953 Trust after obligations. Numbers from public filings/depositions per operator log — verify latest USVI inventory.",
+      "predicted_residue": "Latest USVI probate inventory; Valar LP notices if public",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953 HOUR1",
+        "USVI accounting",
+        "Oversight depositions reporting"
+      ],
+      "tag_hint": "SOLID numbers MAYBE net beneficiaries"
+    },
+    {
+      "id": "OL-L002",
+      "title": "Administrator = top beneficiary structure",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-002: Indyke $50M + Kahn $25M top slots with Shuliak; control of execution/investment/distribution; claims fund restatement $2M→$50M. Structure from public sources; self-dealing = allegation not adjudicated.",
+      "predicted_residue": "EFTA trust schedules; Oversight transcripts",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953",
+        "EFTA reconstructions",
+        "Oversight"
+      ]
+    },
+    {
+      "id": "OL-L003",
+      "title": "Dubin off / Maxwell on 48h window",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-003: Feb 2019 Celina Dubin properties (Zorro/Cypress, LSJ/Nautilus, GSJ/Poplar)+$10M ops; Aug 2019 1953 Trust → Shuliak; Maxwell $10M appears. Celina renunciation Apr 2020. Name presence/absence SOLID across versions if Bates match.",
+      "predicted_residue": "EFTA Jan/Feb/Aug trust versions side-by-side",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953",
+        "EFTA versions"
+      ]
+    },
+    {
+      "id": "OL-L004",
+      "title": "DOJ never interviewed Indyke/Kahn on crimes (their testimony)",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-004: Both stated never questioned by DOJ about crimes; only document subpoenas for will/1953 Trust. Testimony SOLID if transcript public; investigative choice not proven malice.",
+      "predicted_residue": "House Oversight deposition transcripts",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953",
+        "Oversight Mar 2026 reporting"
+      ]
+    },
+    {
+      "id": "OL-L005",
+      "title": "Personal liability suits Indyke/Kahn",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-005: NY Supreme Aug 2026 pleadings allege financial/legal support enabling trafficking; defendants deny. Allegations ≠ convictions.",
+      "predicted_residue": "NY Supreme complaint docket",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953",
+        "Bloomberg reporting"
+      ]
+    },
+    {
+      "id": "OL-L006",
+      "title": "Decanting / insulation language",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-006: WSJ secondary on investment-adviser letter re decant to insulate from claims. Needs primary letter.",
+      "predicted_residue": "Primary adviser letter if/when public",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953",
+        "WSJ secondary"
+      ]
+    },
+    {
+      "id": "OL-L007",
+      "title": "Valar / Thiel capital concentration",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-007: $40M Valar 2015–2016 → ~$170M reported 2025. Investment fact SOLID in operator log; no public evidence Thiel controlled 1953 Trust distributions.",
+      "predicted_residue": "Indyke deposition cites; NYT 2025",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953",
+        "NYT 2025"
+      ]
+    },
+    {
+      "id": "OL-L008",
+      "title": "Signature chronology across death",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-008: Grantor 8 Aug 2019 → Kahn 10 Aug → Indyke 15 Aug Palm Beach → will filed USVI 15 Aug. Dates SOLID if instruments match; narrative weight separate from legal ordinary-counterpart practice.",
+      "predicted_residue": "Notarized counterparts / USVI will filing",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953"
+      ]
+    },
+    {
+      "id": "OL-L009",
+      "title": "Redacted female band ≥$73M",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "LEAD-009: Fourteen redacted slots; majority feminine survival pronouns. HITL: no deanonymization. Amount SOLID if schedule public; IDs sealed.",
+      "predicted_residue": "Redacted trust schedules only as redacted",
+      "status": "OPEN",
+      "sources": [
+        "LEADS_1953"
+      ]
+    },
+    {
+      "id": "OL-REPOS-LEADS",
+      "title": "REPOSITORIES/LEADS_1953_TRUST_HOUR1 (Drive)",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Full hour-1 lead log ingested from Drive REPOSITORIES. Operator-owned. Ten leads LEAD-001..010.",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "sources": [
+        "Drive REPOSITORIES 1l7WSmM736GJbUtlkqvEwvd4aufDUNzbC"
+      ]
+    },
+    {
+      "id": "OL-REPOS-THEORIES",
+      "title": "REPOSITORIES/FIRST/MY THEORIES.pdf",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator theory stack (Nadia line, Maxwell seed, etc.). First-class LEAD only. Not court exhibits. Not auto-SOLID.",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "predicted_residue": "Primary Bates / archive that would confirm or refute each theory branch"
     }
   ],
   "contradictions": [
@@ -2270,11 +2502,168 @@ export const evidenceGraph = {
       "priority": "P1",
       "status": "OPEN",
       "related": []
+    },
+    {
+      "id": "MP-007",
+      "title": "EFTA Jan/Feb/Aug 2019 trust version side-by-side",
+      "need": "Primary Bates pages showing Dubin→Shuliak property transfer and Maxwell $10M slot",
+      "priority": "P0",
+      "status": "OPEN",
+      "related": [
+        "E-1953-TRUST",
+        "E-DUBIN-CELINA",
+        "E-MAXWELL"
+      ]
+    },
+    {
+      "id": "MP-008",
+      "title": "House Oversight Indyke/Kahn deposition transcripts",
+      "need": "Full public transcripts for LEAD-001/004/007 cites",
+      "priority": "P0",
+      "status": "OPEN",
+      "related": [
+        "E-INDYKE",
+        "E-KAHN"
+      ]
+    },
+    {
+      "id": "MP-009",
+      "title": "USVI latest probate inventory",
+      "need": "Updated liquid vs illiquid estate residual after Valar",
+      "priority": "P1",
+      "status": "OPEN",
+      "related": [
+        "E-VALAR",
+        "E-1953-TRUST"
+      ]
+    },
+    {
+      "id": "MP-010",
+      "title": "NY Supreme Aug 2026 Indyke/Kahn liability complaint",
+      "need": "Docketed complaint + answer for LEAD-005",
+      "priority": "P1",
+      "status": "OPEN",
+      "related": [
+        "E-INDYKE",
+        "E-KAHN"
+      ]
     }
   ],
   "residue": {
     "definition": "Hard public residue: court outcomes, charging instruments, regulator orders, load-file indexes, published exhibits with chain. Not press tone. Not operator notes.",
     "solid_count": 30,
     "note": "Residue track is top-level. Operator ledger is separate top-level lead track — not buried as quarantine."
+  },
+  "geo_locations": [
+    {
+      "id": "GEO-NYC-E71",
+      "name": "9 East 71st / E66 Manhattan",
+      "lat": 40.7715,
+      "lng": -73.9654,
+      "status": "SOLID",
+      "entity_id": "E-E66",
+      "details": "Publicly associated NYC properties in reporting and dockets. Association ≠ guilt for third parties.",
+      "hub_rel": "property"
+    },
+    {
+      "id": "GEO-PALM-BEACH",
+      "name": "358 El Brillo Way, Palm Beach",
+      "lat": 26.7003,
+      "lng": -80.0365,
+      "status": "SOLID",
+      "entity_id": "E-PALM-BEACH",
+      "details": "Florida residence; origin of 2005 PBPD investigation.",
+      "hub_rel": "origin"
+    },
+    {
+      "id": "GEO-LSJ",
+      "name": "Little St. James, USVI",
+      "lat": 18.301,
+      "lng": -64.824,
+      "status": "SOLID",
+      "entity_id": "E-LITTLE-ST-JAMES",
+      "details": "Private island in USVI AG settlement residue.",
+      "hub_rel": "property"
+    },
+    {
+      "id": "GEO-GSJ",
+      "name": "Great St. James, USVI",
+      "lat": 18.315,
+      "lng": -64.83,
+      "status": "MAYBE",
+      "entity_id": null,
+      "details": "Operator/estate track island adjacent to LSJ; confirm in inventory.",
+      "hub_rel": "property"
+    },
+    {
+      "id": "GEO-ZORRO",
+      "name": "Zorro Ranch, NM",
+      "lat": 35.284,
+      "lng": -105.904,
+      "status": "SOLID",
+      "entity_id": "E-ZORRO",
+      "details": "New Mexico property publicly associated.",
+      "hub_rel": "property"
+    },
+    {
+      "id": "GEO-TETERBORO",
+      "name": "Teterboro Airport (arrest 2019)",
+      "lat": 40.8501,
+      "lng": -74.0608,
+      "status": "SOLID",
+      "entity_id": "E-EPSTEIN",
+      "details": "2019 arrest locus (public).",
+      "hub_rel": "event"
+    },
+    {
+      "id": "GEO-MCC",
+      "name": "MCC New York",
+      "lat": 40.7125,
+      "lng": -74.001,
+      "status": "SOLID",
+      "entity_id": "E-EPSTEIN",
+      "details": "Death in custody Aug 2019; public OCME/DOJ record.",
+      "hub_rel": "event"
+    },
+    {
+      "id": "GEO-USVI-HUB",
+      "name": "USVI estate / AG venue",
+      "lat": 18.3419,
+      "lng": -64.9307,
+      "status": "SOLID",
+      "entity_id": "E-SOUTHERN-TRUST",
+      "details": "USVI AG settlement + estate administration venue.",
+      "hub_rel": "legal"
+    },
+    {
+      "id": "GEO-SDNY",
+      "name": "USAO SDNY / Manhattan federal",
+      "lat": 40.714,
+      "lng": -74.002,
+      "status": "SOLID",
+      "entity_id": "E-SDNY",
+      "details": "Charging/prosecution venue Epstein & Maxwell.",
+      "hub_rel": "legal"
+    },
+    {
+      "id": "GEO-PARIS",
+      "name": "Paris apartment (public reports)",
+      "lat": 48.8647,
+      "lng": 2.292,
+      "status": "MAYBE",
+      "entity_id": null,
+      "details": "Public reporting of Paris property; confirm deed/estate inventory.",
+      "hub_rel": "property"
+    }
+  ],
+  "meridian": {
+    "primary_hub": {
+      "name": "New York (SDNY / MCC / E71 axis)",
+      "lat": 40.7128,
+      "lng": -74.006,
+      "note": "Analytical hub for flight/property convergence — not a guilt finding"
+    },
+    "renderer": "react-three-fiber + drei Line/Sphere",
+    "policy": "Only public-record or operator-lead tagged locations. SOLID/MAYBE on status. Association ≠ guilt."
   }
 } as const;

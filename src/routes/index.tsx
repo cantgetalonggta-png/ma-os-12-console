@@ -20,11 +20,13 @@ import {
   Building2,
   Archive,
   CircleDot,
+  Globe2,
 } from "lucide-react";
 import { investigation } from "@/lib/investigation-data";
 import { maOsData } from "@/lib/ma-os-data";
 import { evidenceGraph } from "@/lib/evidence-graph";
 import { ollamaStack } from "@/lib/ollama-stack";
+import { MeridianInvestigationGlobe } from "@/components/MeridianGlobe";
 
 /** Top-level tracks: Residue · Operator ledger · Contradictions · Missing productions first */
 type Tab =
@@ -42,13 +44,15 @@ type Tab =
   | "sources"
   | "methods"
   | "links"
-  | "stack";
+  | "stack"
+  | "meridian";
 
 const PRIMARY_TABS: { id: Tab; label: string; icon: typeof Activity }[] = [
   { id: "residue", label: "Residue", icon: Layers },
   { id: "operator_ledger", label: "Operator ledger", icon: NotebookPen },
   { id: "contradictions", label: "Contradictions", icon: AlertTriangle },
   { id: "missing", label: "Missing productions", icon: Archive },
+  { id: "meridian", label: "Meridian globe", icon: Globe2 },
 ];
 
 const SECONDARY_TABS: { id: Tab; label: string; icon: typeof Activity }[] = [
@@ -399,6 +403,7 @@ export function Desk() {
             {tab === "operator_ledger" && <OperatorLedgerPanel items={operatorLedger} />}
             {tab === "contradictions" && <ContradictionsPanel items={contradictions} />}
             {tab === "missing" && <MissingPanel items={missing} />}
+            {tab === "meridian" && <MeridianPanel />}
             {tab === "overview" && <Overview log={log} status={status} m={m} ledgerCount={operatorLedger.length} />}
             {tab === "timeline" && <TimelinePanel items={filteredTimeline} />}
             {tab === "entities" && (
@@ -835,6 +840,44 @@ function MissingPanel({
               ) : null}
             </div>
             <span className="text-[9px] font-mono text-slate-600 shrink-0">{mp.status}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+
+function MeridianPanel() {
+  const locs = ((evidenceGraph as any).geo_locations ?? []) as Array<{
+    id: string; name: string; lat: number; lng: number; status: string;
+    entity_id?: string | null; details: string; hub_rel: string;
+  }>;
+  return (
+    <div className="space-y-4">
+      <LedgerCard
+        stamp="MERIDIAN // GEO CONVERGENCE LAYER"
+        badge="R3F ORBIT"
+        title="Geographic connections — public-record / lead nodes"
+        body="Wireframe Earth with flight-arc paths into the NYC axis hub (SDNY / MCC / E71). Pins are SOLID or MAYBE from the evidence graph. Click a pin for telemetry. Association is not guilt. Operator leads may appear as MAYBE geo until primary deeds/dockets close them."
+        meta={
+          <>
+            <div>NODES: <span className="text-amber-300">{locs.length}</span></div>
+            <div>HUB: <span className="text-slate-400">40.71N 74.00W</span></div>
+            <div>RENDER: <span className="text-slate-400">react-three-fiber</span></div>
+          </>
+        }
+      />
+      <MeridianInvestigationGlobe locations={locs.length ? locs : undefined} />
+      <ul className="grid sm:grid-cols-2 gap-2">
+        {locs.map((l) => (
+          <li key={l.id} className="p-2.5 rounded border border-white/5 bg-[#0b0f19]/40 text-xs">
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-mono text-[10px] text-slate-600">{l.id}</span>
+              <Tag t={l.status === "SOLID" ? "SOLID" : "MAYBE"} />
+            </div>
+            <p className="text-slate-200 font-medium mt-0.5">{l.name}</p>
+            <p className="text-[10px] font-mono text-slate-500 mt-1">{l.lat.toFixed(3)}, {l.lng.toFixed(3)} · {l.hub_rel}</p>
           </li>
         ))}
       </ul>
