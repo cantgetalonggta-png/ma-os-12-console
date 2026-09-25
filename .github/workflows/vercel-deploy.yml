@@ -1,0 +1,38 @@
+name: vercel-prod-deploy
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "package.json"
+      - "vercel.json"
+      - "vite.config.ts"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci || npm install
+      - run: npm run build
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
+      - name: Pull Vercel env
+        # Accept either standard VERCEL_TOKEN or the named secret ma-os-12-deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN || secrets.MA_OS_12_DEPLOY || secrets['ma-os-12-deploy'] }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "No VERCEL_TOKEN / ma-os-12-deploy secret on this repo. Add it under Settings → Secrets."
+            exit 1
+          fi
+          echo "Token present (value hidden). Deploying..."
+          vercel pull --yes --environment=production --token="$VERCEL_TOKEN" || true
+          vercel build --prod --token="$VERCEL_TOKEN" || true
+          vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+        # Note: GitHub secret names cannot contain dots; hyphens may be restricted.
+        # Prefer secret name: VERCEL_TOKEN  (or MA_OS_12_DEPLOY)
