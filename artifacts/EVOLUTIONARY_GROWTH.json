@@ -1,0 +1,21 @@
+{
+  "title": "Hierarchical OSINT OS Evolutionary Growth",
+  "source_pdf": "12 agent.pdf",
+  "distilled_at": "2026-09-25T04:29:27.946119+00:00",
+  "generations": [
+    {"id": "v1.0", "agents": 3, "seekers": 2, "breadcrumbs": 42, "solid": 4, "maybe": 38, "steps": 5},
+    {"id": "v2.0_MAX", "agents": 8, "seekers": 12, "breadcrumbs": 594, "solid": 493, "maybe": 101, "steps": 12},
+    {"id": "v2.GOD", "agents": 9, "seekers": 12, "live": true, "meta": true, "hourly_live_god": true}
+  ],
+  "solid_ratio_v2": 0.83,
+  "growth_drivers": [
+    "multi-hint breadcrumbs",
+    "12 public targets + triangulation chain",
+    "metadata_enricher + triangulation_orchestrator",
+    "evidence_density_score",
+    "full-jitter resilience + never drop",
+    "GOD meta distill/critique/upgrade loop",
+    "global OSINT protocol catalog"
+  ],
+  "next": ["live_throughput_cap", "maybe_requeue", "repositories_ingest", "desk_surface", "hourly_delta"]
+}
