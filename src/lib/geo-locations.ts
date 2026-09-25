@@ -1,4 +1,4 @@
-/** Public-record / lead geo nodes for Meridian globe */
+/** Meridian geo nodes — public-record + operator leads (MAYBE) */
 export const geoLocations = [
   {
     "id": "GEO-NYC-E71",
@@ -99,6 +99,76 @@ export const geoLocations = [
     "entity_id": null,
     "details": "Public reporting of Paris property; confirm deed/estate inventory.",
     "hub_rel": "property"
+  },
+  {
+    "id": "GEO-KOSICE",
+    "name": "Ko\u0161ice, Slovakia (operator Nadazia lead)",
+    "lat": 48.7164,
+    "lng": 21.2611,
+    "status": "MAYBE",
+    "entity_id": null,
+    "details": "Operator lead from Nadazia/Kosice search packs and MY_THEORIES. Not a court finding.",
+    "hub_rel": "lead_origin"
+  },
+  {
+    "id": "GEO-BRATISLAVA",
+    "name": "Bratislava (operator dialect/Nadia engine lead)",
+    "lat": 48.1486,
+    "lng": 17.1077,
+    "status": "MAYBE",
+    "entity_id": null,
+    "details": "Operator theory locus for early aliases/dialect bleed. LEAD only.",
+    "hub_rel": "lead_origin"
+  },
+  {
+    "id": "GEO-PARIS-RIVOLI",
+    "name": "Paris \u2014 Rue de Rivoli / Pergamon orbit",
+    "lat": 48.8606,
+    "lng": 2.3376,
+    "status": "MAYBE",
+    "entity_id": null,
+    "details": "Operator theory: Pergamon ads / PO box. Historical Maxwell publishing public; lure theory is LEAD.",
+    "hub_rel": "lead_property"
+  },
+  {
+    "id": "GEO-LIECHTENSTEIN",
+    "name": "Liechtenstein (wire theory lead)",
+    "lat": 47.141,
+    "lng": 9.5215,
+    "status": "MAYBE",
+    "entity_id": null,
+    "details": "MY_THEORIES File_02 \u00a312k Liechtenstein wire claim \u2014 needs primary bank/estate exhibit.",
+    "hub_rel": "lead_finance"
+  },
+  {
+    "id": "GEO-KIEV",
+    "name": "Kyiv / Kiev (avionics alias lead)",
+    "lat": 50.4501,
+    "lng": 30.5234,
+    "status": "MAYBE",
+    "entity_id": null,
+    "details": "Operator PART3/maindata: Peter avionics / alias ship theory. LEAD only.",
+    "hub_rel": "lead_logistics"
+  },
+  {
+    "id": "GEO-NEW-ALBANY",
+    "name": "New Albany / Wexner orbit (OH)",
+    "lat": 40.0812,
+    "lng": -82.8088,
+    "status": "MAYBE",
+    "entity_id": "E-WEXNER",
+    "details": "Public reporting associates Wexner/L Brands region; not a guilt finding for third parties.",
+    "hub_rel": "associate_public"
+  },
+  {
+    "id": "GEO-CANARY",
+    "name": "Canary Islands area \u2014 Lady Ghislaine death 1991",
+    "lat": 28.2916,
+    "lng": -16.6291,
+    "status": "SOLID",
+    "entity_id": null,
+    "details": "Public historical fact: Robert Maxwell died at sea near Canary Islands Nov 1991. Not Epstein criminal finding.",
+    "hub_rel": "historical_public"
   }
 ] as const;
 export const meridianHub = {

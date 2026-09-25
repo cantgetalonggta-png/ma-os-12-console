@@ -1,14 +1,14 @@
-/** Auto-synced EVIDENCE_GRAPH — Operator ledger + Meridian geo */
+/** Auto-synced EVIDENCE_GRAPH — REPOSITORIES deep distill + Meridian geo */
 export const evidenceGraph = {
   "meta": {
-    "entities": 82,
+    "entities": 86,
     "edges": 57,
     "hypotheses": 5,
     "pipeline_stages": 6,
     "protections": 5,
     "sources": 20,
-    "solid_entities": 30,
-    "maybe_entities": 52,
+    "solid_entities": 32,
+    "maybe_entities": 54,
     "files_ingested": [
       "EFTA02731082.txt",
       "EFTA02731393.txt",
@@ -53,7 +53,7 @@ export const evidenceGraph = {
       "REPOSITORIES/FIRST/MY THEORIES.pdf",
       "REPOSITORIES/primary_Epstein_Echo_LEARNING.pdf"
     ],
-    "generated_at": "2026-09-25T02:32:53.989566+00:00",
+    "generated_at": "2026-09-25T02:37:59.220786+00:00",
     "policy": "Operator-owned investigation · public-record ceiling · HITL · SOLID/MAYBE is source-weight not authorship · association ≠ guilt · no CSAM · never deanonymize redacted victim names · Operator ledger = first-class LEAD track (not fake exhibits) · Residue = hard public residue only",
     "efta_files": [
       "EFTA02730267.txt",
@@ -80,7 +80,7 @@ export const evidenceGraph = {
       "operator_work_product_count": 3,
       "note": "operator_work_product files retained as Operator ledger leads, not discarded and not promoted to exhibits"
     },
-    "cycle": "2026-09-25-06-meridian-repos",
+    "cycle": "2026-09-25-07-repos-deep",
     "authorship": {
       "investigation_owner": "operator (Albtinder / cantgetalonggta-png)",
       "desk_role": "Grok is tool + public-record distiller only; does not claim the investigation",
@@ -110,14 +110,15 @@ export const evidenceGraph = {
       ],
       "note": "Public .gov / official AG / regulator citations attached. Association ≠ guilt. Civil settlement allegations and DFS consent orders are not criminal convictions."
     },
-    "operator_ledger_count": 25,
-    "contradictions_count": 3,
-    "missing_productions_count": 10,
+    "operator_ledger_count": 34,
+    "contradictions_count": 4,
+    "missing_productions_count": 14,
     "ui_tracks": [
       "residue",
       "operator_ledger",
       "contradictions",
       "missing_productions",
+      "meridian",
       "entities",
       "graph",
       "pipeline",
@@ -127,20 +128,42 @@ export const evidenceGraph = {
     "repos_ingest": {
       "folder_id": "1l7WSmM736GJbUtlkqvEwvd4aufDUNzbC",
       "folder_name": "REPOSITORIES",
-      "cycle": "2026-09-25-06-meridian-repos",
-      "files_scanned": 43,
-      "investigation_relevant": [
-        "LEADS_1953_TRUST_HOUR1_2026-09-09.md",
-        "MY THEORIES.pdf",
-        "primary_Epstein specific_API BUILD_New Folder_Echo LEARNING MODELS.pdf",
-        "Epstein Files_ Removal, Transparency, Redaction Debate - Grok.eml",
-        "FIRST/Investigative R-WPS Office.pdf (out-of-scope subject — not Epstein residue)"
+      "cycle": "2026-09-25-07-repos-deep",
+      "subfolders_scanned": [
+        "FIRST",
+        "Folder 1",
+        "Folder 2",
+        "Folder 3",
+        "Folder 6"
       ],
-      "operator_work_product_added": 2,
-      "leads_from_1953_hour1": 10,
-      "note": "MY_THEORIES + Echo LEARNING = operator work product / protocol. LEADS_1953 has mixed SOLID structure facts + MAYBE implications. Investigative_R is non-Epstein subject matter — parked, not graph-promoted. Conti book not ingested as Epstein residue."
+      "files_text_extracted_this_cycle": [
+        "CROSS-REFERENCE.pdf",
+        "MASTER_SQUADS_PROMPT.pdf",
+        "Mega-Timeline.pdf",
+        "The_Seed_Story.pdf",
+        "maindata.pdf",
+        "maindata_part2.pdf",
+        "FLAG-HUNTER_SQU.pdf",
+        "Epstein_Maxwell_True_Story_PART3.pdf",
+        "EFTA_First_Level_Review_Protocol.pdf",
+        "Black_or_white_ADD_ALL.pdf",
+        "LEADS_1953",
+        "MY_THEORIES"
+      ],
+      "skipped_defensive": [
+        "Folder6 export XAI_API_*.txt / credential-looking scripts — NOT loaded",
+        "research-agents-*.json — NOT loaded",
+        "Conti ransomware book — out of scope",
+        "Investigative_R Somali clans — out of Epstein residue scope",
+        "Echo LEARNING predatory persona methods — not surfaced in UI"
+      ],
+      "pending_heavy": [
+        "109-1 - Epstein Archive.PDF (4.4MB)",
+        "Nadazia Kosice search PDFs ~1.8MB each",
+        "acosta and clinton history PDF"
+      ]
     },
-    "geo_locations_count": 10,
+    "geo_locations_count": 17,
     "security_scan": {
       "research_agents_json_present_in_REPOSITORIES": true,
       "action": "NOT downloaded into graph. Treat as potential service-account credential. Do not commit. Do not use third-party keys.",
@@ -1261,6 +1284,62 @@ export const evidenceGraph = {
       "sources": [
         "LEADS_1953"
       ]
+    },
+    {
+      "id": "E-ROBERT-MAXWELL",
+      "name": "Robert Maxwell",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Public historical figure; died 1991 at sea; Ghislaine's father; Pergamon Press. Public record — not an Epstein trafficking conviction.",
+      "aliases": [
+        "Ján Ludvík Hoch",
+        "Bob Maxwell"
+      ],
+      "sources": [
+        "public history",
+        "Seed Story operator narrative"
+      ]
+    },
+    {
+      "id": "E-PERGAMON",
+      "name": "Pergamon Press",
+      "kind": "entity",
+      "tag": "SOLID",
+      "role": "Publishing company associated with Robert Maxwell — public corporate history.",
+      "aliases": [
+        "Pergamon"
+      ],
+      "sources": [
+        "public corporate history"
+      ]
+    },
+    {
+      "id": "E-WEXNER-POA",
+      "name": "Wexner power-of-attorney / financial relationship track",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "Public reporting of financial relationship; POA claims need primary instruments.",
+      "aliases": [
+        "Wexner POA"
+      ],
+      "sources": [
+        "public reporting",
+        "operator maindata"
+      ]
+    },
+    {
+      "id": "E-KARIN-MODELS",
+      "name": "Karin Models (operator recruiter track)",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "Named in operator PART3/Seed as recruiter vehicle. Needs primary business records.",
+      "aliases": [
+        "Karin Models"
+      ],
+      "sources": [
+        "operator PART3",
+        "Seed Story"
+      ]
     }
   ],
   "edges": [
@@ -1966,6 +2045,14 @@ export const evidenceGraph = {
       "class": "public_primary",
       "tag": "SOLID",
       "path": "https://www.dfs.ny.gov/"
+    },
+    {
+      "id": "SRC-EFTA-PROTOCOL-JAN26",
+      "title": "DOJ ODAG Attorney Review Protocol for Epstein Files (Jan 4, 2026) — operator pack copy",
+      "class": "A",
+      "path": "REPOSITORIES/Folder3/EFTA First Level Review Protocol - Final - Jan 26 - 508.PDF",
+      "tag": "SOLID",
+      "note": "Pack copy of first-level review protocol. Confirm against justice.gov if mirror exists. Review protocol ≠ list of guilt findings."
     }
   ],
   "follow_ups": [
@@ -2409,6 +2496,129 @@ export const evidenceGraph = {
       "status": "INGESTED",
       "owner": "Albtinder",
       "predicted_residue": "Primary Bates / archive that would confirm or refute each theory branch"
+    },
+    {
+      "id": "OL-SEED-STORY",
+      "title": "The Seed Story — Robert Maxwell / Pergamon / pipeline origin (operator narrative)",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator long-form narrative: Robert Maxwell → Ghislaine inheritance → Wexner/Epstein hook → recruiter chain theories. Historical public facts (Maxwell death 1991, Pergamon Press) mixed with operator synthesis. Not a court exhibit.",
+      "predicted_residue": "Pergamon filings; 1991 death inquest; public Wexner POA timeline",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "sources": [
+        "REPOSITORIES/Folder2/The Seed Story"
+      ]
+    },
+    {
+      "id": "OL-MEGA-TIMELINE",
+      "title": "Mega-Timeline operator chronology (to 2025 cut)",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator expanded chronology pre-war shadows → 2025. Use as search index for primary FOIA targets; do not treat every dated claim as SOLID without primary.",
+      "predicted_residue": "Each dated claim needs DOJ/court/news primary",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "sources": [
+        "REPOSITORIES/Folder2/Mega-Timeline"
+      ]
+    },
+    {
+      "id": "OL-MAINDATA",
+      "title": "maindata + maindata part2 full map late-1980s→2026",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator 'full map' timeline + buried threads compile. High lead density. Association ≠ guilt.",
+      "predicted_residue": "Cross every name against dockets/flight logs/estate inventory",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "sources": [
+        "REPOSITORIES/Folder2/maindata.pdf",
+        "maindata part2.pdf"
+      ]
+    },
+    {
+      "id": "OL-CROSS-REF-SQUADS",
+      "title": "CROSS-REFERENCE SQUADS PART3 (FOIA/NPA pre-mapping)",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator multi-squad protocol for FOIA log patterns, NPA/plea immunity bleed, co-conspirator blanket focus. Methodology lead — not a finding.",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "sources": [
+        "REPOSITORIES/Folder1/CROSS-REFERENCE"
+      ]
+    },
+    {
+      "id": "OL-MASTER-SQUADS",
+      "title": "MASTER SQUADS PROMPT / Black-or-white monster prompt",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator swarm orchestration prompt (6 squads / multi-thousand agent metaphor). Tooling protocol, not evidence.",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "sources": [
+        "REPOSITORIES/Folder1/MASTER SQUADS PROMPT.pdf"
+      ]
+    },
+    {
+      "id": "OL-PART3-TIMELINE",
+      "title": "Epstein Maxwell True Story PART3 compact timeline",
+      "class": "OPERATOR_WORK_PRODUCT",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Compact operator timeline 1980s–1999 seed chain (Robert Maxwell, Ghislaine, Zuzana/Karin Models, Nadia recruitment theory, MoD waivers). All LEAD until primary.",
+      "predicted_residue": "Karin Models records; immigration filings; public yacht death reports",
+      "status": "INGESTED",
+      "owner": "Albtinder",
+      "sources": [
+        "REPOSITORIES/Folder3/PART3"
+      ]
+    },
+    {
+      "id": "OL-GEO-KOSICE",
+      "title": "Košice / Bratislava / Nadazia geo lead",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "Operator theory places early pipeline nodes in Slovakia/Czech (Košice search PDFs in Folder1). Geo pin added as MAYBE on Meridian. Not a finding of trafficking without primary.",
+      "predicted_residue": "Immigration/visa public records; employment records if public",
+      "status": "OPEN",
+      "sources": [
+        "REPOSITORIES Nadazia Kosice search PDFs",
+        "MY_THEORIES"
+      ]
+    },
+    {
+      "id": "OL-GEO-RIVOLI",
+      "title": "Paris Rue de Rivoli / Pergamon PO box lead",
+      "class": "OPERATOR_LEAD",
+      "track": "operator_ledger",
+      "epistemic": "LEAD_NOT_EXHIBIT",
+      "note": "MY_THEORIES File_02: Pergamon classifieds / Rue de Rivoli PO box / Liechtenstein wire theory. Historical Maxwell/Pergamon is public; trafficking-lure interpretation is operator theory.",
+      "predicted_residue": "Pergamon Press company filings; published ads archives",
+      "status": "OPEN",
+      "sources": [
+        "MY_THEORIES.pdf"
+      ]
+    },
+    {
+      "id": "OL-EFTA-PROTOCOL",
+      "title": "EFTA First Level Review Protocol (Jan 2026 ODAG memo copy)",
+      "class": "A_PUBLIC_PROTOCOL_COPY",
+      "track": "residue",
+      "epistemic": "SOLID_IF_OFFICIAL_MIRROR",
+      "note": "Operator pack contains DOJ ODAG-style memorandum on attorney review protocol for Epstein files dated Jan 4 2026. Process document — not a guilt list. Confirm against justice.gov publication.",
+      "predicted_residue": "justice.gov official PDF hash match",
+      "status": "VERIFY_MIRROR",
+      "sources": [
+        "REPOSITORIES/Folder3/EFTA First Level Review Protocol"
+      ]
     }
   ],
   "contradictions": [
@@ -2441,6 +2651,16 @@ export const evidenceGraph = {
       "tag": "SOLID",
       "note": "OPR report is hard residue on process judgment. Does not by itself prove broader conspiracy.",
       "next": "Keep OPR primary cite; do not inflate to criminal finding"
+    },
+    {
+      "id": "C-004",
+      "title": "Operator full-map density vs public primary sparsity",
+      "claim_a": "Operator maindata/Mega-Timeline present dense multi-decade continuous narrative",
+      "claim_b": "Public primary residue (SDNY, USVI AG, EFTA VOL slice) covers narrower adjudicated/process facts",
+      "status": "OPEN",
+      "tag": "MAYBE",
+      "note": "Not proof either side is false — defines the FOIA/OCR gap. Smoke-and-mirrors posture lives here.",
+      "next": "Map each Mega-Timeline decade claim to a primary or mark OPEN"
     }
   ],
   "missing_productions": [
@@ -2546,6 +2766,47 @@ export const evidenceGraph = {
       "related": [
         "E-INDYKE",
         "E-KAHN"
+      ]
+    },
+    {
+      "id": "MP-011",
+      "title": "EFTA protocol official justice.gov mirror",
+      "need": "Hash-match operator EFTA First Level Review Protocol PDF to official ODAG publication",
+      "priority": "P0",
+      "status": "OPEN",
+      "related": [
+        "SRC-EFTA-PROTOCOL-JAN26"
+      ]
+    },
+    {
+      "id": "MP-012",
+      "title": "109-1 Epstein Archive full OCR",
+      "need": "Folder1 4.4MB 109-1 archive not yet OCR'd this cycle",
+      "priority": "P0",
+      "status": "OPEN",
+      "related": [
+        "E-VOL00012"
+      ]
+    },
+    {
+      "id": "MP-013",
+      "title": "Pergamon / Rivoli primary filings",
+      "need": "Company filings + any public ads archive for LEAD File_02",
+      "priority": "P1",
+      "status": "OPEN",
+      "related": [
+        "E-PERGAMON",
+        "OL-GEO-RIVOLI"
+      ]
+    },
+    {
+      "id": "MP-014",
+      "title": "Karin Models primary records",
+      "need": "Business registry / employment if public",
+      "priority": "P1",
+      "status": "OPEN",
+      "related": [
+        "E-KARIN-MODELS"
       ]
     }
   ],
@@ -2654,6 +2915,76 @@ export const evidenceGraph = {
       "entity_id": null,
       "details": "Public reporting of Paris property; confirm deed/estate inventory.",
       "hub_rel": "property"
+    },
+    {
+      "id": "GEO-KOSICE",
+      "name": "Košice, Slovakia (operator Nadazia lead)",
+      "lat": 48.7164,
+      "lng": 21.2611,
+      "status": "MAYBE",
+      "entity_id": null,
+      "details": "Operator lead from Nadazia/Kosice search packs and MY_THEORIES. Not a court finding.",
+      "hub_rel": "lead_origin"
+    },
+    {
+      "id": "GEO-BRATISLAVA",
+      "name": "Bratislava (operator dialect/Nadia engine lead)",
+      "lat": 48.1486,
+      "lng": 17.1077,
+      "status": "MAYBE",
+      "entity_id": null,
+      "details": "Operator theory locus for early aliases/dialect bleed. LEAD only.",
+      "hub_rel": "lead_origin"
+    },
+    {
+      "id": "GEO-PARIS-RIVOLI",
+      "name": "Paris — Rue de Rivoli / Pergamon orbit",
+      "lat": 48.8606,
+      "lng": 2.3376,
+      "status": "MAYBE",
+      "entity_id": null,
+      "details": "Operator theory: Pergamon ads / PO box. Historical Maxwell publishing public; lure theory is LEAD.",
+      "hub_rel": "lead_property"
+    },
+    {
+      "id": "GEO-LIECHTENSTEIN",
+      "name": "Liechtenstein (wire theory lead)",
+      "lat": 47.141,
+      "lng": 9.5215,
+      "status": "MAYBE",
+      "entity_id": null,
+      "details": "MY_THEORIES File_02 £12k Liechtenstein wire claim — needs primary bank/estate exhibit.",
+      "hub_rel": "lead_finance"
+    },
+    {
+      "id": "GEO-KIEV",
+      "name": "Kyiv / Kiev (avionics alias lead)",
+      "lat": 50.4501,
+      "lng": 30.5234,
+      "status": "MAYBE",
+      "entity_id": null,
+      "details": "Operator PART3/maindata: Peter avionics / alias ship theory. LEAD only.",
+      "hub_rel": "lead_logistics"
+    },
+    {
+      "id": "GEO-NEW-ALBANY",
+      "name": "New Albany / Wexner orbit (OH)",
+      "lat": 40.0812,
+      "lng": -82.8088,
+      "status": "MAYBE",
+      "entity_id": "E-WEXNER",
+      "details": "Public reporting associates Wexner/L Brands region; not a guilt finding for third parties.",
+      "hub_rel": "associate_public"
+    },
+    {
+      "id": "GEO-CANARY",
+      "name": "Canary Islands area — Lady Ghislaine death 1991",
+      "lat": 28.2916,
+      "lng": -16.6291,
+      "status": "SOLID",
+      "entity_id": null,
+      "details": "Public historical fact: Robert Maxwell died at sea near Canary Islands Nov 1991. Not Epstein criminal finding.",
+      "hub_rel": "historical_public"
     }
   ],
   "meridian": {

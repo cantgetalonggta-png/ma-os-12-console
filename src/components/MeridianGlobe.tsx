@@ -49,7 +49,7 @@ function CameraController({
   useFrame((state) => {
     if (zooming && target) {
       const desired = target.clone().multiplyScalar(1.55);
-      state.camera.position.lerp(desired, 0.04);
+      state.camera.position.lerp(desired, 0.05);
       state.camera.lookAt(target);
     }
   });
@@ -151,8 +151,8 @@ export function MeridianInvestigationGlobe({
     <div className="w-full h-[520px] bg-[#06070a] border border-white/5 rounded relative overflow-hidden">
       <div className="absolute top-3 left-3 z-20 font-mono text-[11px] text-slate-400 pointer-events-none space-y-0.5">
         <div>
-          ORBIT_RENDERER: <span className="text-amber-400">MERIDIAN / R3F</span>
-        </div>
+          ORBIT_RENDERER: <span className="text-amber-400">ACTIVE</span></div>
+        <div>CONVERGENCE_TARGET: <span className="text-slate-200">PRIMARY_HUB (NYC)</span></div>
         <div>
           HUB: <span className="text-slate-200">{meridianHub.name}</span>
         </div>
@@ -176,7 +176,7 @@ export function MeridianInvestigationGlobe({
         </span>
       </div>
 
-      <Canvas camera={{ position: [0, 1.2, 5.5], fov: 42 }} dpr={[1, 1.75]}>
+      <Canvas camera={{ position: [0, 0, 6], fov: 45 }} dpr={[1, 1.75]}>
         <color attach="background" args={["#06070a"]} />
         <ambientLight intensity={0.65} />
         <pointLight position={[8, 10, 6]} intensity={1.4} />
