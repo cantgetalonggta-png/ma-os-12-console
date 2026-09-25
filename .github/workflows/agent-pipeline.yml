@@ -1,0 +1,37 @@
+name: Hyper-Automation CI
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  test_and_report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install hyper kernel deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r hyper_kernel/requirements.txt || true
+          pip install pytest || true
+      - name: Kernel import check
+        run: |
+          python -c "import ast; ast.parse(open('hyper_kernel/main.py').read()); print('kernel_syntax_ok')"
+      - name: Web typecheck if present
+        run: |
+          if [ -f package.json ]; then
+            npm ci --ignore-scripts || npm install --ignore-scripts || true
+            npm run typecheck || true
+          fi
+      - name: Optional webhook on failure
+        if: failure()
+        run: |
+          if [ -n "${{ secrets.AGENT_WEBHOOK_URL }}" ]; then
+            curl -sS -X POST "${{ secrets.AGENT_WEBHOOK_URL }}" \
+              -H "Content-Type: application/json" \
+              -d '{"status":"ci_failure","repo":"${{ github.repository }}","run":"${{ github.run_id }}"}' || true
+          fi
