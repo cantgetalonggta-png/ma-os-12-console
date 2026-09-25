@@ -1,27 +1,63 @@
-/* Distilled evidence graph — public-record + operator leads with tags */
 export const evidenceGraph = {
   "meta": {
-    "entities": 34,
-    "edges": 19,
+    "entities": 72,
+    "edges": 57,
     "hypotheses": 5,
     "pipeline_stages": 6,
     "protections": 5,
     "sources": 7,
-    "solid_entities": 18,
-    "maybe_entities": 16,
+    "solid_entities": 21,
+    "maybe_entities": 51,
     "files_ingested": [
-      "BATES_AND_DOCKET_INDEX.md",
-      "CANONICAL_URLS.md",
-      "LEADS_1953_TRUST_HOUR1_2026-09-09.md",
-      "README.md",
-      "SQUADS_PROOF_VOL_INGEST.md",
-      "Verified_Inventory_2020-03-03_djvu.txt",
+      "EFTA02731082.txt",
+      "EFTA02731393.txt",
       "codex_FULL_EXPORT.md",
+      "EFTA02731260.txt",
       "codex_STATUS.json",
-      "lolita_express_main.txt"
+      "EFTA02731200.txt",
+      "EFTA02730486.txt",
+      "EFTA02730267.txt",
+      "README.md",
+      "EFTA02730274.txt",
+      "EFTA02731226.txt",
+      "BATES_AND_DOCKET_INDEX.md",
+      "EFTA02731341.txt",
+      "SQUADS_PROOF_VOL_INGEST.md",
+      "EFTA02730996.txt",
+      "EFTA02731168.txt",
+      "EFTA02731023.txt",
+      "hyper_kernel",
+      "GRAPH_EDGES.csv",
+      "EFTA02731039.txt",
+      "CANONICAL_URLS.md",
+      "CYCLE20",
+      "EFTA02730741.txt",
+      "CYCLE21",
+      "EFTA02731521.txt",
+      "Verified_Inventory_2020-03-03_djvu.txt",
+      "lolita_express_main.txt",
+      "PRIMARY_EXTRACTS",
+      "LEADS_1953_TRUST_HOUR1_2026-09-09.md"
     ],
-    "generated_at": "2026-09-24T23:49:18.807200+00:00",
-    "policy": "Public-record ceiling \u00b7 association \u2260 guilt \u00b7 HITL \u00b7 no CSAM \u00b7 operator theory quarantined from SOLID"
+    "generated_at": "2026-09-25T00:20:46.988155+00:00",
+    "policy": "Public-record ceiling \u00b7 association \u2260 guilt \u00b7 HITL \u00b7 no CSAM \u00b7 operator theory quarantined from SOLID",
+    "efta_files": [
+      "EFTA02730267.txt",
+      "EFTA02730274.txt",
+      "EFTA02730486.txt",
+      "EFTA02730741.txt",
+      "EFTA02730996.txt",
+      "EFTA02731023.txt",
+      "EFTA02731039.txt",
+      "EFTA02731082.txt",
+      "EFTA02731168.txt",
+      "EFTA02731200.txt",
+      "EFTA02731226.txt",
+      "EFTA02731260.txt",
+      "EFTA02731341.txt",
+      "EFTA02731393.txt",
+      "EFTA02731521.txt"
+    ]
   },
   "entities": [
     {
@@ -450,6 +486,501 @@ export const evidenceGraph = {
       "sources": [
         "Verified_Inventory_2020-03-03"
       ]
+    },
+    {
+      "id": "E-BLACK",
+      "name": "Leon Black",
+      "kind": "person",
+      "tag": "SOLID",
+      "role": "Dechert memo re Epstein relationship (public exhibit)",
+      "aliases": [
+        "Black"
+      ],
+      "sources": [
+        "EFTA02730996 Exhibit 99.1"
+      ]
+    },
+    {
+      "id": "E-APOLLO",
+      "name": "Apollo Global Management",
+      "kind": "institution",
+      "tag": "SOLID",
+      "role": "Conflicts Committee retained Dechert",
+      "aliases": [
+        "Apollo"
+      ],
+      "sources": [
+        "EFTA02730996"
+      ]
+    },
+    {
+      "id": "E-DECHERT",
+      "name": "Dechert LLP",
+      "kind": "institution",
+      "tag": "SOLID",
+      "role": "Independent counsel memo Jan 2021",
+      "aliases": [
+        "Dechert"
+      ],
+      "sources": [
+        "EFTA02730996"
+      ]
+    },
+    {
+      "id": "E-JEFFREY-EPSTEIN",
+      "name": "Jeffrey Epstein",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Jeffrey_Epstein"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-DARREN-INDYKE",
+      "name": "Darren Indyke",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Darren_Indyke"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-RICHARD-KAHN",
+      "name": "Richard Kahn",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Richard_Kahn"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-KARYNA-SHULIAK",
+      "name": "Karyna Shuliak",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Karyna_Shuliak"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-COLUMBIA-DENTAL",
+      "name": "Columbia Dental",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Columbia_Dental"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-COLUMBIA-UNIVERSITY",
+      "name": "Columbia University",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Columbia_University"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-ARTHUR-ENGORON",
+      "name": "Arthur Engoron",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Arthur_Engoron"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-NYU-LAW",
+      "name": "NYU Law",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "NYU_Law"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-CORNELL-LAW",
+      "name": "Cornell Law",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Cornell_Law"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-COLGATE",
+      "name": "Colgate",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Colgate"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-BRUCE-REINHART",
+      "name": "Bruce Reinhart",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Bruce_Reinhart"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-SARAH-KELLEN",
+      "name": "Sarah Kellen",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Sarah_Kellen"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-NADIA-MARCINKOVA",
+      "name": "Nadia Marcinkova",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Nadia_Marcinkova"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-EPSTEIN-PILOTS",
+      "name": "Epstein Pilots",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Epstein_Pilots"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-MAR-A-LAGO-WARRANT",
+      "name": "Mar a Lago Warrant",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Mar_a_Lago_Warrant"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-NPA-2007",
+      "name": "NPA 2007",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "NPA_2007"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-HARRY-BELLER",
+      "name": "Harry Beller",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Harry_Beller"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-HBRK",
+      "name": "HBRK",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "HBRK"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-BUTTERFLY-TRUST",
+      "name": "Butterfly Trust",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Butterfly_Trust"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-JPMORGAN",
+      "name": "JPMorgan",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "JPMorgan"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-CIVIL-DISCOVERY",
+      "name": "Civil Discovery",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Civil_Discovery"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-INDYKE-DKI-PLLC",
+      "name": "Indyke DKI PLLC",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Indyke_DKI_PLLC"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-301-E-66-10B",
+      "name": "301 E 66 10B",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "301_E_66_10B"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-301-E-66-10F",
+      "name": "301 E 66 10F",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "301_E_66_10F"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-301-E-66",
+      "name": "301 E 66",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "301_E_66"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-HOUSING-NETWORK",
+      "name": "Housing Network",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Housing_Network"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-MICHELLE-SAIPHER",
+      "name": "Michelle Saipher",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Michelle_Saipher"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-SUCCESSOR-TRUSTS",
+      "name": "Successor Trusts",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Successor_Trusts"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-INDYKE-KAHN-SPOUSES",
+      "name": "Indyke Kahn Spouses",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Indyke_Kahn_Spouses"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-LEON-BLACK",
+      "name": "Leon Black",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Leon_Black"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-SOUTHERN-TRUST-COMPANY",
+      "name": "Southern Trust Company",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Southern_Trust_Company"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-WIRE-250K-RECIPIENT",
+      "name": "Wire 250K Recipient",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Wire_250K_Recipient"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-JAIL-COMPUTER-ACCESS",
+      "name": "Jail Computer Access",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Jail_Computer_Access"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-DEUTSCHE-BANK",
+      "name": "Deutsche Bank",
+      "kind": "entity",
+      "tag": "MAYBE",
+      "role": "From GRAPH_EDGES.csv",
+      "aliases": [
+        "Deutsche_Bank"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv"
+      ]
+    },
+    {
+      "id": "E-SHULIAK",
+      "name": "Karyna Shuliak",
+      "kind": "person",
+      "tag": "MAYBE",
+      "role": "Named in operator 1953 trust bequest graph \u2014 verify on primary instrument",
+      "aliases": [
+        "Shuliak"
+      ],
+      "sources": [
+        "GRAPH_EDGES.csv",
+        "FU-004"
+      ]
     }
   ],
   "edges": [
@@ -585,6 +1116,272 @@ export const evidenceGraph = {
       "rel": "discloses_records_about",
       "tag": "SOLID",
       "note": "Transparency Act / DOJ library"
+    },
+    {
+      "to": "E-EPSTEIN",
+      "rel": "financial_relationship_investigated",
+      "tag": "SOLID",
+      "note": "Dechert investigation of Black-Epstein dealings (public exhibit)",
+      "from": "E-BLACK"
+    },
+    {
+      "to": "E-DECHERT",
+      "rel": "retained_counsel",
+      "tag": "SOLID",
+      "note": "Apollo Conflicts Committee retained Dechert",
+      "from": "E-APOLLO"
+    },
+    {
+      "to": "E-APOLLO",
+      "rel": "affiliated_public_figure",
+      "tag": "SOLID",
+      "note": "Public association; not criminal finding",
+      "from": "E-BLACK"
+    },
+    {
+      "from": "E-JEFFREY-EPSTEIN",
+      "to": "E-DARREN-INDYKE",
+      "rel": "APPOINTS_TRUSTEE_1953",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-JEFFREY-EPSTEIN",
+      "to": "E-RICHARD-KAHN",
+      "rel": "APPOINTS_TRUSTEE_1953",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-JEFFREY-EPSTEIN",
+      "to": "E-KARYNA-SHULIAK",
+      "rel": "BEQUESTS_PRIMARY_1953",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-KARYNA-SHULIAK",
+      "to": "E-COLUMBIA-DENTAL",
+      "rel": "ATTENDED",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-COLUMBIA-DENTAL",
+      "to": "E-COLUMBIA-UNIVERSITY",
+      "rel": "PART_OF",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-ARTHUR-ENGORON",
+      "to": "E-COLUMBIA-UNIVERSITY",
+      "rel": "ALUM_BA_1972",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-ARTHUR-ENGORON",
+      "to": "E-NYU-LAW",
+      "rel": "ALUM_JD_1979",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-DARREN-INDYKE",
+      "to": "E-CORNELL-LAW",
+      "rel": "ALUM_JD_1991",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-DARREN-INDYKE",
+      "to": "E-COLGATE",
+      "rel": "ALUM_BA_1986",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-BRUCE-REINHART",
+      "to": "E-SARAH-KELLEN",
+      "rel": "REPRESENTED_COUNSEL",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-BRUCE-REINHART",
+      "to": "E-NADIA-MARCINKOVA",
+      "rel": "REPRESENTED_COUNSEL",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-BRUCE-REINHART",
+      "to": "E-EPSTEIN-PILOTS",
+      "rel": "REPRESENTED_COUNSEL",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-JEFFREY-EPSTEIN",
+      "to": "E-BRUCE-REINHART",
+      "rel": "PAID_FOR_EMPLOYEE_COUNSEL",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-BRUCE-REINHART",
+      "to": "E-MAR-A-LAGO-WARRANT",
+      "rel": "SIGNED_AS_MAGISTRATE",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-SARAH-KELLEN",
+      "to": "E-NPA-2007",
+      "rel": "NAMED_POTENTIAL_CO_CONSPIRATOR",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-NADIA-MARCINKOVA",
+      "to": "E-NPA-2007",
+      "rel": "NAMED_POTENTIAL_CO_CONSPIRATOR",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-HARRY-BELLER",
+      "to": "E-HBRK",
+      "rel": "CO_FOUNDER",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-RICHARD-KAHN",
+      "to": "E-HBRK",
+      "rel": "CO_FOUNDER",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-HARRY-BELLER",
+      "to": "E-BUTTERFLY-TRUST",
+      "rel": "SUCCESSOR_TRUSTEE",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-HARRY-BELLER",
+      "to": "E-JPMORGAN",
+      "rel": "SAR_SUBJECT",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-HARRY-BELLER",
+      "to": "E-CIVIL-DISCOVERY",
+      "rel": "FIFTH_AMENDMENT",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-INDYKE-DKI-PLLC",
+      "to": "E-301-E-66-10B",
+      "rel": "OFFICE",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-HBRK",
+      "to": "E-301-E-66-10F",
+      "rel": "OFFICE",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-301-E-66",
+      "to": "E-HOUSING-NETWORK",
+      "rel": "SAME_BUILDING",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-MICHELLE-SAIPHER",
+      "to": "E-1953-TRUST",
+      "rel": "BEQUEST_3M",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-DARREN-INDYKE",
+      "to": "E-1953-TRUST",
+      "rel": "RESIDUAL_JUMP_20_TO_50M",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-RICHARD-KAHN",
+      "to": "E-1953-TRUST",
+      "rel": "RESIDUAL_JUMP_20_TO_25M",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-RICHARD-KAHN",
+      "to": "E-1953-TRUST",
+      "rel": "SIGNS_DEATH_DAY",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-BUTTERFLY-TRUST",
+      "to": "E-SUCCESSOR-TRUSTS",
+      "rel": "DECANT_2020",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-SUCCESSOR-TRUSTS",
+      "to": "E-INDYKE-KAHN-SPOUSES",
+      "rel": "BENEFICIARIES",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-LEON-BLACK",
+      "to": "E-SOUTHERN-TRUST-COMPANY",
+      "rel": "PAID_23_5M_2013",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-JEFFREY-EPSTEIN",
+      "to": "E-RICHARD-KAHN",
+      "rel": "DIRECTS_WIRE_250K_DEC2018",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-RICHARD-KAHN",
+      "to": "E-WIRE-250K-RECIPIENT",
+      "rel": "EXECUTES_WIRE",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-DARREN-INDYKE",
+      "to": "E-JAIL-COMPUTER-ACCESS",
+      "rel": "FACILITATES_WITH_PARALEGAL",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
+    },
+    {
+      "from": "E-SOUTHERN-TRUST-COMPANY",
+      "to": "E-DEUTSCHE-BANK",
+      "rel": "ACCOUNT_HOLDER",
+      "tag": "MAYBE",
+      "note": "GRAPH_EDGES.csv \u2014 operator established tag; needs primary cite for SOLID"
     }
   ],
   "pipeline": [
@@ -798,6 +1595,34 @@ export const evidenceGraph = {
       "class": "url_index",
       "tag": "SOLID",
       "path": "strand-1953 08_URL_INDEX"
+    },
+    {
+      "id": "SRC-EFTA-PRIMARY",
+      "title": "EFTA primary text extracts",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "swarm 15_EFTA_PRIMARY/text"
+    },
+    {
+      "id": "SRC-DECHERT",
+      "title": "Dechert Exhibit 99.1",
+      "class": "public_primary",
+      "tag": "SOLID",
+      "path": "EFTA02730996"
+    },
+    {
+      "id": "SRC-CYCLE21",
+      "title": "CYCLE20/21 + ANOMALY_MESH",
+      "class": "swarm_export",
+      "tag": "MAYBE",
+      "path": "live-online-agent-swarm"
+    },
+    {
+      "id": "SRC-HYPER",
+      "title": "Hyper kernel + Ollama stack",
+      "class": "infra",
+      "tag": "SOLID",
+      "path": "hyper_kernel/"
     }
   ],
   "follow_ups": [
