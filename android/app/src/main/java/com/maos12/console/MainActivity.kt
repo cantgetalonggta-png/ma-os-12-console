@@ -21,10 +21,16 @@ import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
 
 /**
- * MA-OS-12 Android companion shell.
- * Loads the multi-agent OS web console in a hardened WebView.
+ * MA-OS-12 Epstein Public-Record Investigation Desk — Android companion.
+ *
+ * Hardened WebView shell for the live Vercel console.
  * Deep link: maos12://open?url=<https-url>
- * Policy: public-record ceiling; no secret storage in the shell.
+ *
+ * Policy:
+ *  - HTTPS only (cleartext disabled in manifest)
+ *  - No secret / API key storage in the shell
+ *  - Public-record ceiling; association ≠ guilt
+ *  - Operator ledger is LEAD track (not auto-SOLID)
  */
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = getString(R.string.app_name)
+        supportActionBar?.subtitle = "LIVE · GOD"
 
         webView = findViewById(R.id.webview)
         progress = findViewById(R.id.progress)
@@ -64,11 +71,17 @@ class MainActivity : AppCompatActivity() {
         val data = intent?.data
         if (data != null && data.scheme == "maos12" && data.host == "open") {
             val q = data.getQueryParameter("url")
-            if (!q.isNullOrBlank() && q.startsWith("https://")) return q
+            if (!q.isNullOrBlank() && isAllowedHttps(q)) return q
         }
         val extra = intent?.getStringExtra(EXTRA_URL)
-        if (!extra.isNullOrBlank() && extra.startsWith("https://")) return extra
+        if (!extra.isNullOrBlank() && isAllowedHttps(extra)) return extra
         return defaultConsoleUrl
+    }
+
+    private fun isAllowedHttps(url: String): Boolean {
+        if (!url.startsWith("https://")) return false
+        val host = Uri.parse(url).host ?: return false
+        return true
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -82,7 +95,9 @@ class MainActivity : AppCompatActivity() {
         s.allowFileAccess = false
         s.allowContentAccess = false
         s.mediaPlaybackRequiresUserGesture = true
-        s.userAgentString = s.userAgentString + " MAOS12Console/1.0"
+        s.builtInZoomControls = true
+        s.displayZoomControls = false
+        s.userAgentString = s.userAgentString + " MAOS12Console/2.0 GOD-LIVE"
         if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
             WebSettingsCompat.setForceDark(s, WebSettingsCompat.FORCE_DARK_ON)
         }
@@ -93,12 +108,24 @@ class MainActivity : AppCompatActivity() {
             ): Boolean {
                 val u = request.url
                 return when (u.scheme) {
-                    "https", "http" -> false
+                    "https" -> false
+                    "http" -> {
+                        Toast.makeText(
+                            this@MainActivity,
+                            R.string.https_only,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        true
+                    }
                     "mailto", "tel" -> {
                         try {
                             startActivity(Intent(Intent.ACTION_VIEW, u))
                         } catch (_: Exception) {
-                            Toast.makeText(this@MainActivity, R.string.no_handler, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@MainActivity,
+                                R.string.no_handler,
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                         true
                     }
@@ -137,6 +164,14 @@ class MainActivity : AppCompatActivity() {
                 webView.loadUrl(defaultConsoleUrl)
                 true
             }
+            R.id.action_live_console -> {
+                webView.loadUrl(PRODUCTION_VERCEL_URL)
+                true
+            }
+            R.id.action_status -> {
+                showLiveStatus()
+                true
+            }
             R.id.action_set_url -> {
                 promptUrl()
                 true
@@ -158,6 +193,22 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun showLiveStatus() {
+        val msg = """
+            Console: $defaultConsoleUrl
+            Production: $PRODUCTION_VERCEL_URL
+            Mode: LIVE HTTP · GOD profile
+            Tracks: Residue · Operator ledger · Contradictions · Missing productions · Meridian
+            Policy: public-record only · association ≠ guilt · no secrets in shell
+            Deep link: maos12://open?url=https://…
+        """.trimIndent()
+        AlertDialog.Builder(this)
+            .setTitle(R.string.status_title)
+            .setMessage(msg)
+            .setPositiveButton(android.R.string.ok, null)
+            .show()
     }
 
     private fun promptUrl() {
@@ -197,8 +248,12 @@ class MainActivity : AppCompatActivity() {
         private const val PREFS = "maos12"
         private const val KEY_URL = "console_url"
         const val EXTRA_URL = "extra_url"
-        // Built-in fallback: GitHub Pages-style docs; operator sets live grok.me URL in-app
-        const val FALLBACK_CONSOLE_URL =
-            "https://cantgetalonggta-png.github.io/ma-os-12-console/"
+
+        /** Live Vercel production console (MA-OS-12 desk). */
+        const val PRODUCTION_VERCEL_URL =
+            "https://ma-os-12-console-echo-ec69.vercel.app"
+
+        /** Built-in fallback: production Vercel (was GitHub Pages). */
+        const val FALLBACK_CONSOLE_URL = PRODUCTION_VERCEL_URL
     }
 }

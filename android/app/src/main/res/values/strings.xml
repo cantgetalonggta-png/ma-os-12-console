@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MA-OS-12</string>
+    <string name="app_name">Epstein Desk</string>
     <string name="reload">Reload</string>
     <string name="home">Console home</string>
+    <string name="live_console">Open LIVE console</string>
+    <string name="status">LIVE status</string>
+    <string name="status_title">LIVE · GOD status</string>
     <string name="set_url">Set console URL</string>
     <string name="set_url_title">Console HTTPS URL</string>
     <string name="save">Save</string>
     <string name="open_browser">Open in browser</string>
     <string name="about">About</string>
-    <string name="about_title">MA-OS-12 Console</string>
-    <string name="about_body">Android WebView shell for the Multi-Agent Operating System control panel.\n\nPublic-record ceiling · HITL · SOLID/MAYBE.\nNo secrets are stored in this shell. Set your live console HTTPS URL from the menu.\n\nDeep link: maos12://open?url=https://…</string>
+    <string name="about_title">Epstein Public-Record Desk</string>
+    <string name="about_body">Android shell for the Epstein public-record investigation desk (MA-OS-12).\n\nLIVE Vercel console · GOD OSINT profile · Meridian globe · Operator ledger.\n\nPublic-record ceiling · HITL · SOLID/MAYBE · association ≠ guilt.\nNo secrets are stored in this shell.\n\nDeep link: maos12://open?url=https://…</string>
     <string name="https_only">HTTPS URLs only</string>
     <string name="no_handler">No app can handle this link</string>
 </resources>
