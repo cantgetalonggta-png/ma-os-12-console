@@ -1,0 +1,8 @@
+{
+  "build": "BUILD_MASTER",
+  "desk_build": "ok",
+  "mcp_bridge": "up",
+  "credential_policy": "oauth_and_env_inputs_only",
+  "refused": ["drive_key_dumps", "codespaces_screenshot_secrets", "admaster_blob"],
+  "tabs": ["residue", "operator_ledger", "contradictions", "missing", "meridian", "distill", "connectors"]
+}

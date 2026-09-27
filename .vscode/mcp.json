@@ -1,0 +1,33 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "github-token",
+      "description": "GitHub PAT — VS Code stores this; never paste Drive key dumps here",
+      "password": true
+    },
+    {
+      "type": "promptString",
+      "id": "mcp-bridge-token",
+      "description": "Optional shared token for local MCP HTTP bridge",
+      "password": true
+    }
+  ],
+  "servers": {
+    "maOs12HttpBridge": {
+      "type": "http",
+      "url": "http://127.0.0.1:8788/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:mcp-bridge-token}"
+      }
+    },
+    "githubOfficial": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github-token}"
+      }
+    }
+  }
+}
