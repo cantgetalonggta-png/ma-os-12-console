@@ -1,0 +1,40 @@
+name: automationcrew-permanent-hourly
+on:
+  schedule:
+    - cron: "0 * * * *"   # every hour UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "AUTOMATIONCREW/**"
+      - "config/self.*.yaml"
+      - "scripts/crew_cycle.py"
+      - ".github/workflows/automationcrew-hourly.yml"
+jobs:
+  permanent-crew:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Assert permanent lock
+        run: |
+          python3 -c "import json; d=json.load(open('AUTOMATIONCREW/PERMANENT_LOCK.json')); assert d['permanent'] is True; print('PERMANENT LOCK OK')"
+      - name: Run AutomationCrew cycle
+        run: python3 scripts/crew_cycle.py --once
+      - name: Deploy gate (desk + bridge probes)
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open("AUTOMATIONCREW/LAST_CYCLE.json"))
+          assert d.get("deployment_activation")=="green", d
+          print("DEPLOYMENT_ACTIVATION GREEN")
+          PY
+      - name: Commit learning log if changed
+        run: |
+          git config user.name "MA-OS-12 AutomationCrew"
+          git config user.email "agent@ma-os-12.local"
+          git add self/LEARNING_LOG.md AUTOMATIONCREW/LAST_CYCLE.json || true
+          git diff --cached --quiet || git commit -m "chore(automationcrew): hourly cycle log [skip ci]"
+          git push origin HEAD:main || true

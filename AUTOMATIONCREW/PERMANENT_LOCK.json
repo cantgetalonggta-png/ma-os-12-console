@@ -1,0 +1,16 @@
+{
+  "permanent": true,
+  "name": "MA-OS-12-AUTOMATIONCREW-PERMANENT",
+  "base": "ma-os-12-console",
+  "unattended": true,
+  "require_operator_approval_only_for": [
+    "secret_rotation_confirmation",
+    "paid_model_download_gt_2gb",
+    "destructive_delete_repos",
+    "STOP_EXPORT",
+    "pause_automation"
+  ],
+  "dual_tts": {"n1": "rex", "n2": "helios", "style": "unhinged_conversational"},
+  "cadence": "hourly",
+  "cancel_tokens": ["STOP EXPORT", "pause automation", "stop automationcrew"]
+}
