@@ -1,13 +1,6 @@
 {
   "name": "manus-mcp-bridge",
   "private": true,
-  "version": "0.1.0",
-  "type": "module",
-  "scripts": {
-    "build": "echo no-build",
-    "start": "node api/index.js"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+  "description": "Python FastAPI bridge — Vercel uses server.py not npm build",
+  "scripts": { "build": "echo python-bridge" }
 }

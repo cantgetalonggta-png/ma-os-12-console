@@ -1,12 +1,9 @@
-# manus-mcp-bridge
+# MCP HTTP Bridge v1.5.0
 
-Vercel Root Directory for project **manus-mcp-bridge**.
+Alias: manus-mcp-bridge
 
-Public-record MCP HTTP shim:
+Autoresearch: experiment → synthesize → steer (dry-run default)
 
-- `GET /health` — status (no secrets)
-- `POST /` — tools `public_record_get` | `desk_status`
-- Optional env `MCP_BRIDGE_TOKEN` (set in Vercel project env)
-- Allowlist: justice.gov, courtlistener.com, web.archive.org, govinfo.gov, sec.gov
+Endpoints: /health /eval /research /mcp
 
-Repo also has local `mcp-http-bridge/` (loopback README). This folder is the deployable serverless surface.
+Vercel Root Directory: `mcp-http-bridge` or `manus-mcp-bridge` (identical).
