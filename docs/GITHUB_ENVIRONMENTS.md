@@ -1,6 +1,6 @@
 # GitHub Environments — MA-OS-12 (exact steps)
 
-This maps GitHub’s “Managing environments for deployment” docs to **your** repos.
+Maps GitHub’s “Managing environments for deployment” docs to **your** repos.
 
 Repo is **public** → Free plan **can** use environments + environment secrets.
 
@@ -22,14 +22,17 @@ Jobs that say `environment: production` only see that environment’s secrets **
 1. Environments UI  
    https://github.com/cantgetalonggta-png/ma-os-12-console/settings/environments
 
-2. Repo Actions secrets (fallback if not using environments)  
+2. Repo Actions secrets (fallback)  
    https://github.com/cantgetalonggta-png/ma-os-12-console/settings/secrets/actions
 
 3. Workflows  
    https://github.com/cantgetalonggta-png/ma-os-12-console/actions
 
-4. Live app (Vercel, not GitHub env URL)  
+4. Live app  
    https://ma-os-12-console-echo-ec69.vercel.app
+
+5. Vercel project env (runtime for Vite)  
+   https://vercel.com/echo-ec69/ma-os-12-console/settings/environment-variables
 
 ---
 
@@ -37,25 +40,37 @@ Jobs that say `environment: production` only see that environment’s secrets **
 
 1. Open: https://github.com/cantgetalonggta-png/ma-os-12-console/settings/environments  
 2. **New environment** → name: `production` → **Configure environment**  
+   - If the environment already exists (auto-created by a workflow run), open it and configure.
 3. Optional protection:
    - **Required reviewers** → add yourself (or leave off for solo auto-deploy)
    - **Deployment branches** → **Selected branches** → allow `main` only  
-4. Under **Environment secrets** → **Add secret**:
+4. Under **Environment secrets** → **Add secret** (encrypted):
 
 | Name | Value | Notes |
 |------|--------|------|
-| `VERCEL_TOKEN` | from https://vercel.com/account/tokens | Create token, paste **once** into this secret UI only |
-| `VERCEL_ORG_ID` | team id if CLI needs it | optional |
-| `VERCEL_PROJECT_ID` | `prj_Ozz5MVxosia5r1JLxa5ah8Lb4ZV7` | public project id, ok as plain |
+| `VERCEL_TOKEN` | from https://vercel.com/account/tokens | Paste **only** in GitHub secret UI |
+| `VERCEL_ORG_ID` | optional team/org id for CLI | optional |
+| `VERCEL_PROJECT_ID` | `prj_Ozz5MVxosia5r1JLxa5ah8Lb4ZV7` | public project id |
 
-5. Under **Environment variables** (non-secret):
+5. Under **Environment variables** (non-secret, `vars.*` in Actions):
 
 | Name | Value |
 |------|--------|
+| `VITE_PUBLIC_CONSOLE_URL` | `https://ma-os-12-console-echo-ec69.vercel.app` |
 | `PUBLIC_CONSOLE_URL` | `https://ma-os-12-console-echo-ec69.vercel.app` |
-| `VITE_PUBLIC_CONSOLE_URL` | same |
+| `VITE_PUBLIC_GITHUB_REPO` | `https://github.com/cantgetalonggta-png/ma-os-12-console` |
+| `VITE_PUBLIC_APP_NAME` | `MA-OS-12 Public-Record Investigation Desk` |
 
 6. Save.
+
+### Same non-secret vars on **Vercel** (required for Vite client build)
+
+GitHub env vars do **not** automatically inject into Vercel builds from Git integration. Put the same four public values in:
+
+https://vercel.com/echo-ec69/ma-os-12-console/settings/environment-variables  
+→ Production (and Preview if you want) → **Plain** / not Sensitive.
+
+Repo already documents them in `.env.example`.
 
 ## Create `preview` (optional)
 
@@ -75,17 +90,23 @@ environment:
   url: https://ma-os-12-console-echo-ec69.vercel.app
 ```
 
-So the job can only read `secrets.VERCEL_TOKEN` from the **production** environment (if you store it there).
+The job reads `secrets.VERCEL_TOKEN` from the **production** environment (or repo Actions secrets).
 
 ### Run it
 
-1. Put `VERCEL_TOKEN` in Environment secrets (step above) **or** Actions secrets  
+1. Put `VERCEL_TOKEN` in Environment secrets **or** Actions secrets  
 2. Actions → **vercel-prod-deploy** → **Run workflow**  
    or push to `main` under `src/**` / `package.json` / `vercel.json`
 
 ### If token missing
 
-Job fails with a clear message. Do **not** paste the token into chat — only into GitHub’s secret form.
+Job fails with a clear message. Do **not** paste the token into chat.
+
+---
+
+## Auto-create note (from GitHub docs)
+
+Running a workflow that references an environment that does not exist **creates** that environment with the referenced name. Configure secrets/rules afterward in Settings → Environments.
 
 ---
 
@@ -94,27 +115,25 @@ Job fails with a clear message. Do **not** paste the token into chat — only in
 Environments UI:  
 https://github.com/cantgetalonggta-png/mcp-stack-deploy/settings/environments
 
-Suggested:
-
 | Env | Secrets (encrypted) |
 |-----|---------------------|
-| `production` | `BRIDGE_TOKEN`, optional `MANUS_API_KEY` for Actions only if needed |
+| `production` | `BRIDGE_TOKEN`, optional `MANUS_API_KEY` for Actions only |
 
-Vercel still owns runtime env for **manus-mcp-bridge**. GitHub env secrets are for **Actions** jobs, not automatic Vercel inject.
+Runtime keys for the live bridge still live in **Vercel** project env.
 
 ---
 
-## Vercel vs GitHub (don’t mix them up)
+## Three different “protections” (do not mix)
 
 | Concern | Where |
 |---------|--------|
 | Runtime env for Vite / FastAPI | **Vercel** project env |
 | CI deploy token for `vercel` CLI | **GitHub** environment secret `VERCEL_TOKEN` |
-| Deployment Protection (SSO 302) | **Vercel** project settings |
-| Required reviewers before deploy job | **GitHub** environment protection |
+| Browser SSO / 302 login wall | **Vercel** Deployment Protection (`ssoProtection`) |
+| Required reviewers before Actions deploy job | **GitHub** environment protection |
 
 ---
 
 ## Delete an environment
 
-Settings → Environments → trash icon → confirm. Deletes that env’s secrets/rules.
+Settings → Environments → trash → confirm. Deletes that env’s secrets/rules.
