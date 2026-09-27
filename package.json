@@ -6,7 +6,7 @@
     "dev": "vite --host 0.0.0.0 --port 8080",
     "build": "vite build",
     "preview": "vite preview",
-    "vercel-build": "echo prebuilt"
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",
