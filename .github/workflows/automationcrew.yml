@@ -1,0 +1,21 @@
+name: automationcrew-deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  crew-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Validate self configs
+        run: |
+          python3 -c "import yaml,sys; yaml.safe_load(open('config/self.agents_config.yaml')); yaml.safe_load(open('config/self.tasks_config.yaml')); print('yaml ok')"
+      - name: Crew cycle once (probe live)
+        run: python3 scripts/crew_cycle.py --once
+      - name: Secret scan
+        run: |
+          if grep -RInE 'sk-[a-zA-Z0-9]{20,}|MANUS_API_KEY=sk' --exclude-dir=.git . ; then exit 1; fi
+          echo clean

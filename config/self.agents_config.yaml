@@ -1,0 +1,34 @@
+# MA-OS-12 Epstein Investigation Desk — Self Agents Config
+# Base: ma-os-12-console (Public-Record Investigation Desk)
+version: "1.0.0"
+base_repo: cantgetalonggta-png/ma-os-12-console
+unified_repo: cantgetalonggta-png/ma-os-12-unified-codespace
+ceiling: public-record-only
+association_not_guilt: true
+dual_tts:
+  n1: rex
+  n2: helios
+  style: unhinged_conversational  # sighs, laughs, jokes, emotional swings
+agents:
+  - id: supervisor
+    role: Orchestrate crew cycle; never invent facts
+    skills: [llm-orchestration, multi-agent-patterns, research-automation]
+  - id: distill_worker
+    role: Hourly distill SOLID/MAYBE from public packs
+    skills: [epstein-investigation-synthesizer, document-intelligence, truth-verification]
+  - id: ingest_worker
+    role: Drive/GitHub public ingest only
+    skills: [ethical-data-harvesting, osint-rag-master, legal-osint-compliance-layer]
+  - id: deploy_worker
+    role: Auto-deploy desk + bridge on green gates
+    skills: [deployment-automation, code-evolution, metrics-self-healing]
+  - id: self_learner
+    role: Capture cycle lessons into self/LEARNING_LOG.md
+    skills: [self-dev-resources, ontological-self-update, autoresearch]
+  - id: narrator_rex
+    role: N1 dual export voice
+    voice_id: rex
+  - id: narrator_helios
+    role: N2 dual export voice
+    voice_id: helios
+crew_name: AUTOMATIONCREW

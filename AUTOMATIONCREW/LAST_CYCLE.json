@@ -1,0 +1,33 @@
+{
+  "ts": "2026-09-27T07:56:59.226214+00:00",
+  "crew": "AUTOMATIONCREW",
+  "base": "ma-os-12-console",
+  "probes": [
+    {
+      "url": "https://ma-os-12-console-echo-ec69.vercel.app",
+      "status": 200,
+      "ok": true,
+      "snippet": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-w"
+    },
+    {
+      "url": "https://manus-mcp-bridge-echo-ec69.vercel.app/health",
+      "status": 200,
+      "ok": true,
+      "snippet": "{\"ok\":true,\"service\":\"mcp-http-bridge\",\"alias\":\"manus-mcp-bridge\",\"version\":\"1.5.0\",\"bridge_token_configured\":true,\"manu"
+    }
+  ],
+  "tasks": [
+    "T01_ingest_stub",
+    "T02_distill_stub",
+    "T03_deploy_gate",
+    "T04_self_learn",
+    "T05_dual_export_external",
+    "T06_status"
+  ],
+  "dual_tts": {
+    "n1": "rex",
+    "n2": "helios",
+    "style": "unhinged_conversational"
+  },
+  "deployment_activation": "green"
+}

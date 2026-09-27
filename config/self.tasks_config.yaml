@@ -1,0 +1,34 @@
+# MA-OS-12 Self Tasks Config — Epstein investigation codespace base
+version: "1.0.0"
+loop: continuous  # until STOP EXPORT / pause automation
+tasks:
+  - id: T01_ingest
+    agent: ingest_worker
+    every: 1h
+    action: public_drive_github_ingest
+  - id: T02_distill
+    agent: distill_worker
+    every: 1h
+    action: evidence_graph_merge_solid_maybe
+  - id: T03_deploy
+    agent: deploy_worker
+    every: on_change
+    action: vite_build_github_push_vercel
+    gates: [tests_or_verify_script, no_secrets_in_tree]
+  - id: T04_self_learn
+    agent: self_learner
+    every: cycle_end
+    action: append_learning_log_and_self_update
+  - id: T05_dual_export
+    agent: [narrator_rex, narrator_helios]
+    every: agent_reply
+    action: pdf_plus_6min_unhinged_mp3
+  - id: T06_status
+    agent: supervisor
+    every: cycle_end
+    action: refresh_PURPOSE_AND_STATUS
+deployment_activation:
+  desk_url: https://ma-os-12-console-echo-ec69.vercel.app
+  bridge_url: https://manus-mcp-bridge-echo-ec69.vercel.app/health
+  unified_repo: https://github.com/cantgetalonggta-png/ma-os-12-unified-codespace
+  console_repo: https://github.com/cantgetalonggta-png/ma-os-12-console
