@@ -1,0 +1,38 @@
+{
+  "created": "2026-09-27T08:41:57.714783+00:00",
+  "show": "DEV-TEST \u00b7 Rex & Helios Unhinged Societal Fuckery Hour",
+  "format": "PDF + 20min dual MP3 + photoreal stills + short video",
+  "voices": {
+    "n1": "rex",
+    "n2": "helios",
+    "style": "unhinged_conversational_fresh_scripts"
+  },
+  "topics": [
+    {
+      "id": 1,
+      "title": "The Attention Casino",
+      "thesis": "Feeds are slot machines with better fonts\u2014rage, envy, and FOMO as engagement fuel while sleep and focus get liquidated."
+    },
+    {
+      "id": 2,
+      "title": "Housing as a Hostage Situation",
+      "thesis": "Shelter treated like a speculative asset class: rent extraction, zoning theater, and 'just move' advice from people who already own the ladder."
+    },
+    {
+      "id": 3,
+      "title": "AI Theater vs Reality",
+      "thesis": "Hype cycles sell god-mode demos while reliability, copyright gray zones, and synthetic media erode the shared sense of what is true."
+    },
+    {
+      "id": 4,
+      "title": "Trust Collapse in Public Health & Institutions",
+      "thesis": "Real failures + online grift = a public that can't tell a peer-reviewed correction from a thread with 40k likes and zero methods."
+    },
+    {
+      "id": 5,
+      "title": "Privacy Theater & Surveillance Capitalism",
+      "thesis": "Cookie banners and 'we value your privacy' copy while behavioral data is the product\u2014consent UX designed to exhaust, not protect."
+    }
+  ],
+  "disclaimer": "Satire + commentary. Not legal/medical advice. Association of ideas \u2260 guilt of persons."
+}
