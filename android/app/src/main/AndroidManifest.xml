@@ -28,6 +28,15 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="maos12" android:host="open" />
             </intent-filter>
+            <!-- Optional App Links style for console host (view-only; no auto-verify required) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="ma-os-12-console-echo-ec69.vercel.app" />
+            </intent-filter>
         </activity>
     </application>
 </manifest>

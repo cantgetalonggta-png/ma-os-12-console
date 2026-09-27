@@ -21,10 +21,10 @@ import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
 
 /**
- * MA-OS-12 Android companion shell.
- * Loads the multi-agent OS web console in a hardened WebView.
+ * MA-OS-12 Android companion shell (v2.2).
+ * Loads the public-record investigation desk Web console.
  * Deep link: maos12://open?url=<https-url>
- * Policy: public-record ceiling; no secret storage in the shell.
+ * Policy: HTTPS-only, no secrets in the shell, public-record ceiling.
  */
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = getString(R.string.app_name)
+        supportActionBar?.subtitle = getString(R.string.subtitle_live)
 
         webView = findViewById(R.id.webview)
         progress = findViewById(R.id.progress)
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         s.allowFileAccess = false
         s.allowContentAccess = false
         s.mediaPlaybackRequiresUserGesture = true
-        s.userAgentString = s.userAgentString + " MAOS12Console/2.1 DISTILL-LIVE"
+        s.userAgentString = s.userAgentString + " MAOS12Console/2.2 BRIDGE-v1.4 DISTILL-LIVE"
         if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
             WebSettingsCompat.setForceDark(s, WebSettingsCompat.FORCE_DARK_ON)
         }
@@ -94,7 +95,10 @@ class MainActivity : AppCompatActivity() {
                 val u = request.url
                 return when (u.scheme) {
                     "https" -> false
-                    "http" -> true
+                    "http" -> {
+                        Toast.makeText(this@MainActivity, R.string.https_only, Toast.LENGTH_SHORT).show()
+                        true
+                    }
                     "mailto", "tel" -> {
                         try {
                             startActivity(Intent(Intent.ACTION_VIEW, u))
@@ -134,6 +138,14 @@ class MainActivity : AppCompatActivity() {
                 webView.reload()
                 true
             }
+            R.id.action_live_console -> {
+                webView.loadUrl(FALLBACK_CONSOLE_URL)
+                true
+            }
+            R.id.action_status -> {
+                showLiveStatus()
+                true
+            }
             R.id.action_home -> {
                 webView.loadUrl(defaultConsoleUrl)
                 true
@@ -144,7 +156,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.action_open_browser -> {
                 val u = webView.url
-                if (!u.isNullOrBlank()) {
+                if (!u.isNullOrBlank() && u.startsWith("https://")) {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(u)))
                 }
                 true
@@ -159,6 +171,27 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun showLiveStatus() {
+        val current = webView.url ?: defaultConsoleUrl
+        val msg = getString(
+            R.string.status_body,
+            current,
+            FALLBACK_CONSOLE_URL,
+            BRIDGE_HEALTH_HINT
+        )
+        AlertDialog.Builder(this)
+            .setTitle(R.string.status_title)
+            .setMessage(msg)
+            .setPositiveButton(R.string.open_bridge_health) { _, _ ->
+                webView.loadUrl(BRIDGE_HEALTH_HINT)
+            }
+            .setNeutralButton(R.string.live_console) { _, _ ->
+                webView.loadUrl(FALLBACK_CONSOLE_URL)
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
     }
 
     private fun promptUrl() {
@@ -200,5 +233,8 @@ class MainActivity : AppCompatActivity() {
         const val EXTRA_URL = "extra_url"
         const val FALLBACK_CONSOLE_URL =
             "https://ma-os-12-console-echo-ec69.vercel.app"
+        /** Prefer production alias; health path is public when SSO is off. */
+        const val BRIDGE_HEALTH_HINT =
+            "https://manus-mcp-bridge-echo-ec69.vercel.app/health"
     }
 }

@@ -1,23 +1,26 @@
-# MA-OS-12 Android Console Shell
+# MA-OS-12 Android shell
 
-Kotlin + WebView companion for the MA-OS-12 multi-agent OS control panel.
+WebView companion for the LIVE desk at:
 
-## Features
-- Hardened WebView (HTTPS only, no cleartext, no file access)
-- Force-dark, progress bar, toolbar actions
-- Persist console URL · deep link `maos12://open?url=https://…`
-- Public-record ceiling — no secrets stored
+`https://ma-os-12-console-echo-ec69.vercel.app`
 
-## Build (CI free path)
-GitHub Actions workflow builds `assembleDebug` on `ubuntu-latest` (free minutes).
+## Features (v2.2)
+
+- Default console = production Vercel alias
+- Menu: Reload · Open LIVE console · LIVE status (bridge /health) · Home · Set URL · Browser · About
+- UA: `MAOS12Console/2.2 BRIDGE-v1.4 DISTILL-LIVE`
+- HTTPS only; cleartext blocked
+- Deep link: `maos12://open?url=https://…`
+- `singleTop` so deep links reuse the activity
+
+## Build
+
+Open `android/` in Android Studio or:
 
 ```bash
-# local (requires Android SDK)
-./gradlew :app:assembleDebug
+cd android && ./gradlew assembleDebug
 ```
 
-## Install
-Download the **debug APK** artifact from Actions → `android-ci` run.
+## Note
 
-## Policy
-HITL · SOLID/MAYBE · class-based quarantine · no third-party secret reuse.
+If the desk or bridge returns SSO 302, turn off Vercel Authentication on the project in the dashboard. The shell cannot store deployment-protection secrets.
