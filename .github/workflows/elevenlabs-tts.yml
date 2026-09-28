@@ -8,9 +8,9 @@ on:
         required: true
         type: string
       voice_id:
-        description: "ElevenLabs premade voice ID (not a library voice; library IDs 402 on free)"
+        description: "ElevenLabs voice ID. Default Sarah works on free. Library voices 402."
         required: true
-        default: "21m00Tcm4TlvDq8ikWAM"
+        default: "EXAVITQu4vr4xnSDxMaL"
         type: string
       outfile:
         description: "Output filename under artifacts/"
@@ -19,8 +19,8 @@ on:
         type: string
 
 # Requires repository secret: ELEVEN_LABS_KEY_
-# Premade default: Rachel 21m00Tcm4TlvDq8ikWAM (free-tier compatible)
-# Library voices return HTTP 402 on free plans.
+# Working free-tier default: Sarah EXAVITQu4vr4xnSDxMaL (run 36407196951 = success)
+# Rachel 21m00Tcm4TlvDq8ikWAM and library IDs return HTTP 402 on free.
 
 jobs:
   tts:
