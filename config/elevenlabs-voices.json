@@ -1,0 +1,28 @@
+{
+  "note": "Voice IDs are public identifiers, not secrets. API keys stay in GitHub Actions secrets / Vercel env only.",
+  "secret_name": "ELEVENLABS_API_KEY",
+  "model_id_default": "eleven_multilingual_v2",
+  "roles": {
+    "host": { "name": "Declan Sage", "id": "kqVT88a5QfII1HNAEPTJ", "lane": "narration" },
+    "menace": { "name": "Hale", "id": "wWWn96OtTHu1sn8SRGEr", "lane": "conversational" },
+    "supervise": { "name": "Oliver", "id": "L1aJrPa7pLJEyYlh3Ilq", "lane": "narration" },
+    "verify": { "name": "Marv", "id": "3HVqMrtg7gWyWkIQWUAC", "lane": "advertisement" },
+    "merge": { "name": "Kesa", "id": "A2YXU4WQdM14YT3hVcji", "lane": "advertisement" },
+    "reason": { "name": "Will", "id": "KjWPwHJWLungxeiYigoM", "lane": "narrative" },
+    "tough": { "name": "Adam", "id": "IRHApOXLvnW57QJPQH2P", "lane": "characters" },
+    "intense": { "name": "B. Promotional Oxley", "id": "mpqxolTU7HOZxBGDUKes", "lane": "advertisement" },
+    "youth": { "name": "Bridgit", "id": "KR1TkIhkSykEjI4B0DtH", "lane": "advertisement" },
+    "producer": { "name": "Jaye Neutron", "id": "DNCtDD5fcXY2jWCRyj4I", "lane": "advertisement" },
+    "young_male": { "name": "Jon Quintero", "id": "10Oz6dRJfcETCvViPSmk", "lane": "advertisement" }
+  },
+  "audio_laws": [
+    "facts-over-feelings baseline when requested",
+    "no emotional tags spoken on mic",
+    "no filler / no stretch-to-fake duration",
+    "no agent names on mic",
+    "no letter-spam pronunciation",
+    "public-record ceiling: proven / alleged / hypothesis / gap",
+    "name-in-file != guilt; black book != client list; flight log != crime",
+    "probe file on disk before publish"
+  ]
+}

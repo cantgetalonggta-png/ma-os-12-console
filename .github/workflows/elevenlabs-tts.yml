@@ -1,0 +1,73 @@
+name: elevenlabs-tts
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "Text to synthesize (max ~2500 chars recommended)"
+        required: true
+        type: string
+      voice_id:
+        description: "ElevenLabs voice ID (public constant; not a secret)"
+        required: true
+        default: "kqVT88a5QfII1HNAEPTJ"
+        type: string
+      outfile:
+        description: "Output filename under artifacts/"
+        required: false
+        default: "elevenlabs-out.mp3"
+        type: string
+
+# Requires repository secret: ELEVENLABS_API_KEY
+# Optional: ELEVENLABS_API_KEY_BACKUP if you keep a second key
+# Voice IDs are NOT secrets — see config/elevenlabs-voices.json
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate secret presence (no echo of value)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then
+            echo "::error::Missing repository secret ELEVENLABS_API_KEY"
+            echo "Settings → Secrets and variables → Actions → New repository secret"
+            exit 1
+          fi
+          echo "ELEVENLABS_API_KEY is set (length withheld)"
+
+      - name: Call ElevenLabs TTS
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          VOICE_ID: ${{ inputs.voice_id }}
+          OUTFILE: ${{ inputs.outfile }}
+        run: |
+          mkdir -p artifacts
+          # Never print the API key. Never log the Authorization header value.
+          HTTP_CODE=$(curl -sS -o "artifacts/${OUTFILE}" -w "%{http_code}" \
+            -X POST "https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}" \
+            -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -H "Accept: audio/mpeg" \
+            -d "$(jq -n --arg t "${{ inputs.text }}" '{text:$t, model_id:"eleven_multilingual_v2"}')")
+          echo "HTTP status: ${HTTP_CODE}"
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::error::ElevenLabs TTS failed with HTTP ${HTTP_CODE}"
+            # show response body only if not binary (error JSON)
+            file "artifacts/${OUTFILE}" || true
+            head -c 500 "artifacts/${OUTFILE}" || true
+            exit 1
+          fi
+          ls -la "artifacts/${OUTFILE}"
+
+      - name: Upload MP3 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: elevenlabs-tts
+          path: artifacts/${{ inputs.outfile }}
+          if-no-files-found: error
