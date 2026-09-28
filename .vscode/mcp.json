@@ -14,6 +14,14 @@
     }
   ],
   "servers": {
+    "vercelOfficial": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    },
+    "livekitDocs": {
+      "type": "http",
+      "url": "https://docs.livekit.io/mcp"
+    },
     "maOs12HttpBridge": {
       "type": "http",
       "url": "http://127.0.0.1:8788/mcp",
