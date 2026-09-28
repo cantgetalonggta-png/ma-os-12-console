@@ -18,8 +18,7 @@ on:
         default: "elevenlabs-out.mp3"
         type: string
 
-# Requires repository secret: ELEVENLABS_API_KEY
-# Optional: ELEVENLABS_API_KEY_BACKUP if you keep a second key
+# Requires repository secret: ELEVEN_LABS_KEY_
 # Voice IDs are NOT secrets — see config/elevenlabs-voices.json
 
 jobs:
@@ -32,33 +31,32 @@ jobs:
 
       - name: Validate secret presence (no echo of value)
         env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_LABS_KEY_: ${{ secrets.ELEVEN_LABS_KEY_ }}
         run: |
-          if [ -z "$ELEVENLABS_API_KEY" ]; then
-            echo "::error::Missing repository secret ELEVENLABS_API_KEY"
-            echo "Settings → Secrets and variables → Actions → New repository secret"
+          if [ -z "$ELEVEN_LABS_KEY_" ]; then
+            echo "::error::Missing repository secret ELEVEN_LABS_KEY_"
+            echo "Settings → Secrets and variables → Actions → name must be exactly ELEVEN_LABS_KEY_"
             exit 1
           fi
-          echo "ELEVENLABS_API_KEY is set (length withheld)"
+          echo "ELEVEN_LABS_KEY_ is set (length withheld)"
 
       - name: Call ElevenLabs TTS
         env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_LABS_KEY_: ${{ secrets.ELEVEN_LABS_KEY_ }}
           VOICE_ID: ${{ inputs.voice_id }}
           OUTFILE: ${{ inputs.outfile }}
         run: |
           mkdir -p artifacts
-          # Never print the API key. Never log the Authorization header value.
+          # Never print the API key. Never log the header value.
           HTTP_CODE=$(curl -sS -o "artifacts/${OUTFILE}" -w "%{http_code}" \
             -X POST "https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}" \
-            -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
+            -H "xi-api-key: ${ELEVEN_LABS_KEY_}" \
             -H "Content-Type: application/json" \
             -H "Accept: audio/mpeg" \
             -d "$(jq -n --arg t "${{ inputs.text }}" '{text:$t, model_id:"eleven_multilingual_v2"}')")
           echo "HTTP status: ${HTTP_CODE}"
           if [ "$HTTP_CODE" != "200" ]; then
             echo "::error::ElevenLabs TTS failed with HTTP ${HTTP_CODE}"
-            # show response body only if not binary (error JSON)
             file "artifacts/${OUTFILE}" || true
             head -c 500 "artifacts/${OUTFILE}" || true
             exit 1

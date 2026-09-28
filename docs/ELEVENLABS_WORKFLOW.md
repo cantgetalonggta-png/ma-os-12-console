@@ -4,7 +4,7 @@
 
 | Name | Where | Notes |
 |------|--------|--------|
-| `ELEVENLABS_API_KEY` | GitHub → Settings → Secrets and variables → Actions | Required for `.github/workflows/elevenlabs-tts.yml` |
+| `ELEVEN_LABS_KEY_` | GitHub → Settings → Secrets and variables → Actions | **Exact name required** for `.github/workflows/elevenlabs-tts.yml` |
 | Same name | Vercel → Project → Environment Variables → Production | Only if a **server** route needs TTS. Never `VITE_*`. |
 
 Do **not** commit API keys. Do **not** put keys in `VITE_*` (browser-exposed).
@@ -22,9 +22,9 @@ See `config/elevenlabs-voices.json`. Voice IDs are not secrets.
 ## Local (operator machine only)
 
 ```bash
-export ELEVENLABS_API_KEY=...   # from your password manager, not from git
+export ELEVEN_LABS_KEY_=...   # from your password manager, not from git
 curl -X POST "https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID" \
-  -H "xi-api-key: $ELEVENLABS_API_KEY" \
+  -H "xi-api-key: $ELEVEN_LABS_KEY_" \
   -H "Content-Type: application/json" \
   -d '{"text":"Hello","model_id":"eleven_multilingual_v2"}' \
   --output out.mp3

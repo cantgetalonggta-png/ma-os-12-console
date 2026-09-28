@@ -14,7 +14,7 @@ Public-record **investigation desk** (Vite SPA). Operator-led leads are visible 
 4. **Open source allowed** under clear guidelines — see unified codespace `directives/OPEN_SOURCE_USE_POLICY.md`.
 5. **Do not** load quarantined probe/dork dumps or evasion scripts into agents.
 6. **Do not** deanonymize redacted victim identities.
-7. **ElevenLabs** — API key = secret `ELEVENLABS_API_KEY` only. Voice IDs = public constants in `config/elevenlabs-voices.json`. Workflow: `.github/workflows/elevenlabs-tts.yml`. Guide: `docs/ELEVENLABS_WORKFLOW.md`.
+7. **ElevenLabs** — API key = secret `ELEVEN_LABS_KEY_` only. Voice IDs = public constants in `config/elevenlabs-voices.json`. Workflow: `.github/workflows/elevenlabs-tts.yml`. Guide: `docs/ELEVENLABS_WORKFLOW.md`.
 8. **Audio production laws** (investigation panels):
    - facts-over-feelings baseline when requested
    - no emotional tags spoken on mic
@@ -30,7 +30,7 @@ Public-record **investigation desk** (Vite SPA). Operator-led leads are visible 
 - Vite + React + Tailwind
 - Optional Three.js / R3F for Meridian-style views
 - Evidence graph JSON as data, not verdicts
-- Dual TTS path: Grok Voice (session) + ElevenLabs (Actions secret)
+- Dual TTS path: Grok Voice (session) + ElevenLabs (Actions secret `ELEVEN_LABS_KEY_`)
 
 ## Preferred agent behavior
 

@@ -1,6 +1,6 @@
 {
   "note": "Voice IDs are public identifiers, not secrets. API keys stay in GitHub Actions secrets / Vercel env only.",
-  "secret_name": "ELEVENLABS_API_KEY",
+  "secret_name": "ELEVEN_LABS_KEY_",
   "model_id_default": "eleven_multilingual_v2",
   "roles": {
     "host": { "name": "Declan Sage", "id": "kqVT88a5QfII1HNAEPTJ", "lane": "narration" },
