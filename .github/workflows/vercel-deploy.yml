@@ -13,38 +13,29 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    # GitHub Environment: secrets + protection rules apply before this job runs
+    runs-n: ubuntu-latest
     environment:
       name: production
       url: https://ma-os-12-console-echo-ec69.vercel.app
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
-
       - run: npm ci || npm install
       - run: npm run build
-
       - name: Install Vercel CLI
         run: npm i -g vercel@latest
-
       - name: Deploy to Vercel production
         env:
-          # Prefer production Environment secret; fall back to repo Actions secret
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN || secrets.VERCEL_TOKEN_ }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           if [ -z "$VERCEL_TOKEN" ]; then
-            echo "::error::Missing VERCEL_TOKEN. Add it under:"
-            echo "  Settings → Environments → production → Environment secrets"
-            echo "  or Settings → Secrets and variables → Actions"
-            echo "Create token at: https://vercel.com/account/tokens"
-            echo "Do not paste the token into chat."
+            echo "::error::Missing VERCEL_TOKEN / VERCEL_TOKEN_"
+            echo "Add under Settings → Environments → production or Actions secrets"
             exit 1
           fi
           vercel pull --yes --environment=production --token="$VERCEL_TOKEN" || true
