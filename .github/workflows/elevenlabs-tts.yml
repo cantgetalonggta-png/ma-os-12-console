@@ -8,9 +8,9 @@ on:
         required: true
         type: string
       voice_id:
-        description: "ElevenLabs voice ID (public constant; not a secret)"
+        description: "ElevenLabs premade voice ID (not a library voice; library IDs 402 on free)"
         required: true
-        default: "kqVT88a5QfII1HNAEPTJ"
+        default: "21m00Tcm4TlvDq8ikWAM"
         type: string
       outfile:
         description: "Output filename under artifacts/"
@@ -19,7 +19,8 @@ on:
         type: string
 
 # Requires repository secret: ELEVEN_LABS_KEY_
-# Voice IDs are NOT secrets — see config/elevenlabs-voices.json
+# Premade default: Rachel 21m00Tcm4TlvDq8ikWAM (free-tier compatible)
+# Library voices return HTTP 402 on free plans.
 
 jobs:
   tts:
@@ -47,7 +48,6 @@ jobs:
           OUTFILE: ${{ inputs.outfile }}
         run: |
           mkdir -p artifacts
-          # Never print the API key. Never log the header value.
           HTTP_CODE=$(curl -sS -o "artifacts/${OUTFILE}" -w "%{http_code}" \
             -X POST "https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}" \
             -H "xi-api-key: ${ELEVEN_LABS_KEY_}" \
