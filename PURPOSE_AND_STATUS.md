@@ -15,8 +15,10 @@
 | Parallel seekers | up to 12 (live: 3) |
 | Live mode | ENABLE_LIVE_FETCH=1 |
 | Hourly task | ma-os-12-hourly-distill-ingest-LIVE-GOD |
+| Elite uplink | TeacherUplink x5 (2026-10-11 cycle complete) |
 
 **Compliance:** Public-record ceiling · association ≠ guilt · HITL · no secret harvest · journals read-only
 
 **Console:** https://ma-os-12-console-echo-ec69.vercel.app  
-**Evolutionary distill:** `EVOLUTIONARY_GROWTH_DISTILL.md`
+**Evolutionary distill:** `EVOLUTIONARY_GROWTH_DISTILL.md`  
+**Latest ADVANCED_TECH_SHARE:** EXPANSION_ENGINE/learning/ADVANCED_TECH_SHARE.md
