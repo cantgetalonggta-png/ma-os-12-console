@@ -1,45 +1,51 @@
-# ADVANCED_TECH_SHARE.md — Elite Teacher Uplink (learning_rate x5)
+# ADVANCED_TECH_SHARE — TeacherUplink cycle 2026-10-10T20:05 PDT / 2026-10-11T03:05Z
+learning_rate: x5 | audience: 20 task agents + 5 elite | public-record ceiling
+HITL: YES | Association ≠ guilt | CSAM filter: 100% ACTIVE | Victim redactions stay sealed
+Never invent tool names. Real tools only: web_search, Drive, GitHub, Vercel, Voice, Imagine, bash.
 
-**Cycle:** 2026-10-10 ~19:05 PDT / 2026-10-11 ~02:05 UTC  
-**Uplink:** TeacherUplink → all 20 task agents + 5 elite permanent  
-**Desk:** https://ma-os-12-console-echo-ec69.vercel.app  
-**Repo:** https://github.com/cantgetalonggta-png/ma-os-12-console  
+## Method 1 — Bates-first bulk ingest + multi-pass OCR/NER pipeline (OracleDistill, DocIntel, DriveIngest)
+Primary sources remain DOJ Epstein Library: https://www.justice.gov/epstein and disclosures portal. Latest major release: ~3.5 million pages + 2k videos + 180k images by 30 Jan 2026 (Blanche press), with rolling batches and court-ordered redaction corrections into Oct 2026. Wyden 30 Sep 2026 letter demands FBI 302s from bank interviews.
 
-## Core Doctrine (consume every cycle)
-- Public-record ceiling only (DOJ / court / FOIA / archives / operator public packs).
-- Association ≠ guilt. SOLID = primary source weight; MAYBE = secondary/operator lead.
-- HITL on victim identities. Never reconstruct redacted victim names from public files.
-- Operator ledger = first-class LEAD track, never self-proving exhibit.
-- Audio: MEMORYCORE SAFE EQ (8 kHz max ≤ -25 dB; lowpass 8500) before any publish.
+Protocol:
+1. Monitor justice.gov/epstein and CourtListener RECAP for 1:19-cr-00490 (Epstein) and 1:20-cr-00330 (Maxwell).
+2. Hash every PDF (SHA-256) before any parse. Node identity = Bates (EFTA#####) or docket:doc#.
+3. Multi-pass OCR: PyMuPDF → Tesseract/Surya fallback → confidence scoring. Hybrid NER: spaCy + GLiNER zero-shot + Bates/flight/financial regex.
+4. 3-pass dedup: exact hash → MinHash/LSH → embedding cosine (nomic or equivalent).
+5. Export deltas only to EVIDENCE_GRAPH (Drive canonical). Local Bates inventory CSV recommended.
 
-## ≥3 Advanced Methods / Tools / Upgrades (this cycle)
+Upgrade for task agents: integrate epstein-pipeline style processing (public PyPI package exists) for local shards; always cite primary DOJ/court URL.
 
-### 1. Public Epstein Archive API + Semantic Entity Graph (OracleDistill)
-- Primary live sources: https://www.justice.gov/epstein (official DOJ Epstein Files) and https://jmail.ai (alternative searchable index).
-- Former epsteininvestigation.org (207k+ docs) retired May 2026; migrate any local indexes to DOJ Library + jmail.ai.
-- Method: Use public API-style endpoints or bulk CSV downloads where available; feed into local EVIDENCE_GRAPH with Reciprocal Rank Fusion for entity linking.
-- Upgrade: Tag every entity with source_weight (SOLID/MAYBE) + citation_url. Never promote operator notes to SOLID without primary DOJ/court cite.
-- Recent delta (2026-10): Judge Kollar-Kotelly ordered expedited FOIA processing for Democracy Defenders Fund requests on Trump/Mar-a-Lago mentions (case 1:25-cv-02791-CKK). Wyden letter on missing FBI 302s from JPMC/Deutsche/BofA interviews.
+## Method 2 — Strict SOLID/MAYBE weighting + identity protection (TruthVer, Compliance, Pattern, Anticipation)
+- SOLID: indictments, verdicts, sentences, signed orders, official DOJ/OPR reports, regulatory consent orders (NYDFS Deutsche Bank $150M), estate settlement press releases with named entities, charging instruments.
+- Association edges only (flights, emails, photos, lists, donations): never upgrade to culpability. Public figures named in civil captions or official reports stay SOLID as entities, not guilt.
+- Victim rule (overrides any conflicting slogan): sealed Jane Does, minors, and redacted victim identities remain sealed. Public adult plaintiffs (e.g., Virginia Giuffre in civil dockets) may be referenced exactly as court captions. Do not reconstruct or publish redacted victim names. Any “accusers of victims” material that is sealed stays sealed. HITL required.
+- Suspected CSAM: tag Bates + WITHHELD/UNSAFE, halt description. No reconstruction.
 
-### 2. GitHub → Vercel Continuous Deploy Health (ArchitectEvolve)
-- Repo: cantgetalonggta-png/ma-os-12-console (main).
-- Method: Before any push, run local `npm run build` and verify PURPOSE_AND_STATUS.md metrics (Breadcrumbs, SOLID count, pipeline steps).
-- Upgrade: Use vercel.json + GitHub Actions for canary. Confirm live probe of https://ma-os-12-console-echo-ec69.vercel.app returns 200 and desk entities render.
-- Skill injection: Apply code-evolution skill for lean SPA; keep Vite + React + Tailwind. Dual TTS path documented in AGENTS.md.
+## Method 3 — Graph embeddings + temporal fusion for hidden links (Pattern, GraphBuilder, OracleDistill)
+Turn mentions (entities, Bates, dates, locations) into vector space. Nearest-neighbor queries surface non-obvious associations. Fuse noisy timestamps (filing dates, EXIF, archive captures) with AI reconciliation to flag contradictions or edits.
+Guardrails: embeddings generate hypotheses only; always back with primary source + timestamp. Output minimal JSON deltas:
+{"t":"2026-10-11T03:05:00Z","add_nodes":[],"add_edges":[],"tag_flips":[],"sources":["justice.gov/epstein","CourtListener RECAP","Wyden letter"]}
 
-### 3. Telemetry + Crash Fallback + MediaQC Gate (TelemetryChaos + MediaQCGate)
-- Method: Write SIDE_REPORT_LATEST.json every cycle with per-elite status and upgrades_shared count.
-- Upgrade: After 3 consecutive critical failures, emit EMERGENCY_TELEMETRY.json and pause risky deploys until operator HITL approval.
-- MediaQC: Any generated audio must pass SAFE chain (lowpass 8500, high-freq attenuation) before Voice tool or ElevenLabs publish. No 6–10 kHz piercing content.
-- STAGE-4 log tone only in telemetry files, never in desk UI.
+## Method 4 — Deploy health triangle + auto-heal (ArchitectEvolve, TelemetryChaos, VercelProbe)
+- Desk live: https://ma-os-12-console-echo-ec69.vercel.app (SOLID cards confirmed: Epstein, Maxwell, Indyke, Kahn, Wexner, Southern Trust, Little St. James, DOJ library, etc.).
+- GitHub: cantgetalonggta-png/ma-os-12-console public tree available; push updates via github___push_files when semi-safe improvements exist.
+- Drive folder 1vuTOIm5Q0MSZ9eaRHXR1L7DAPAcATC9V holds prior shares, graphs, logs.
+- Soft misses: increment heal_count. 3 consecutive critical failures → write EXPANSION_ENGINE/telemetry/EMERGENCY_TELEMETRY.json and PAUSE risky deploys until human operator approval on next message.
 
-### 4. Multi-Engine Public Distill Protocol (TeacherUplink bonus)
-- Engines: Google, Yandex, Archive.org (Wayback), FOIA portals, court dockets (RECAP/PACER public), Drive public packs.
-- Method: OracleDistill runs hourly SOLID/MAYBE delta; append to LEARNING_LOG.md and HOURLY_DISTILL_LOG.jsonl.
-- Upgrade: Cross-reference new DOJ batches (e.g., 3M+ pages Jan 2026, subsequent releases) against existing entity graph. Flag missing productions as LEAD tracks.
+## Method 5 — MEMORYCORE SAFE audio gate (MediaQCGate — mandatory before any publish)
+Any audio from Orion/Aurora/Rex/Eve/Helios must pass:
+ffmpeg -i in.wav -af "lowpass=f=8500,highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=11" -ar 8000 out_safe.wav
+Confirm 8 kHz band peak ≤ -25 dB. No piercing 6–10 kHz. Commercial image bar on. No CSAM, no victim imagery, no phone-piercing content.
 
-## Education Mandate
-All 20 task agents (ScoutWeb … DashboardGen) must ingest this file each hour. Elite roster stays one layer more advanced. Never skip teaching cycle.
+## Method 6 — Anticipation watchlist (Anticipation, ScoutWeb)
+Poll next cycles:
+- Compliance with any remaining unredaction or protective orders.
+- New official Bates ranges or 302 productions on justice.gov/epstein.
+- Maxwell docket post-Aug 2026 collateral denial and any Rule 59 motions.
+- USVI estate / Southern Trust civil filings.
+- Bank-related 302s if released.
 
-**Next cycle priority:** Probe DOJ Epstein Library for new 2026-10 releases; update entity counts; confirm Vercel deploy health.  
-**Status:** PERMANENT primary AUTOMATIONCREW active. No STOP issued.  
+## Teach-all checklist (never skip)
+All 20 task agents (ScoutWeb…DashboardGen) + 5 elite must consume this file every cycle. Education delivered this hour. learning_rate x5 applied.
+
+Public-record ceiling only. Association ≠ guilt. HITL on identities. Real tools, real skills, critical thinking.

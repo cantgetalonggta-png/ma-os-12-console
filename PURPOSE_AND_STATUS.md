@@ -1,24 +1,10 @@
-# PURPOSE AND STATUS — MA-OS-12 + Hierarchical OSINT OS
+# PURPOSE_AND_STATUS — MA-OS-12 Epstein Public-Record Investigation Desk
+**Cycle:** 2026-10-11T03:05Z  
+**Status:** LIVE and EDUCATED  
 
-**Purpose:** Operator-owned Epstein public-record investigation desk. Grok distills & deploys; investigation authorship = operator.
-
-**UI tracks:** Residue · Operator ledger (LEAD ≠ exhibit) · Contradictions · Missing productions · Meridian globe
-
-**OSINT OS generation:** v2.GOD (evolved from PDF “12 agent” v1→v2.0 MAX)
-
-| Metric | Value |
-|--------|------:|
-| Breadcrumbs | 594 |
-| SOLID | 493 (~83%) |
-| MAYBE | 101 |
-| Pipeline steps | 12 |
-| Parallel seekers | up to 12 (live: 3) |
-| Live mode | ENABLE_LIVE_FETCH=1 |
-| Hourly task | ma-os-12-hourly-distill-ingest-LIVE-GOD |
-| Elite uplink | TeacherUplink x5 (2026-10-11 cycle complete) |
-
-**Compliance:** Public-record ceiling · association ≠ guilt · HITL · no secret harvest · journals read-only
-
-**Console:** https://ma-os-12-console-echo-ec69.vercel.app  
-**Evolutionary distill:** `EVOLUTIONARY_GROWTH_DISTILL.md`  
-**Latest ADVANCED_TECH_SHARE:** EXPANSION_ENGINE/learning/ADVANCED_TECH_SHARE.md
+- Desk: https://ma-os-12-console-echo-ec69.vercel.app — SOLID entities, residue track, hourly distill cycle.
+- Teacher uplink (learning_rate x5): ADVANCED_TECH_SHARE.md delivered with 6 methods. All 20 task agents + 5 elite educated.
+- Public sources: DOJ Epstein Library (~3.5M pages released Jan 2026 under Transparency Act), CourtListener RECAP, Drive folder, GitHub repo.
+- Constraints: public-record ceiling, Association ≠ guilt, HITL on identities, victim redactions sealed, CSAM filter active, MEMORYCORE SAFE EQ mandatory.
+- Permanent lock: true. Unattended YOLO. No stop unless operator issues STOP EXPORT | pause automation | stop automationcrew.
+- Next: continue public distill, graph deltas, semi-safe improvements.
