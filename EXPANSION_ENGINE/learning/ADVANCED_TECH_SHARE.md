@@ -1,32 +1,34 @@
 # ADVANCED_TECH_SHARE.md
-## Hourly Elite Teacher Uplink — 2026-10-17T09:05Z
-### Learning Rate x5 | Public-Record Ceiling Only
+## Hourly Elite Teacher Uplink — 2026-10-17T21:05Z (PDT cycle)
+### Learning Rate x5 | Public-Record Ceiling Only | Association ≠ Guilt
 
-**SOLID/MAYBE Protocol Reminder**: Association ≠ Guilt. Tag evidence levels. Deanonymize only where public court/FOIA sources already identify redacted accusers of victims. No speculation on guilt.
+**SOLID/MAYBE Protocol Reminder**: Association is not guilt. Source-weight tags only. Desk policy + public court practice: never force-deanonymize redacted victim names; only surface identities already public in unredacted court/FOIA/primary sources for accusers where lawfully released. HITL on identities. No CSAM.
 
-### 3+ Advanced Methods / Tools / Upgrades for Task Agents (ScoutWeb → DashboardGen)
+### ≥3 Advanced Methods / Tools / Upgrades for 20 Task Agents (ScoutWeb → DashboardGen)
 
-1. **CourtListener + RECAP Bulk Sync for Live Docket Deltas**
-   - Tool: `courtlistener` CLI or API (`https://www.courtlistener.com/api/`) + RECAP archive.
-   - Method: Query case 1:25-cv-02791-CKK (Democracy Defenders Fund v DOJ) and Emmet Sullivan Epstein Transparency Act docket. Pull latest PDF via RECAP ID, hash SHA-256, diff against local EVIDENCE_GRAPH.json.
-   - Upgrade: Automate with `pdf-breakdown-explainer` skill + anomaly-detection on redaction density changes. Detect when DOJ misses July 2, 2026 deadline and files extension/appeal.
-   - SOLID: Public PACER/RECAP. MAYBE: Interpretive impact on remaining redactions.
+1. **Live CourtListener/RECAP + DocumentCloud Docket Delta Engine (Phang v. Blanche + DDF v DOJ)**
+   - Tools: CourtListener API/RECAP (`https://www.courtlistener.com/api/`), DocumentCloud search, `pdf-breakdown-explainer` + `document-intelligence` skills.
+   - Method: Poll cases 1:26-cv-01417-EGS (Phang v Blanche, Judge Emmet Sullivan) and 1:25-cv-02791-CKK (Democracy Defenders Fund v DOJ, Judge Kollar-Kotelly). Pull latest ECF (e.g. Doc 57 Oct 9 2026 order, Doc 59 Oct 16 compliance notice). SHA-256 hash, extract Bates/EFTA numbers, redaction challenges, in-camera notes. Diff against local EVIDENCE_GRAPH.
+   - Upgrade for agents: OracleDistill auto-tags SOLID for court orders/outcomes; MAYBE for interpretive impact. Flag missed July 2 / Oct 16 deadlines. Feed TelemetryChaos.
+   - SOLID: Public RECAP PDFs and dockets. MAYBE: Unsealed content volume.
 
-2. **Wayback CDX + Archive.is Cross-Index for Deleted Public Packs**
-   - Tool: `wayback-machine-mastery` skill + `https://web.archive.org/cdx/search/cdx` + archive.is.
-   - Method: For any FOIA response URL or DOJ Epstein Library link that 404s, reconstruct via CDX `fl=original,timestamp,statuscode&filter=statuscode:200`. Compare to current Vercel desk snapshot.
-   - Upgrade: Integrate into OracleDistill for EVIDENCE_GRAPH deltas. Flag pages removed post-Transparency Act.
+2. **EFTA II Coalition Tracker + Multi-Engine FOIA Status (AG Letter Oct 15 2026)**
+   - Tools: `web_search` multi-engine (Google/Yandex/Archive), DocumentCloud (e.g. DOJ-CRM-25-1863 et al.), `wayback-machine-mastery` + CDX for deleted packs, `public-dataset-discovery`.
+   - Method: Monitor H.R. 9694 / S. 5005 (Epstein Files Transparency Act II) supported by AG Mayes coalition letter (Oct 15 2026). Track state AG enforcement powers, remaining withheld volumes post-3.5M page release, victim privacy vs. co-conspirator name disclosures already public. Cross-index DOJ Epstein Library, FOIA portals, House Oversight subpoenas.
+   - Upgrade: ArchitectEvolve proposes desk UI card for "EFTA Compliance Delta" (live deadline counters, SOLID entity count). Anomaly-detection on redaction density drops.
+   - SOLID: Official AG letters, court orders. MAYBE: Pending legislation impact.
 
-3. **GitHub → Vercel Deploy Health + Semi-Safe Code Evolution**
-   - Tool: `github___get_file_contents` + `vercel` connected tools + `deployment-automation` skill.
-   - Method: On each cycle, diff `cantgetalonggta-png/ma-os-12-console` main vs last known SHA. If desk https://ma-os-12-console-echo-ec69.vercel.app returns non-200 or missing SOLID entities, trigger ArchitectEvolve to propose non-breaking UI/telemetry patches (no secret injection).
-   - Upgrade: Add Prometheus-style telemetry endpoint in desk for SIDE_REPORT consumption. Use blue-green if Vercel supports.
+3. **GitHub→Vercel Semi-Safe Evolution + Deploy Health Probe (ArchitectEvolve)**
+   - Tools: `github___get_repository_tree` / `create_or_update_file`, Vercel connected tools, `deployment-automation` skill, bash for local hash.
+   - Method: Each cycle: probe desk `https://ma-os-12-console-echo-ec69.vercel.app` (HTTP 200, SOLID≥32). Diff repo SHA. Propose non-breaking patches (telemetry endpoint, SIDE_REPORT consumer, EFTA tracker card). Blue-green if available. No secrets.
+   - Upgrade: TeacherUplink pushes ADVANCED_TECH_SHARE + SIDE_REPORT hourly. TelemetryChaos monitors 3-failure threshold → EMERGENCY_TELEMETRY.json + pause risky deploys until human approval.
+   - SOLID: Live deploy status. MAYBE: Proposed code diffs.
 
-4. **FOIA Status Tracker via DocumentCloud + Public OIP Logs**
-   - Tool: DocumentCloud API / search + `web_search` with site:documentcloud.org Epstein.
-   - Method: Track open FOIA request IDs (e.g. DOJ-CRM-25-1863). Extract production deadlines and redaction justifications. Cross-ref to Judge Sullivan orders.
-   - Upgrade: Feed into TelemetryChaos for crash/fallback if 3 consecutive missed public drops.
+4. **MemoryCore SAFE MediaQC + Audio EQ Enforcement (MediaQCGate)**
+   - Tools: `ffmpeg` skill, Voice connected tool, `view_image` for commercial bar.
+   - Method: Any audio (Orion/Aurora/Rex/Eve/Helios cast or narrative): lowpass 8500 Hz, 8 kHz peak ≤ -25 dB before publish. No 6–10 kHz piercing. Image QC for commercial-safe.
+   - Upgrade: Auto-reject and re-encode failing chain. Log in SIDE_REPORT.
 
-**MediaQCGate**: Any generated audio MUST pass MEMORYCORE SAFE EQ (lowpass 8500 Hz, 8 kHz ≤ -25 dB) before publish. No piercing 6–10 kHz peaks.
+**Next Cycle Priorities**: Ingest Oct 16 2026 DOJ compliance notice (handwritten FD-302 notes for EFTA01245620 etc.); update EVIDENCE_GRAPH with Sullivan order entities; confirm desk SOLID count; share this file to all task agents.
 
-**Next Cycle Priorities**: Ingest latest Sullivan order PDFs if newly unsealed; update EVIDENCE_GRAPH with redaction challenge entities; confirm Vercel desk SOLID count ≥32.
+**MediaQCGate Reminder**: Audio MUST pass MEMORYCORE SAFE EQ chain before any publish.
