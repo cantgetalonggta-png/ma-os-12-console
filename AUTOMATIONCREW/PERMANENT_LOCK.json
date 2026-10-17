@@ -1,1 +1,10 @@
-{"permanent":true,"lock":"ma-os-12-ELITE5-TEACHER-HOURLY","learning_rate":"x5","ceiling":"public-record","victim_rule":"sealed","association_rule":"not_guilt","created":"2026-10-14T02:10Z"}
+{
+  "permanent": true,
+  "lock_time": "2026-10-17T06:05Z",
+  "primary": "ma-os-12-AUTOMATIONCREW-PERMANENT",
+  "secondary": "ma-os-12-ELITE5-TEACHER-HOURLY",
+  "stop_conditions": ["STOP EXPORT", "pause automation", "stop automationcrew"],
+  "public_record_ceiling": true,
+  "association_not_guilt": true,
+  "victim_redactions_sealed": true
+}
