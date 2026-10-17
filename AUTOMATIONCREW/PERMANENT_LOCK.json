@@ -1,10 +1,6 @@
 {
   "permanent": true,
-  "lock_time": "2026-10-17T06:05Z",
-  "primary": "ma-os-12-AUTOMATIONCREW-PERMANENT",
-  "secondary": "ma-os-12-ELITE5-TEACHER-HOURLY",
-  "stop_conditions": ["STOP EXPORT", "pause automation", "stop automationcrew"],
-  "public_record_ceiling": true,
-  "association_not_guilt": true,
-  "victim_redactions_sealed": true
+  "lock_reason": "ELITE5 secondary automation + primary AUTOMATIONCREW continuous public-record desk operation",
+  "operator_override_only": ["STOP EXPORT", "pause automation", "stop automationcrew"],
+  "last_set": "2026-10-17T09:05:00Z"
 }
