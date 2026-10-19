@@ -1,0 +1,6 @@
+{
+  "permanent": true,
+  "lock": "ma-os-12-ELITE5-TEACHER-HOURLY",
+  "timestamp": "2026-10-18T17:22 PDT",
+  "do_not_stop_unless": ["STOP EXPORT", "pause automation", "stop automationcrew"]
+}
