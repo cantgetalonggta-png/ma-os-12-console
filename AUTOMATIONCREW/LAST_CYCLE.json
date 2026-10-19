@@ -1,8 +1,9 @@
 {
-  "cycle": "2026-10-18T17:22 PDT",
+  "cycle": "2026-10-18T19:05 PDT",
   "status": "completed",
   "desk_probe": "READY",
-  "distill_items": ["Phang Doc 59", "EFTA II 17-AG letter", "DDF expedited FOIA"],
+  "distill_items": ["Phang Doc 59 in-camera FD-302 notes", "EFTA II 17-AG letter", "DDF expedited FOIA", "redaction exposure patterns"],
   "upgrades_shared": 4,
-  "permanent": true
+  "permanent": true,
+  "failures": 0
 }

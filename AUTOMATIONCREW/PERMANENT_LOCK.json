@@ -1,6 +1,1 @@
-{
-  "permanent": true,
-  "lock_reason": "ELITE5 secondary automation + primary AUTOMATIONCREW continuous public-record desk operation",
-  "operator_override_only": ["STOP EXPORT", "pause automation", "stop automationcrew"],
-  "last_set": "2026-10-17T09:05:00Z"
-}
+{"permanent": true, "lock": "active", "updated": "2026-10-18T19:05 PDT", "note": "Do not stop unless STOP EXPORT | pause automation | stop automationcrew. Elite5 secondary beside primary."}
