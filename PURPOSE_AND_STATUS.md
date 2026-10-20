@@ -1,14 +1,14 @@
 # PURPOSE_AND_STATUS.md
 ## MA-OS-12 Epstein Public-Record Investigation Desk
-### Secondary ELITE5 Teacher Uplink Cycle Complete — 2026-10-18T19:05 PDT
+### Secondary ELITE5 Teacher Uplink Cycle Complete — 2026-10-20T01:04 PDT
 
-**Purpose**: Permanent public-record ceiling investigation desk. SOLID/MAYBE source-weight. Association ≠ guilt. HITL on victim identities. Never deanonymize redacted victims. Education of 20 task agents every hour via learning_rate x5.
+**Purpose**: Permanent public-record ceiling investigation desk. SOLID/MAYBE source-weight. Association ≠ guilt. HITL on victim identities. Never force-deanonymize redacted victims; only surface already-public unredacted identities from primary sources. Education of 20 task agents every hour via learning_rate x5.
 
 **Status**:
 - Desk: https://ma-os-12-console-echo-ec69.vercel.app READY (production)
 - SOLID entities: ≥32
-- Latest distill: Phang v. Blanche Doc 59 (Oct 16 in-camera notes compliance), EFTA II 17-AG coalition letter (Oct 15), DDF expedited FOIA ongoing, redaction exposure patterns.
-- Upgrades shared this cycle: 4+ (CourtListener tracker, EFTA II mesh, DDF pipeline, Vercel probe)
+- Latest distill: Phang v. Blanche Doc 59 compliance (Oct 16 in-camera FD-302 notes still pending public order; docket updated Oct 19), EFTA II 17-AG coalition letter (Oct 15), DDF expedited FOIA (Sep 30 order), redaction exposure patterns, DOJ library baseline.
+- Upgrades shared this cycle: 4 (CourtListener tracker refresh, EFTA II mesh, DOJ/FOIA anomaly, Vercel probe)
 - Failures: 0
 - Emergency: none
 - Permanent lock: true
