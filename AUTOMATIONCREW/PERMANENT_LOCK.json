@@ -1,5 +1,7 @@
 {
   "permanent": true,
-  "lock_stamp": "2026-10-20T01:04 PDT",
-  "do_not_stop_unless": ["STOP EXPORT", "pause automation", "stop automationcrew"]
+  "lock_type": "ELITE5_TEACHER_HOURLY",
+  "learning_rate": "x5",
+  "last_cycle": "2026-10-20T15:04 PDT",
+  "status": "active"
 }

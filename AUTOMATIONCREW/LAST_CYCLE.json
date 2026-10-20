@@ -1,8 +1,8 @@
 {
-  "cycle": "2026-10-20T01:04 PDT",
+  "cycle": "2026-10-20T15:04 PDT",
   "status": "completed",
   "desk_probe": "READY",
-  "distill_items": ["Phang Doc 59 in-camera FD-302 notes compliance (pending public order)", "EFTA II 17-AG coalition letter Oct 15", "DDF expedited FOIA Sep 30", "DOJ library incremental baseline", "redaction exposure patterns"],
+  "distill_items": ["Phang Doc 59 in-camera FD-302 notes compliance (pending public order)", "EFTA II 17-AG coalition letter Oct 15", "DDF expedited FOIA Sep 30", "DOJ library incremental baseline (last Sep 11)", "redaction exposure patterns"],
   "upgrades_shared": 4,
   "permanent": true,
   "failures": 0,
