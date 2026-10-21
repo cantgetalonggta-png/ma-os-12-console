@@ -1,7 +1,6 @@
 {
   "permanent": true,
-  "lock_type": "ELITE5_TEACHER_HOURLY",
-  "learning_rate": "x5",
-  "last_cycle": "2026-10-20T15:04 PDT",
-  "status": "active"
+  "lock": "automationcrew_active",
+  "last_cycle": "2026-10-21T02:04 PDT",
+  "operator_override": "STOP EXPORT | pause automation | stop automationcrew only"
 }
