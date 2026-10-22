@@ -1,10 +1,9 @@
 {
-  "cycle": "2026-10-21T02:04 PDT",
-  "status": "completed",
-  "desk_probe": "READY",
-  "distill_items": ["EFTA II AG coalition letter Oct 15 2026 (James + 16 AGs)", "DOJ library last updated Sep 11 2026", "Phang v. Blanche AG concession of EFTA I violation", "desk SOLID entities stable 32", "redaction enforcement absolute"],
-  "upgrades_shared": 5,
-  "permanent": true,
+  "cycle": "2026-10-22T16:04PDT",
+  "status": "complete",
+  "desk": "READY",
+  "upgrades_shared": 4,
   "failures": 0,
-  "desk_url": "https://ma-os-12-console-echo-ec69.vercel.app"
+  "commit": "146484732df4d81b212ac2804b22945f1b16f57a",
+  "permanent": true
 }
