@@ -1,1 +1,7 @@
-{"permanent": true, "lock": "active", "updated": "2026-10-18T19:05 PDT"}
+{
+  "permanent": true,
+  "lock_timestamp": "2026-10-22T01:04:00-07:00",
+  "automation": "ma-os-12-AUTOMATIONCREW-PERMANENT + ma-os-12-ELITE5-TEACHER-HOURLY",
+  "status": "active",
+  "do_not_stop_unless": ["STOP EXPORT", "pause automation", "stop automationcrew"]
+}
