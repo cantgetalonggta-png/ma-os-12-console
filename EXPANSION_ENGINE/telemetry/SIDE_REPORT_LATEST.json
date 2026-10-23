@@ -1,8 +1,8 @@
 {
-  "cycle": "2026-10-23T04:05PDT",
-  "utc": "2026-10-23T11:05Z",
+  "cycle": "2026-10-23T16:04PDT",
+  "utc": "2026-10-23T23:04Z",
   "elite_roster": {
-    "OracleDistill": {"status": "active", "upgrades_shared": 4, "notes": "Public RECAP/CourtListener Phang ECF59 confirmed; no new unseal. NM suit tracked."},
+    "OracleDistill": {"status": "active", "upgrades_shared": 4, "notes": "Public RECAP/CourtListener Phang ECF59 confirmed; no new unseal. NM suit tracked. No new major DOJ drops."},
     "ArchitectEvolve": {"status": "active", "upgrades_shared": 4, "notes": "Desk probe READY; propose non-breaking EFTA II / Phang / NM badges"},
     "TelemetryChaos": {"status": "active", "upgrades_shared": 4, "notes": "Failures=0; self-heal standby; no EMERGENCY"},
     "MediaQCGate": {"status": "active", "upgrades_shared": 4, "notes": "SAFE EQ reminder enforced (lowpass 8500; 8kHz ≤ -25dB)"},
