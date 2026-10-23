@@ -1,9 +1,9 @@
 {
-  "cycle": "2026-10-22T16:04PDT",
-  "utc": "2026-10-22T23:04Z",
+  "cycle": "2026-10-23T04:05PDT",
+  "utc": "2026-10-23T11:05Z",
   "elite_roster": {
-    "OracleDistill": {"status": "active", "upgrades_shared": 4, "notes": "Public RECAP/CourtListener Phang ECF59 confirmed; no new unseal"},
-    "ArchitectEvolve": {"status": "active", "upgrades_shared": 4, "notes": "Desk probe READY; propose non-breaking EFTA II / Phang badges"},
+    "OracleDistill": {"status": "active", "upgrades_shared": 4, "notes": "Public RECAP/CourtListener Phang ECF59 confirmed; no new unseal. NM suit tracked."},
+    "ArchitectEvolve": {"status": "active", "upgrades_shared": 4, "notes": "Desk probe READY; propose non-breaking EFTA II / Phang / NM badges"},
     "TelemetryChaos": {"status": "active", "upgrades_shared": 4, "notes": "Failures=0; self-heal standby; no EMERGENCY"},
     "MediaQCGate": {"status": "active", "upgrades_shared": 4, "notes": "SAFE EQ reminder enforced (lowpass 8500; 8kHz ≤ -25dB)"},
     "TeacherUplink": {"status": "active", "upgrades_shared": 4, "notes": "Education delivered to all 20 task agents; learning_rate x5"}
@@ -12,12 +12,13 @@
     "url": "https://ma-os-12-console-echo-ec69.vercel.app",
     "status": "READY",
     "title": "Epstein Public-Record Investigation Desk · MA-OS-12",
-    "solid_entities_approx": 32
+    "solid_entities_approx": 32,
+    "http_status": 200
   },
   "public_distill_highlights": [
     "Phang v. Blanche: ECF 59 Oct 16 compliance notice filed; in-camera notes still not public",
-    "EFTA II: 17-AG coalition letter Oct 15; discharge petition ~216/218 per SVPA Oct 21",
-    "No new major public DOJ drops this cycle"
+    "EFTA II: 17-AG coalition letter Oct 15; discharge petition ~216/218 per SVPA Oct 21; NM sued DOJ Oct 20/21 for unredacted Zorro Ranch files",
+    "No new major public DOJ drops this cycle; prior redaction concerns noted"
   ],
   "failures_consecutive": 0,
   "emergency": false,
