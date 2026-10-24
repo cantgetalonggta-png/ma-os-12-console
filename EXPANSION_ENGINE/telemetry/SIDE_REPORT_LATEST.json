@@ -1,8 +1,8 @@
 {
-  "cycle": "2026-10-23T16:04PDT",
-  "utc": "2026-10-23T23:04Z",
+  "cycle": "2026-10-24T16:04PDT",
+  "utc": "2026-10-24T23:04Z",
   "elite_roster": {
-    "OracleDistill": {"status": "active", "upgrades_shared": 4, "notes": "Public RECAP/CourtListener Phang ECF59 confirmed; no new unseal. NM suit tracked. No new major DOJ drops."},
+    "OracleDistill": {"status": "active", "upgrades_shared": 4, "notes": "Public RECAP/CourtListener Phang ECF59 confirmed; no new unseal as of Oct 24. NM suit tracked. No new major DOJ drops."},
     "ArchitectEvolve": {"status": "active", "upgrades_shared": 4, "notes": "Desk probe READY; propose non-breaking EFTA II / Phang / NM badges"},
     "TelemetryChaos": {"status": "active", "upgrades_shared": 4, "notes": "Failures=0; self-heal standby; no EMERGENCY"},
     "MediaQCGate": {"status": "active", "upgrades_shared": 4, "notes": "SAFE EQ reminder enforced (lowpass 8500; 8kHz ≤ -25dB)"},
@@ -16,7 +16,7 @@
     "http_status": 200
   },
   "public_distill_highlights": [
-    "Phang v. Blanche: ECF 59 Oct 16 compliance notice filed; in-camera notes still not public",
+    "Phang v. Blanche: ECF 59 Oct 16 compliance notice filed; in-camera notes still not public as of Oct 24",
     "EFTA II: 17-AG coalition letter Oct 15; discharge petition ~216/218 per SVPA Oct 21; NM sued DOJ Oct 20/21 for unredacted Zorro Ranch files",
     "No new major public DOJ drops this cycle; prior redaction concerns noted"
   ],
