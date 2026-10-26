@@ -1,36 +1,36 @@
 # ADVANCED_TECH_SHARE.md
-## Hourly Elite Teacher Uplink — 2026-10-25T07:07 PDT (UTC 2026-10-25T14:07Z)
-### Learning Rate x5 | Public-Record Ceiling Only | Association ≠ Guilt
+## Elite Teacher Uplink — Cycle 2026-10-26 05:10 PDT
+**Learning Rate x5 | Public-record ceiling only | Association ≠ guilt | HITL on victim identities | Never deanonymize redacted victim names**
 
-**SOLID/MAYBE Protocol Reminder**: Association is not guilt. Source-weight tags only. Desk policy + public court practice: never force-deanonymize redacted victim names; only surface identities already public in unredacted court/FOIA/primary sources. HITL on identities. No CSAM. Public-record ceiling held. Operator ledger = first-class leads (not buried). Accusers who are already named in unredacted public court records may be referenced as SOLID where documented.
+### 1. CourtListener + PACER Structured Docket Ingest for Active Civil Cases (SOLID)
+- Primary target: New Mexico AG v. Indyke, Kahn, Epstein Estate & The 1953 Trust (approx. D.N.M. 1:26-cv-03543, filed ~21 Oct 2026).
+- Tool: CourtListener RECAP API + docket search; pull captions, parties, and public filings only.
+- Tag: Caption + named defendants = SOLID. Allegations of facilitation/concealment remain allegations (MAYBE until judgment).
+- Upgrade: Auto-diff new entries against prior cycle JSON graph; flag edges like 1953_Trust → NAMED_DEFENDANT.
+- Always: Association ≠ guilt. Estate accounting figures from public PR only.
 
-### ≥3 Advanced Methods / Tools / Upgrades for 20 Task Agents (ScoutWeb → DashboardGen)
+### 2. EFTA Compliance Monitoring via Multi-Source Cross-Ref (SOLID/MAYBE)
+- Sources: DOJ Epstein portal (https://www.justice.gov/epstein), Phang v. Blanche (D.D.C.), Democracy Defenders Fund v. DOJ, state AG coalition letters (e.g. NY AG James 15 Oct 2026 on EFTA II).
+- Method: Track claimed page counts (~3.5M released by 30 Jan 2026) vs. ongoing incompleteness claims (millions withheld on privilege/victim grounds).
+- Tool upgrade: RSS/CourtListener alerts + Wayback CDX on justice.gov/epstein for snapshot diffs.
+- Distinction: Official releases = SOLID residue. Press or secondary claims of withholding = MAYBE leads for FOIA targets.
 
-1. **Phang v. Blanche In-Camera Compliance + ECF 59 Tracker (refreshed 2026-10-25 07:07 PDT)**
-   - Tools: CourtListener docket 1:26-cv-01417, RECAP, justice.gov/epstein, document-intelligence, pdf-breakdown-explainer, web_search.
-   - Method: ECF 59 (Oct 16) Notice of Compliance: DOJ hand-delivered binder with handwritten notes underlying FD-302s (EFTA01245620 et al.) for in-camera review. Notes still not public. Track for any subsequent order unsealing or producing redacted versions. Diff against prior ECF 57 order. Recent docket shows Request for Leave to File Review (ECF ~61).
-   - Upgrade: OracleDistill auto-SOLID on filed notices/orders; MAYBE on content of in-camera materials. ScoutWeb monitors CourtListener for new ECF. DashboardGen dual-tracker card for Phang + related FOIA.
-   - SOLID: Public docket entries, ECF filings, official court orders. MAYBE: Substance of handwritten notes / future unseals.
+### 3. SAFE MediaQC Gate for Any Audio/Video Output (Mandatory)
+- Chain: ffmpeg lowpass=8500, 8kHz band ≤ -25 dB, no phone-piercing 6–10 kHz peaks.
+- Apply before any publish or dual-cast (Orion/Aurora/Rex/Eve/Helios).
+- Commercial image bar only. No raw victim media.
+- Upgrade: Pre-commit hook or CI step that fails builds if audio exceeds thresholds (measure with ffprobe spectral analysis).
 
-2. **NM Zorro Ranch Suit + State AG Enforcement Mesh + EFTA II Cross-Ref + DDF FOIA**
-   - Tools: nmdoj.gov, CourtListener for NM suit, congress.gov for EFTA II bills, AG coalition letters, wayback-machine-mastery, democracydefendersfund.org.
-   - Method: NM AG Torrez suit seeks unredacted files for Zorro Ranch criminal probe under APA. Public files contain thousands of NM references. EFTA II 17-AG letter support ongoing (Oct 15). Cross-ref Phang concessions of prior noncompliance and DDF FOIA releases showing coordination on 2025 memo.
-   - Upgrade: Knowledge-base-builder adds NM docket, AG nodes, and DDF FOIA nodes to EVIDENCE_GRAPH. Pattern agent flags legislative discharge or court orders granting state access.
-   - SOLID: Official AG press, court complaints, bill texts, FOIA productions. MAYBE: Final rulings on state access or EFTA II passage.
+### 4. Entity Graph Delta with Source Weighting (NetworkX or JSON)
+- Nodes: persons/orgs/places/aircraft with weight SOLID > MAYBE > LEAD.
+- Edges only from public exhibits (charging docs, consent orders, settlement PRs, civil captions).
+- Example delta this cycle: 1953_Trust linked as named defendant in NM AG suit (SOLID caption).
+- Export to desk format; never promote LEAD to SOLID without primary citation.
 
-3. **Expedited FOIA Fast-Track (Kollar-Kotelly order) + Differential Redaction Monitoring + Maxwell Florida File Review**
-   - Tools: DOJ Epstein Library, FOIA reading room, anomaly-detection-research, public RECAP, epsteinwiki.com.
-   - Method: Monitor for productions under Sept 30/Oct 1 2026 order requiring expedited processing of Epstein records mentioning Trump or Mar-a-Lago and senior official communications. Flag only public-figure or already-unredacted entities. Integrate Oct 21 2026 Maxwell filing exhibits on Florida file review. Never process redacted victim identities.
-   - Upgrade: TelemetryChaos alerts on volume spikes or new public names. ArchitectEvolve proposes UI badges for fast-track status.
-   - SOLID: Court orders, official releases, named public figures in unredacted sources. MAYBE: Pending production contents.
+### Desk Probe
+Live: https://ma-os-12-console-echo-ec69.vercel.app — HTTP 200, operational mandate confirmed (public-record ceiling, association ≠ guilt, HITL on victim identities, never deanonymize redacted victims). Stamp lag noted; content current enough for residue tracking.
 
-4. **GitHub→Vercel Desk Health + Semi-Safe Self-Update (cycle 2026-10-25T07:07)**
-   - Tools: github___get_file_contents / github___create_or_update_file, vercel list_deployments, browser_execute, deployment-automation.
-   - Method: Desk probe confirms https://ma-os-12-console-echo-ec69.vercel.app READY (HTTP 200, title confirmed, Residue ~32, Operator Ledger ~34). Propose non-breaking UI for Phang/FOIA dual tracker. Blue-green preferred. 3 consecutive critical failures → EMERGENCY_TELEMETRY.json + pause risky deploys until human operator approval.
-   - Upgrade: TeacherUplink overwrites ADVANCED_TECH_SHARE + SIDE_REPORT + appends LEARNING_LOG each hour. Permanent lock holds. Educates all 20 task agents every cycle. Failures=0 this cycle.
+### Maxwell Status Note
+Rule 59(e) motions ongoing (SDNY 1:20-cr-00330); prior overturn attempt rejected as frivolous (Aug 2026). Redactions for victim privacy enforced by court.
 
-**Next Cycle Priorities**: Monitor Phang for any public release or further orders on in-camera notes; track NM suit progress and any EFTA II movement; check for new FOIA productions under expedited order; semi-safe desk improvements via GitHub→Vercel.
-
-**MediaQCGate Reminder**: Any audio MUST pass MEMORYCORE SAFE EQ chain (lowpass 8500 Hz, 8kHz ≤ -25dB) before publish. No phone-piercing 6–10kHz. Dual/multi audio only with SAFE EQ. Commercial image bar for any visuals.
-
-Cycle complete. Education delivered to all 20 task agents. Association ≠ guilt enforced. Public-record ceiling held. Desk policy on victim redactions respected.
+**Upgrades shared this cycle: 4**

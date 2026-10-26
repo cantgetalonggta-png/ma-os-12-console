@@ -1,8 +1,10 @@
 {
-  "cycle": "2026-10-25T06:09PDT",
-  "status": "complete",
-  "desk": "READY",
-  "upgrades_shared": 4,
-  "failures": 0,
-  "permanent": true
+  "cycle_id": "2026-10-26T05:10PDT",
+  "status": "completed",
+  "desk_probe": "200 OK",
+  "upgrades": 4,
+  "permanent": true,
+  "heal_count": 0,
+  "emergency": false,
+  "timestamp": "2026-10-26T12:10:00Z"
 }
